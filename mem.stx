@@ -3,16 +3,16 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:/Workspace/ISE/OpenMIPS/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to E:/Workspace/ISE/OpenMIPS/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
---> Reading design: if_id.prj
+--> Reading design: mem.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -39,17 +39,17 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\if_id.v\" into library work
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\mem.v\" into library work
 Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
-Parsing module <if_id>.
+Parsing module <mem>.
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.24 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.28 secs
  
 --> 
 
-Total memory usage is 191596 kilobytes
+Total memory usage is 191468 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

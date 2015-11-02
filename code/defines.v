@@ -52,10 +52,10 @@
 
 `define EXE_NOP 6'b000000				//
 
-
+//因为mips32一共有156条指令，所以至少得用8位进制数来表示出所有的操作码
 //AluOp
 `define EXE_OR_OP    8'b00100101
-`define EXE_ORI_OP  8'b01011010
+`define EXE_ORI_OP 	8'b01011010
 
 
 `define EXE_NOP_OP    8'b00000000

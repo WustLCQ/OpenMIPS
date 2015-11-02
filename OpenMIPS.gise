@@ -23,9 +23,27 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ex.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ex.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ex.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ex_mem.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ex_mem.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ex_mem.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="id.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="id.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="id.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="id_ex.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="id_ex.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="id_ex.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="if_id.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="if_id.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="if_id.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mem.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="mem.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mem_wb.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem_wb.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="mem_wb.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pc_reg.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="pc_reg.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="pc_reg.xst"/>
