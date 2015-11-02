@@ -47,7 +47,7 @@ module regfile(
 	
 	//读操作，若读地址与写地址相同，直接传出将要写入的数据
 	always @(posedge clk) begin
-		if(rst == RstEnable) begin
+		if(rst == `RstEnable) begin
 			rdata1 <= `ZeroWord;
 		end else if(raddr1 == `RegNumLog2'h0) begin
 			rdata1 <= `ZeroWord;
@@ -56,12 +56,12 @@ module regfile(
 		end else if(re1 == `ReadEnable) begin
 			rdata1 <= regs[raddr1];
 		end else begin
-			radata1 <= `ZeroWord;
+			rdata1 <= `ZeroWord;
 		end
 	end
 	
 	always @(posedge clk) begin
-		if(rst == RstEnable) begin
+		if(rst == `RstEnable) begin
 			rdata2 <= `ZeroWord;
 		end else if(raddr2 == `RegNumLog2'h0) begin
 			rdata2 <= `ZeroWord;
@@ -70,7 +70,7 @@ module regfile(
 		end else if(re2 == `ReadEnable) begin
 			rdata2 <= regs[raddr2];
 		end else begin
-			radata2 <= `ZeroWord;
+			rdata2 <= `ZeroWord;
 		end
 	end
 

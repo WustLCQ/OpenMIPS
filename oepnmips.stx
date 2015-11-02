@@ -1,0 +1,84 @@
+Release 13.2 - xst O.61xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to E:/Workspace/ISE/OpenMIPS/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to E:/Workspace/ISE/OpenMIPS/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: oepnmips.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\regfile.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <regfile>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\pc_reg.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <pc_reg>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\mem_wb.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 21.
+Parsing module <mem_wb>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\mem.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <mem>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\if_id.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <if_id>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\id_ex.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <id_ex>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\id.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <id>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\ex_mem.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <ex_mem>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\ex.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <ex>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\oepnmips.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
+Parsing module <oepnmips>.
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.46 secs
+ 
+--> 
+
+Total memory usage is 191404 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
