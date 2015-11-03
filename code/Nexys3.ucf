@@ -1,0 +1,66 @@
+#  This  file  is  a  simple  SOC  .ucf  for  Nexys3  rev  B  board #Clock  signal 
+Net  "clk_100mhz"  LOC=V10  |IOSTANDARD=LVCMOS33;
+NET  "clk_100mhz"	PERIOD  =  10ns;	#  10ns  =  50Mhz
+#Net  "clk_100mhz"  TNM_NET  =  sys_clk_pin; 
+
+#NET  "clk"  CLOCK_DEDICATED_ROUTE  =  FALSE; 
+#PIN  "clk_BUFGP/BUFG.O"  CLOCK_DEDICATED_ROUTE  =  FALSE; #  7  segment  display 
+Net  "seg[7]"  LOC  =  M13  |IOSTANDARD  =  LVCMOS33;  #p 
+Net  "seg[6]"  LOC  =  T17  |IOSTANDARD  =  LVCMOS33;  #a 
+Net  "seg[5]"  LOC  =  T18  |IOSTANDARD  =  LVCMOS33;  #b 
+Net  "seg[4]"  LOC  =  U17  |IOSTANDARD  =  LVCMOS33;  #c 
+Net  "seg[3]"  LOC  =  U18  |IOSTANDARD  =  LVCMOS33;  #d 
+Net  "seg[2]"  LOC  =  M14  |IOSTANDARD  =  LVCMOS33;  #e 
+Net  "seg[1]"  LOC  =  N14  |IOSTANDARD  =  LVCMOS33;  #f 
+Net  "seg[0]"  LOC  =  L14  |IOSTANDARD  =  LVCMOS33;  #g 
+Net  "an[0]"  LOC  =  N16  |IOSTANDARD  =  LVCMOS33; 
+Net  "an[1]"  LOC  =  N15  |IOSTANDARD  =  LVCMOS33; 
+Net  "an[2]"  LOC  =  P18  |IOSTANDARD  =  LVCMOS33; 
+Net  "an[3]"  LOC  =  P17  |IOSTANDARD  =  LVCMOS33; 
+#  LEDs 
+Net  "led[0]"  LOC  =  U16  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[1]"  LOC  =  V16  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[2]"  LOC  =  U15  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[3]"  LOC  =  V15  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[4]"  LOC  =  M11  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[5]"  LOC  =  N11  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[6]"  LOC  =  R11  |IOSTANDARD  =  LVCMOS33; 
+Net  "led[7]"  LOC  =  T11  |IOSTANDARD  =  LVCMOS33; 
+#  SWitches 
+Net  "sw[0]"  LOC  =  T10  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[1]"  LOC  =  T9  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[2]"  LOC  =  V9  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[3]"  LOC  =  M8  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[4]"  LOC  =  N8  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[5]"  LOC  =  U8  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[6]"  LOC  =  V8  |IOSTANDARD  =  LVCMOS33; 
+Net  "sw[7]"  LOC  =  T5  |IOSTANDARD  =  LVCMOS33; 
+#  Buttons 
+Net  "btn[0]"  LOC  =  B8  |IOSTANDARD  =  LVCMOS33;	#  reset
+Net  "btn[1]"  LOC  =  A8  |IOSTANDARD  =  LVCMOS33;	#  BTNU
+Net  "btn[2]"  LOC  =  C4  |IOSTANDARD  =  LVCMOS33;	#  BTNL
+Net  "btn[3]"  LOC  =  C9  |IOSTANDARD  =  LVCMOS33;	#  BTND
+Net  "btn[4]"  LOC  =  D9  |IOSTANDARD  =  LVCMOS33;	#  BTNR
+#  Pic  USB-HID  interface 
+#Net  "PS2_Data"  LOC  =  J13|  IOSTANDARD  =  LVCMOS33;  #Bank  =  1,  pin  name  =  IO_L39P_M1A3,  Sch  name  = PIC-SDI1 
+#Net  "PS2_clk"  LOC  =  L12  |  IOSTANDARD  =  LVCMOS33;  #Bank  =  1,  pin  name  =  IO_L40P_GCLK11_M1A5,  Sch name  =  PIC-SCK1 
+
+#  VGA  Connector
+ 
+#NET  "Red[0]"  LOC  =  U7  |  IOSTANDARD  =  LVCMOS33;
+
+#NET "Red[1]" LOC  = V7  | IOSTANDARD  = LVCMOS33; 
+#NET "Red[2]"LOC  = N7  | IOSTANDARD  = LVCMOS33; 
+#NET "Green[0]" LOC  = P8  | IOSTANDARD  = LVCMOS33; 
+#NET "Green[1]" LOC  = T6  | IOSTANDARD  = LVCMOS33;
+ 
+#  Bank  =  2,  pin  name  =  IO_L43P,  Sch  name=  RED0
+
+# Bank  =  2, pin name  = IO_L43N, Sch name  = RED1 
+# Bank  =  2, pin name  = IO_L44P, Sch name  = RED2 
+# Bank  =  2, pin name  = IO_L44N, Sch name  = GRN0 
+# Bank  =  2, pin name  = IO_L45P, Sch name  = GRN1
+#NET "Green[2]" LOC  = V6  | IOSTANDARD  = LVCMOS33;	# Bank  =  2, pin name  = IO_L45N, Sch name  = GRN2
+#NET "Blue[1]" LOC  = R7  | IOSTANDARD  = LVCMOS33;	# Bank  =  2, pin name  = IO_L46P, Sch name  = BLU1
+#NET "Blue[2]" LOC  = T7  | IOSTANDARD  = LVCMOS33;	# Bank  =  2, pin name  = IO_L46N, Sch name  = BLU2
+

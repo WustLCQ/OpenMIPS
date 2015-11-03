@@ -82,3 +82,9 @@
 `define RegNum 32							//通用寄存器数量
 `define RegNumLog2 5						//寻址通用寄存器使用的地址位数
 `define NOPRegAddr 5'b00000
+
+//七位数码管选择信号
+`define Seg0 4'b1110
+`define Seg1 4'b1101
+`define Seg2 4'b1011
+`define Seg3 4'b0111

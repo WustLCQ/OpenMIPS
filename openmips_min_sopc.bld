@@ -1,0 +1,41 @@
+Release 13.2 ngdbuild O.61xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: D:\Xilinx\13.2\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+ise -dd _ngo -sd code -nt timestamp -uc code/Nexys3.ucf -p xc6slx16-csg324-3
+openmips_min_sopc.ngc openmips_min_sopc.ngd
+
+Reading NGO file "E:/Workspace/ISE/OpenMIPS/openmips_min_sopc.ngc" ...
+Loading design module "code/inst_rom.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "code/Nexys3.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem - The Period constraint <NET  "clk_100mhz"	PERIOD  = 
+   10ns;> [code/Nexys3.ucf(3)], is specified using the Net Period method which
+   is not recommended. Please use the Timespec PERIOD method.
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 138004 kilobytes
+
+Writing NGD file "openmips_min_sopc.ngd" ...
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "openmips_min_sopc.bld"...

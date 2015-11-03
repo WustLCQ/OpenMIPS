@@ -22,7 +22,14 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="OpenMIPS.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="code/coregen.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ex.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ex.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ex.xst"/>
@@ -44,15 +51,178 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mem_wb.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem_wb.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="mem_wb.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="oepnmips.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="oepnmips.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="oepnmips.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="openmips_min_sopc.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="openmips_min_sopc.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="openmips_min_sopc.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="openmips_min_sopc.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="openmips_min_sopc.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="openmips_min_sopc.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="openmips_min_sopc.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="openmips_min_sopc.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="openmips_min_sopc.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="openmips_min_sopc.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="openmips_min_sopc.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="openmips_min_sopc.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="openmips_min_sopc.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="openmips_min_sopc.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="openmips_min_sopc.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="openmips_min_sopc.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="openmips_min_sopc.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="openmips_min_sopc.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="openmips_min_sopc.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="openmips_min_sopc.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="openmips_min_sopc.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="openmips_min_sopc.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="openmips_min_sopc.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="openmips_min_sopc_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="openmips_min_sopc_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="openmips_min_sopc_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="openmips_min_sopc_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="openmips_min_sopc_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="openmips_min_sopc_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="openmips_min_sopc_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="openmips_min_sopc_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="openmips_min_sopc_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pc_reg.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="pc_reg.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="pc_reg.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1446557022" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1391545671781970039" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:in_ck="-6131075702971096627" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="code/inst_rom.ngc"/>
+      <outfile xil_pn:name="code/inst_rom.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:in_ck="588686612758885852" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="4171959947969967289" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:in_ck="588686612758885852" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446557022" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-2535363934053202224" xil_pn:start_ts="1446557022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446559960" xil_pn:in_ck="-481841231599025357" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7765323860876020885" xil_pn:start_ts="1446559953">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.lso"/>
+      <outfile xil_pn:name="openmips_min_sopc.ngc"/>
+      <outfile xil_pn:name="openmips_min_sopc.ngr"/>
+      <outfile xil_pn:name="openmips_min_sopc.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc.stx"/>
+      <outfile xil_pn:name="openmips_min_sopc.syr"/>
+      <outfile xil_pn:name="openmips_min_sopc.xst"/>
+      <outfile xil_pn:name="openmips_min_sopc_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1446559683" xil_pn:in_ck="7531030170678586240" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-1762995665444657692" xil_pn:start_ts="1446559683">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446560007" xil_pn:in_ck="7531573479526054979" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1412782974647899591" xil_pn:start_ts="1446560002">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.bld"/>
+      <outfile xil_pn:name="openmips_min_sopc.ngd"/>
+      <outfile xil_pn:name="openmips_min_sopc_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1446560017" xil_pn:in_ck="-7072420607115071063" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1446560007">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.pcf"/>
+      <outfile xil_pn:name="openmips_min_sopc_map.map"/>
+      <outfile xil_pn:name="openmips_min_sopc_map.mrp"/>
+      <outfile xil_pn:name="openmips_min_sopc_map.ncd"/>
+      <outfile xil_pn:name="openmips_min_sopc_map.ngm"/>
+      <outfile xil_pn:name="openmips_min_sopc_map.xrpt"/>
+      <outfile xil_pn:name="openmips_min_sopc_summary.xml"/>
+      <outfile xil_pn:name="openmips_min_sopc_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1446560087" xil_pn:in_ck="-3416862313887011518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1446560074">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.ncd"/>
+      <outfile xil_pn:name="openmips_min_sopc.pad"/>
+      <outfile xil_pn:name="openmips_min_sopc.par"/>
+      <outfile xil_pn:name="openmips_min_sopc.ptwx"/>
+      <outfile xil_pn:name="openmips_min_sopc.unroutes"/>
+      <outfile xil_pn:name="openmips_min_sopc.xpi"/>
+      <outfile xil_pn:name="openmips_min_sopc_pad.csv"/>
+      <outfile xil_pn:name="openmips_min_sopc_pad.txt"/>
+      <outfile xil_pn:name="openmips_min_sopc_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1446560107" xil_pn:in_ck="-6470490051138628187" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1446560094">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.bgn"/>
+      <outfile xil_pn:name="openmips_min_sopc.bit"/>
+      <outfile xil_pn:name="openmips_min_sopc.drc"/>
+      <outfile xil_pn:name="openmips_min_sopc.ut"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1446560087" xil_pn:in_ck="-7072420607115071195" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1446560081">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="openmips_min_sopc.twr"/>
+      <outfile xil_pn:name="openmips_min_sopc.twx"/>
+    </transform>
+    <transform xil_pn:end_ts="1446559963" xil_pn:in_ck="2329906010307342531" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="3528897565860843958" xil_pn:start_ts="1446559960">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="netgen"/>
+      <outfile xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
+      <outfile xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
+    </transform>
+  </transforms>
 
 </generated_project>

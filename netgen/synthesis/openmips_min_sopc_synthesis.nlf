@@ -1,0 +1,19 @@
+Release 13.2 - netgen O.61xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis
+-ofmt verilog -sim openmips_min_sopc.ngc openmips_min_sopc_synthesis.v  
+
+Reading design 'openmips_min_sopc.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing Verilog netlist file
+'E:\Workspace\ISE\OpenMIPS\netgen\synthesis\openmips_min_sopc_synthesis.v' ...
+INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM simulation library for
+   correct compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 132676 kilobytes

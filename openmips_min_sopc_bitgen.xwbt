@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\Workspace\ISE\OpenMIPS\openmips_min_sopc.ncd
+OUTFILE=E:\Workspace\ISE\OpenMIPS\openmips_min_sopc.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=E:\Workspace\ISE\OpenMIPS
+LICENSE=ISE
+USER_INFO=No user information available.

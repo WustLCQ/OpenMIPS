@@ -25,12 +25,12 @@ module ex_mem(
 	input	rst,
 	
 	input	[`RegAddrBus]	ex_wd,
-	input	ex_wreg,
-	input	[`RegBus]	ex_wdata,
+	input						ex_wreg,
+	input	[`RegBus]		ex_wdata,
 	
 	output	reg[`RegAddrBus]	mem_wd,
-	output	reg mem_wreg,
-	output	reg[`RegBus]	mem_wdata
+	output	reg 					mem_wreg,
+	output	reg[`RegBus]		mem_wdata
     );
 	 
 	 always @(posedge clk)	begin

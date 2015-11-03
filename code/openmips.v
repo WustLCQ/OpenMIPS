@@ -20,12 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 //顶层模块
 `include "defines.v"
-module oepnmips(
+module openmips(
 	input	clk,
 	input	rst,
 	input		[`RegBus]	rom_data_i,		//从rom中读取的指令
 	output	[`RegBus]	rom_addr_o,		//pc的值
-	output	reg rom_ce_o
+	output	rom_ce_o
     );
 
 	wire[`InstAddrBus]	pc;
@@ -146,7 +146,7 @@ module oepnmips(
 		.ex_wd(ex_wd_o),
 		.ex_wreg(ex_wreg_o),
 		.ex_wdata(ex_wdata_o),
-		.meme_wd(mem_wd_i),
+		.mem_wd(mem_wd_i),
 		.mem_wreg(mem_wreg_i),
 		.mem_wdata(mem_wdata_i));
 		

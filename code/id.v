@@ -49,7 +49,7 @@ module id(
 	 reg[`RegBus] imm;		//立即数	
 	 
 	//指令是否有效
-	reg instvalid;
+	//reg instvalid;
 	
 	always @(*) begin 
 		if(rst == `RstEnable) begin
@@ -57,7 +57,7 @@ module id(
 			alusel_o	<= `EXE_RES_NOP;
 			wd_o		<= `NOPRegAddr;
 			wreg_o	<= `WriteDisable;
-			instvalid	<= `InstValid;
+	//		instvalid	<= `InstValid;
 			reg1_read_o	<= 1'b0;
 			reg2_read_o	<= 1'b0;
 			reg1_addr_o	<= `NOPRegAddr;
@@ -69,7 +69,7 @@ module id(
 			alusel_o	<=	`EXE_RES_NOP;
 			wd_o		<=	inst_i[15:11];
 			wreg_o	<= `WriteDisable;
-			instvalid	<=	`InstInvalid;
+	//		instvalid	<=	`InstInvalid;
 			reg1_read_o	<= 1'b0;
 			reg2_read_o	<= 1'b0;
 			reg1_addr_o	<= inst_i[25:21];
@@ -85,7 +85,7 @@ module id(
 					reg2_read_o	<=	1'b0;
 					imm	<=	{16'h0,inst_i[15:0]};	//32位立即数
 					wd_o	<=	inst_i[20:16];				//目标寄存器地址
-					instvalid	<=	`InstValid;
+	//				instvalid	<=	`InstValid;
 				end
 				default:	begin
 				end
