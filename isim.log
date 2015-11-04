@@ -1,0 +1,27 @@
+ISim log file
+Running: E:\Workspace\ISE\OpenMIPS\openmips_min_sopc_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/Workspace/ISE/OpenMIPS/openmips_min_sopc_tb_isim_beh.wdb 
+ISim O.61xd (signature 0x6dd86d03)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.
+ISim O.61xd (signature 0x6dd86d03)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.

@@ -34,7 +34,7 @@ module ex_mem(
     );
 	 
 	 always @(posedge clk)	begin
-		if(rst == `RstDisable) begin
+		if(rst == `RstEnable) begin
 			mem_wd <= `NOPRegAddr;
 			mem_wreg <= `WriteDisable;
 			mem_wdata	<= `ZeroWord;

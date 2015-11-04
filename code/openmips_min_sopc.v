@@ -46,16 +46,15 @@ module openmips_min_sopc(
 	
 	assign clk = btn[4];
 	openmips openmips(
-		.clk(clk),
+		.clk(clk_100mhz),
 		.rst(rst),
 		.rom_addr_o(inst_addr),
 		.rom_data_i(inst),
 		.rom_ce_o(rom_ce));
 		
 	inst_rom inst_rom(
-		.clka(clk),
-		.addra(inst_addr[11:2]),
-		.douta(inst));
+		.a(inst_addr[11:2]),
+		.spo(inst));
 		
 	decoder_7seg decoder_7seg(
 		.digit(digit[3:0]),
@@ -84,11 +83,11 @@ module openmips_min_sopc(
 
 	anti_jitter anti_jitter(
 		.clk(clk_100mhz),
-		.btn(btn[3:0]),
+		.btn(btn[4:0]),
 		.sw(sw[7:0]),
 		.rst(rst_tmp),
-		.btn_out(btn_out[3:0]),
-		.btn_pulse(btn_pulse[3:0]),
+		.btn_out(btn_out[4:0]),
+		.btn_pulse(btn_pulse[4:0]),
 		.sw_ok(sw_ok[7:0]));
 		
 	clk_div clk_div(
@@ -107,7 +106,7 @@ module openmips_min_sopc(
 				led	<=	inst_addr[7:0];
 			end
 			2'b01:	begin
-				led	<=	{7'b1010100,btn[5]};
+				led	<=	inst_addr[15:8];
 			end
 			2'b10:	begin
 				led	<= inst_addr[23:16];

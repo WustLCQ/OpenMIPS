@@ -1,7 +1,7 @@
 Release 13.2 - par O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Tue Nov 03 22:14:40 2015
+Wed Nov 04 16:23:37 2015
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -289,7 +289,7 @@ R15||IOBM|IO_L1P_CCLK_2|UNUSED||2|||||||||
 R16|||SUSPEND||||||||||||
 R17|||VCCO_1|||1|||||3.30||||
 R18|||GND||||||||||||
-T1|rst|IOB|IO_L33N_M3DQ13_3|INPUT|LVCMOS25*|3||||NONE||UNLOCATED|NO|NONE|
+T1||IOBS|IO_L33N_M3DQ13_3|UNUSED||3|||||||||
 T2||IOBM|IO_L33P_M3DQ12_3|UNUSED||3|||||||||
 T3||IOBS|IO_L62N_D6_2|UNUSED||2|||||||||
 T4||IOBM|IO_L63P_2|UNUSED||2|||||||||

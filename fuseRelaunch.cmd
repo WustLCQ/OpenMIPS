@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "E:/Workspace/ISE/OpenMIPS/openmips_min_sopc_tb_isim_beh.exe" -prj "E:/Workspace/ISE/OpenMIPS/openmips_min_sopc_tb_beh.prj" "work.openmips_min_sopc_tb" "work.glbl" 

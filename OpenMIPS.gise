@@ -29,13 +29,14 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="code/coregen.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ex.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ex.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ex.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ex_mem.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ex_mem.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ex_mem.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ex_mem_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="id.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="id.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="id.xst"/>
@@ -45,6 +46,10 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="if_id.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="if_id.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="if_id.xst"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mem.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="mem.xst"/>
@@ -82,6 +87,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="openmips_min_sopc.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="openmips_min_sopc_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="openmips_min_sopc_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="openmips_min_sopc_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="openmips_min_sopc_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="openmips_min_sopc_map.ncd" xil_pn:subbranch="Map"/>
@@ -91,21 +97,109 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="openmips_min_sopc_pad.csv" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="openmips_min_sopc_pad.txt" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_par.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="openmips_min_sopc_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="openmips_min_sopc_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="openmips_min_sopc_summary.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="openmips_min_sopc_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="openmips_min_sopc_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="openmips_min_sopc_tb_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="openmips_min_sopc_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="openmips_min_sopc_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="openmips_min_sopc_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pc_reg.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="pc_reg.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="pc_reg.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="pc_reg_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pc_reg_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1446628133" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1446628133">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446636512" xil_pn:in_ck="-4104669222882649089" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1446636512">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="code/anti_jitter.v"/>
+      <outfile xil_pn:name="code/clk_div.v"/>
+      <outfile xil_pn:name="code/decoder_7seg.v"/>
+      <outfile xil_pn:name="code/defines.v"/>
+      <outfile xil_pn:name="code/ex.v"/>
+      <outfile xil_pn:name="code/ex_mem.v"/>
+      <outfile xil_pn:name="code/id.v"/>
+      <outfile xil_pn:name="code/id_ex.v"/>
+      <outfile xil_pn:name="code/if_id.v"/>
+      <outfile xil_pn:name="code/mem.v"/>
+      <outfile xil_pn:name="code/mem_wb.v"/>
+      <outfile xil_pn:name="code/mux4t1_4.v"/>
+      <outfile xil_pn:name="code/mux8t1_4.v"/>
+      <outfile xil_pn:name="code/openmips.v"/>
+      <outfile xil_pn:name="code/openmips_min_sopc.v"/>
+      <outfile xil_pn:name="code/openmips_min_sopc_tb.v"/>
+      <outfile xil_pn:name="code/pc_reg.v"/>
+      <outfile xil_pn:name="code/regfile.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1446635900" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1176684606477639470" xil_pn:start_ts="1446635900">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446635900" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3472245728967666964" xil_pn:start_ts="1446635900">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1446631469" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1446631469">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/inst_rom.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/inst_rom.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1446636515" xil_pn:in_ck="7239190872084379325" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1446636515">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="code/anti_jitter.v"/>
+      <outfile xil_pn:name="code/clk_div.v"/>
+      <outfile xil_pn:name="code/decoder_7seg.v"/>
+      <outfile xil_pn:name="code/defines.v"/>
+      <outfile xil_pn:name="code/ex.v"/>
+      <outfile xil_pn:name="code/ex_mem.v"/>
+      <outfile xil_pn:name="code/id.v"/>
+      <outfile xil_pn:name="code/id_ex.v"/>
+      <outfile xil_pn:name="code/if_id.v"/>
+      <outfile xil_pn:name="code/mem.v"/>
+      <outfile xil_pn:name="code/mem_wb.v"/>
+      <outfile xil_pn:name="code/mux4t1_4.v"/>
+      <outfile xil_pn:name="code/mux8t1_4.v"/>
+      <outfile xil_pn:name="code/openmips.v"/>
+      <outfile xil_pn:name="code/openmips_min_sopc.v"/>
+      <outfile xil_pn:name="code/openmips_min_sopc_tb.v"/>
+      <outfile xil_pn:name="code/pc_reg.v"/>
+      <outfile xil_pn:name="code/regfile.v"/>
+      <outfile xil_pn:name="ipcore_dir/inst_rom.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1446636521" xil_pn:in_ck="7239190872084379325" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9111462882530470597" xil_pn:start_ts="1446636515">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="openmips_min_sopc_tb_beh.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1446636522" xil_pn:in_ck="-9216636567683657152" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3299781228638621726" xil_pn:start_ts="1446636521">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="openmips_min_sopc_tb_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1446557022" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1446557022">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -114,11 +208,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1446557022" xil_pn:in_ck="-6131075702971096627" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1446557022">
+    <transform xil_pn:end_ts="1446623839" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1446623839">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="code/inst_rom.ngc"/>
-      <outfile xil_pn:name="code/inst_rom.v"/>
+      <outfile xil_pn:name="ipcore_dir/inst_rom.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/inst_rom.v"/>
     </transform>
     <transform xil_pn:end_ts="1446557022" xil_pn:in_ck="588686612758885852" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1446557022">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -136,7 +230,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1446559960" xil_pn:in_ck="-481841231599025357" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7765323860876020885" xil_pn:start_ts="1446559953">
+    <transform xil_pn:end_ts="1446636500" xil_pn:in_ck="-1239102444148490696" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7765323860876020885" xil_pn:start_ts="1446636494">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -150,6 +244,9 @@
       <outfile xil_pn:name="openmips_min_sopc.stx"/>
       <outfile xil_pn:name="openmips_min_sopc.syr"/>
       <outfile xil_pn:name="openmips_min_sopc.xst"/>
+      <outfile xil_pn:name="openmips_min_sopc_stx_beh.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc_tb_beh.prj"/>
+      <outfile xil_pn:name="openmips_min_sopc_tb_stx_beh.prj"/>
       <outfile xil_pn:name="openmips_min_sopc_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
@@ -158,65 +255,55 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1446560007" xil_pn:in_ck="7531573479526054979" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1412782974647899591" xil_pn:start_ts="1446560002">
+    <transform xil_pn:end_ts="1446625404" xil_pn:in_ck="-1222346198094581208" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1412782974647899591" xil_pn:start_ts="1446625400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
-      <outfile xil_pn:name="openmips_min_sopc.bld"/>
-      <outfile xil_pn:name="openmips_min_sopc.ngd"/>
-      <outfile xil_pn:name="openmips_min_sopc_ngdbuild.xrpt"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1446560017" xil_pn:in_ck="-7072420607115071063" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1446560007">
+    <transform xil_pn:end_ts="1446625412" xil_pn:in_ck="-7072420607115071063" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1446625404">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
-      <outfile xil_pn:name="openmips_min_sopc.pcf"/>
-      <outfile xil_pn:name="openmips_min_sopc_map.map"/>
-      <outfile xil_pn:name="openmips_min_sopc_map.mrp"/>
-      <outfile xil_pn:name="openmips_min_sopc_map.ncd"/>
-      <outfile xil_pn:name="openmips_min_sopc_map.ngm"/>
-      <outfile xil_pn:name="openmips_min_sopc_map.xrpt"/>
-      <outfile xil_pn:name="openmips_min_sopc_summary.xml"/>
-      <outfile xil_pn:name="openmips_min_sopc_usage.xml"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1446560087" xil_pn:in_ck="-3416862313887011518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1446560074">
+    <transform xil_pn:end_ts="1446625423" xil_pn:in_ck="-3416862313887011518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1446625412">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
-      <outfile xil_pn:name="openmips_min_sopc.ncd"/>
-      <outfile xil_pn:name="openmips_min_sopc.pad"/>
-      <outfile xil_pn:name="openmips_min_sopc.par"/>
-      <outfile xil_pn:name="openmips_min_sopc.ptwx"/>
-      <outfile xil_pn:name="openmips_min_sopc.unroutes"/>
-      <outfile xil_pn:name="openmips_min_sopc.xpi"/>
-      <outfile xil_pn:name="openmips_min_sopc_pad.csv"/>
-      <outfile xil_pn:name="openmips_min_sopc_pad.txt"/>
-      <outfile xil_pn:name="openmips_min_sopc_par.xrpt"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1446560107" xil_pn:in_ck="-6470490051138628187" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1446560094">
+    <transform xil_pn:end_ts="1446625439" xil_pn:in_ck="-6470490051138628187" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1446625428">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
-      <outfile xil_pn:name="openmips_min_sopc.bgn"/>
-      <outfile xil_pn:name="openmips_min_sopc.bit"/>
-      <outfile xil_pn:name="openmips_min_sopc.drc"/>
-      <outfile xil_pn:name="openmips_min_sopc.ut"/>
-      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
-      <outfile xil_pn:name="webtalk.log"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1446560087" xil_pn:in_ck="-7072420607115071195" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1446560081">
+    <transform xil_pn:end_ts="1446625423" xil_pn:in_ck="-7072420607115071195" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1446625418">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
-      <outfile xil_pn:name="openmips_min_sopc.twr"/>
-      <outfile xil_pn:name="openmips_min_sopc.twx"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1446559963" xil_pn:in_ck="2329906010307342531" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="3528897565860843958" xil_pn:start_ts="1446559960">
+    <transform xil_pn:end_ts="1446636502" xil_pn:in_ck="3386841028902176424" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="3528897565860843958" xil_pn:start_ts="1446636500">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="netgen"/>

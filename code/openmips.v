@@ -165,7 +165,7 @@ module openmips(
 		.mem_wd(mem_wd_o),
 		.mem_wreg(mem_wreg_o),
 		.mem_wdata(mem_wdata_o),
-		.wb_wd(wd_wd_i),
+		.wb_wd(wb_wd_i),
 		.wb_wreg(wb_wreg_i),
 		.wb_wdata(wb_wdata_i));
 

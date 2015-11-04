@@ -35,7 +35,7 @@ module id_ex(
 	output	reg[`RegBus]		ex_reg1,
 	output	reg[`RegBus]		ex_reg2,
 	output	reg[`RegAddrBus]	ex_wd,
-	output	ex_wreg
+	output	reg					ex_wreg
     );
 
 	always @(posedge clk) begin
@@ -44,13 +44,15 @@ module id_ex(
 			ex_alusel	<=	`EXE_RES_NOP;
 			ex_reg1	<=	`ZeroWord;
 			ex_reg2	<= `ZeroWord;
-			ex_wd	<=	`WriteDisable;
+			ex_wd		<=	`NOPRegAddr;
+			ex_wreg	<=	`WriteDisable;
 		end else begin
 			ex_aluop <= id_aluop;
 			ex_alusel	<=	id_alusel;
 			ex_reg1	<=	id_reg1;
 			ex_reg2	<= id_reg2;
-			ex_wd	<=	id_wreg;
+			ex_wd	<=	id_wd;
+			ex_wreg	<=	id_wreg;
 		end
 	end
 

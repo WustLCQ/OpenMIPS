@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -101,7 +101,7 @@ Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
 ---- Other Options
-Cores Search Directories           : {"code"  }
+Cores Search Directories           : {"ipcore_dir"  }
 
 =========================================================================
 
@@ -136,6 +136,8 @@ Parsing module <ex_mem>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\ex.v\" into library work
 Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
 Parsing module <ex>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\ipcore_dir\inst_rom.v\" into library work
+Parsing module <inst_rom>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\openmips.v\" into library work
 Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
 Parsing module <openmips>.
@@ -143,8 +145,6 @@ Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\mux8t1_4.v\" into librar
 Parsing module <mux8t1_4>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\mux4t1_4.v\" into library work
 Parsing module <mux4t1_4>.
-Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\inst_rom.v\" into library work
-Parsing module <inst_rom>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\decoder_7seg.v\" into library work
 Parsing module <decoder_7seg>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\clk_div.v\" into library work
@@ -160,6 +160,7 @@ Parsing module <openmips_min_sopc>.
 =========================================================================
 
 Elaborating module <openmips_min_sopc>.
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 47: Assignment to clk ignored, since the identifier is never used
 
 Elaborating module <openmips>.
 
@@ -180,13 +181,10 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 168: Size mismatch in connection of port <wb_wd>. Formal port size is 5-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 168: Assignment to wd_wd_i ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 50: Net <wb_wd_i[4]> does not have a driver.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 53: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
-WARNING:HDLCompiler:1499 - "E:\Workspace\ISE\OpenMIPS\code\inst_rom.v" Line 39: Empty module <inst_rom> remains a black box.
+WARNING:HDLCompiler:1499 - "E:\Workspace\ISE\OpenMIPS\ipcore_dir\inst_rom.v" Line 39: Empty module <inst_rom> remains a black box.
 
 Elaborating module <decoder_7seg>.
 
@@ -195,15 +193,11 @@ Elaborating module <mux8t1_4>.
 Elaborating module <mux4t1_4>.
 
 Elaborating module <anti_jitter>.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 87: Size mismatch in connection of port <btn>. Formal port size is 5-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 90: Size mismatch in connection of port <btn_out>. Formal port size is 5-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 90: Assignment to btn_out ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 91: Size mismatch in connection of port <btn_pulse>. Formal port size is 5-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 91: Assignment to btn_pulse ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 89: Assignment to btn_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 90: Assignment to btn_pulse ignored, since the identifier is never used
 
 Elaborating module <clk_div>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 98: Assignment to clk_cpu ignored, since the identifier is never used
-WARNING:HDLCompiler:532 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 110: Index <5> is out of range [4:0] for signal <btn>.
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 97: Assignment to clk_cpu ignored, since the identifier is never used
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 77. All outputs of instance <if_id> of block <if_id> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 85. All outputs of instance <id> of block <id> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 102. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
@@ -220,18 +214,16 @@ WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 162. All out
 Synthesizing Unit <openmips_min_sopc>.
     Related source file is "e:/workspace/ise/openmips/code/openmips_min_sopc.v".
 INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 48: Output port <rom_ce_o> of the instance <openmips> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 85: Output port <btn_out> of the instance <anti_jitter> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 85: Output port <btn_pulse> of the instance <anti_jitter> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 94: Output port <clk_cpu> of the instance <clk_div> is unconnected or connected to loadless signal.
-    Found 8-bit 4-to-1 multiplexer for signal <led> created at line 105.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 84: Output port <btn_out> of the instance <anti_jitter> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 84: Output port <btn_pulse> of the instance <anti_jitter> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 93: Output port <clk_cpu> of the instance <clk_div> is unconnected or connected to loadless signal.
+    Found 8-bit 4-to-1 multiplexer for signal <led> created at line 104.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <openmips_min_sopc> synthesized.
 
 Synthesizing Unit <openmips>.
     Related source file is "e:/workspace/ise/openmips/code/openmips.v".
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips.v" line 162: Output port <wb_wd> of the instance <mem_wb> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <wb_wd_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <openmips> synthesized.
@@ -329,9 +321,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Reading core <code/inst_rom.ngc>.
+Reading core <ipcore_dir/inst_rom.ngc>.
 Loading core <inst_rom> for timing and area information for instance <inst_rom>.
-WARNING:Xst:1710 - FF/Latch <btn_temp_4> (without init value) has a constant value of 0 in block <anti_jitter>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <sw_ok_0> of sequential type is unconnected in block <anti_jitter>.
 WARNING:Xst:2677 - Node <sw_ok_2> of sequential type is unconnected in block <anti_jitter>.
 WARNING:Xst:2677 - Node <sw_ok_3> of sequential type is unconnected in block <anti_jitter>.
@@ -405,9 +396,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <btn_temp_4> (without init value) has a constant value of 0 in block <anti_jitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <btn_out_4> (without init value) has a constant value of 0 in block <anti_jitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <btn_pulse_4> (without init value) has a constant value of 0 in block <anti_jitter>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <openmips/pc_reg/pc_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips/pc_reg/pc_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_20> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -432,10 +420,12 @@ WARNING:Xst:2677 - Node <anti_jitter/sw_ok_4> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_3> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_2> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_4> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_3> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_2> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_1> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_out_4> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_3> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_2> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_1> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -462,7 +452,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 2.
 
 Final Macro Processing ...
 
@@ -470,8 +460,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 112
- Flip-Flops                                            : 112
+# Registers                                            : 113
+ Flip-Flops                                            : 113
 
 =========================================================================
 
@@ -494,31 +484,29 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 397
+# BELS                             : 412
 #      GND                         : 2
-#      INV                         : 4
+#      INV                         : 6
 #      LUT1                        : 91
 #      LUT2                        : 5
-#      LUT3                        : 21
+#      LUT3                        : 22
 #      LUT4                        : 43
-#      LUT5                        : 12
-#      LUT6                        : 16
+#      LUT5                        : 11
+#      LUT6                        : 30
 #      MUXCY                       : 102
 #      MUXF7                       : 4
-#      VCC                         : 2
+#      VCC                         : 1
 #      XORCY                       : 95
-# FlipFlops/Latches                : 112
-#      FD                          : 12
+# FlipFlops/Latches                : 113
+#      FD                          : 14
 #      FDC                         : 20
 #      FDE                         : 4
-#      FDR                         : 48
+#      FDR                         : 47
 #      FDRE                        : 28
-# RAMS                             : 2
-#      RAMB16BWER                  : 2
-# Clock Buffers                    : 2
-#      BUFGP                       : 2
-# IO Buffers                       : 33
-#      IBUF                        : 13
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 34
+#      IBUF                        : 14
 #      OBUF                        : 20
 
 Device utilization summary:
@@ -528,25 +516,23 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             112  out of  18224     0%  
- Number of Slice LUTs:                  192  out of   9112     2%  
-    Number used as Logic:               192  out of   9112     2%  
+ Number of Slice Registers:             113  out of  18224     0%  
+ Number of Slice LUTs:                  208  out of   9112     2%  
+    Number used as Logic:               208  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    202
-   Number with an unused Flip Flop:      90  out of    202    44%  
-   Number with an unused LUT:            10  out of    202     4%  
-   Number of fully used LUT-FF pairs:   102  out of    202    50%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:    218
+   Number with an unused Flip Flop:     105  out of    218    48%  
+   Number with an unused LUT:            10  out of    218     4%  
+   Number of fully used LUT-FF pairs:   103  out of    218    47%  
+   Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                          35
  Number of bonded IOBs:                  35  out of    232    15%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                2  out of     32     6%  
-    Number using Block RAM only:          2
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -566,14 +552,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                                                                                             | Load  |
------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
-btn<4>                             | BUFGP                                                                                                                             | 33    |
-clk_100mhz                         | BUFGP                                                                                                                             | 81    |
-inst_rom/N1                        | NONE(inst_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 2     |
------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_100mhz                         | BUFGP                  | 113   |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -583,9 +566,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.322ns (Maximum Frequency: 231.351MHz)
-   Minimum input arrival time before clock: 5.944ns
-   Maximum output required time after clock: 7.393ns
+   Minimum period: 4.342ns (Maximum Frequency: 230.285MHz)
+   Minimum input arrival time before clock: 5.568ns
+   Maximum output required time after clock: 8.223ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -593,104 +576,33 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'btn<4>'
-  Clock period: 2.322ns (frequency: 430.746MHz)
-  Total number of paths / destination ports: 515 / 80
--------------------------------------------------------------------------
-Delay:               2.322ns (Levels of Logic = 31)
-  Source:            openmips/pc_reg/pc_2 (FF)
-  Destination:       openmips/pc_reg/pc_31 (FF)
-  Source Clock:      btn<4> rising
-  Destination Clock: btn<4> rising
-
-  Data Path: openmips/pc_reg/pc_2 to openmips/pc_reg/pc_31
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              4   0.447   0.683  openmips/pc_reg/pc_2 (openmips/pc_reg/pc_2)
-     INV:I->O              1   0.206   0.000  openmips/pc_reg/Maccum_pc_lut<2>_INV_0 (openmips/pc_reg/Maccum_pc_lut<2>)
-     MUXCY:S->O            1   0.172   0.000  openmips/pc_reg/Maccum_pc_cy<2> (openmips/pc_reg/Maccum_pc_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<3> (openmips/pc_reg/Maccum_pc_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<4> (openmips/pc_reg/Maccum_pc_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<5> (openmips/pc_reg/Maccum_pc_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<6> (openmips/pc_reg/Maccum_pc_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<7> (openmips/pc_reg/Maccum_pc_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<8> (openmips/pc_reg/Maccum_pc_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<9> (openmips/pc_reg/Maccum_pc_cy<9>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<10> (openmips/pc_reg/Maccum_pc_cy<10>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<11> (openmips/pc_reg/Maccum_pc_cy<11>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<12> (openmips/pc_reg/Maccum_pc_cy<12>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<13> (openmips/pc_reg/Maccum_pc_cy<13>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<14> (openmips/pc_reg/Maccum_pc_cy<14>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<15> (openmips/pc_reg/Maccum_pc_cy<15>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<16> (openmips/pc_reg/Maccum_pc_cy<16>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<17> (openmips/pc_reg/Maccum_pc_cy<17>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<18> (openmips/pc_reg/Maccum_pc_cy<18>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<19> (openmips/pc_reg/Maccum_pc_cy<19>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<20> (openmips/pc_reg/Maccum_pc_cy<20>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<21> (openmips/pc_reg/Maccum_pc_cy<21>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<22> (openmips/pc_reg/Maccum_pc_cy<22>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<23> (openmips/pc_reg/Maccum_pc_cy<23>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<24> (openmips/pc_reg/Maccum_pc_cy<24>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<25> (openmips/pc_reg/Maccum_pc_cy<25>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<26> (openmips/pc_reg/Maccum_pc_cy<26>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<27> (openmips/pc_reg/Maccum_pc_cy<27>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<28> (openmips/pc_reg/Maccum_pc_cy<28>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<29> (openmips/pc_reg/Maccum_pc_cy<29>)
-     MUXCY:CI->O           0   0.019   0.000  openmips/pc_reg/Maccum_pc_cy<30> (openmips/pc_reg/Maccum_pc_cy<30>)
-     XORCY:CI->O           1   0.180   0.000  openmips/pc_reg/Maccum_pc_xor<31> (Result<31>)
-     FDR:D                     0.102          openmips/pc_reg/pc_31
-    ----------------------------------------
-    Total                      2.322ns (1.639ns logic, 0.683ns route)
-                                       (70.6% logic, 29.4% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100mhz'
-  Clock period: 4.322ns (frequency: 231.351MHz)
-  Total number of paths / destination ports: 3521 / 166
+  Clock period: 4.342ns (frequency: 230.285MHz)
+  Total number of paths / destination ports: 4065 / 226
 -------------------------------------------------------------------------
-Delay:               4.322ns (Levels of Logic = 2)
-  Source:            anti_jitter/btn_temp_0 (FF)
+Delay:               4.342ns (Levels of Logic = 2)
+  Source:            anti_jitter/sw_temp_6 (FF)
   Destination:       anti_jitter/rst_counter_27 (FF)
   Source Clock:      clk_100mhz rising
   Destination Clock: clk_100mhz rising
 
-  Data Path: anti_jitter/btn_temp_0 to anti_jitter/rst_counter_27
+  Data Path: anti_jitter/sw_temp_6 to anti_jitter/rst_counter_27
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.808  anti_jitter/btn_temp_0 (anti_jitter/btn_temp_0)
-     LUT6:I3->O            3   0.205   0.995  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o5 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o5)
-     LUT6:I1->O           28   0.203   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
+     FD:C->Q               1   0.447   0.808  anti_jitter/sw_temp_6 (anti_jitter/sw_temp_6)
+     LUT6:I3->O            3   0.205   1.015  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o2 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o2)
+     LUT6:I0->O           28   0.203   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
      FDRE:R                    0.430          anti_jitter/rst_counter_0
     ----------------------------------------
-    Total                      4.322ns (1.285ns logic, 3.037ns route)
-                                       (29.7% logic, 70.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'btn<4>'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              2.231ns (Levels of Logic = 1)
-  Source:            rst (PAD)
-  Destination:       openmips/pc_reg/ce (FF)
-  Destination Clock: btn<4> rising
-
-  Data Path: rst to openmips/pc_reg/ce
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.579  rst_IBUF (rst_IBUF)
-     FDR:R                     0.430          openmips/pc_reg/ce
-    ----------------------------------------
-    Total                      2.231ns (1.652ns logic, 0.579ns route)
-                                       (74.1% logic, 25.9% route)
+    Total                      4.342ns (1.285ns logic, 3.057ns route)
+                                       (29.6% logic, 70.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 877 / 93
+  Total number of paths / destination ports: 928 / 95
 -------------------------------------------------------------------------
-Offset:              5.944ns (Levels of Logic = 3)
+Offset:              5.568ns (Levels of Logic = 3)
   Source:            btn<3> (PAD)
   Destination:       anti_jitter/rst_counter_27 (FF)
   Destination Clock: clk_100mhz rising
@@ -699,91 +611,64 @@ Offset:              5.944ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.656  btn_3_IBUF (btn_3_IBUF)
-     LUT6:I0->O            3   0.203   0.995  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o5 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o5)
-     LUT6:I1->O           28   0.203   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
+     IBUF:I->O            31   1.222   1.622  btn_3_IBUF (btn_3_IBUF)
+     LUT6:I1->O            3   0.203   0.651  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o4 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o4)
+     LUT6:I5->O           28   0.205   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
      FDRE:R                    0.430          anti_jitter/rst_counter_0
     ----------------------------------------
-    Total                      5.944ns (2.058ns logic, 3.886ns route)
-                                       (34.6% logic, 65.4% route)
+    Total                      5.568ns (2.060ns logic, 3.508ns route)
+                                       (37.0% logic, 63.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 164 / 19
+  Total number of paths / destination ports: 1636 / 19
 -------------------------------------------------------------------------
-Offset:              6.461ns (Levels of Logic = 4)
-  Source:            clk_div/clkdiv_19 (FF)
-  Destination:       seg<6> (PAD)
+Offset:              8.223ns (Levels of Logic = 7)
+  Source:            openmips/pc_reg/pc_4 (FF)
+  Destination:       seg<5> (PAD)
   Source Clock:      clk_100mhz rising
 
-  Data Path: clk_div/clkdiv_19 to seg<6>
+  Data Path: openmips/pc_reg/pc_4 to seg<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.447   1.297  clk_div/clkdiv_19 (clk_div/clkdiv_19)
-     LUT6:I0->O            1   0.203   0.000  mux8t1_4/Mmux_o_3 (mux8t1_4/Mmux_o_3)
-     MUXF7:I1->O           7   0.140   1.021  mux8t1_4/Mmux_o_2_f7 (digit<0>)
-     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment21 (seg_2_OBUF)
-     OBUF:I->O                 2.571          seg_2_OBUF (seg<2>)
+     FDR:C->Q              9   0.447   1.174  openmips/pc_reg/pc_4 (openmips/pc_reg/pc_4)
+     begin scope: 'inst_rom:a<2>'
+     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1211_SW0 (N2)
+     LUT6:I5->O            8   0.205   0.907  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1211 (spo<0>)
+     end scope: 'inst_rom:spo<6>'
+     LUT6:I4->O            1   0.203   0.000  mux8t1_4/Mmux_o_42 (mux8t1_4/Mmux_o_42)
+     MUXF7:I0->O           7   0.131   1.021  mux8t1_4/Mmux_o_2_f7_1 (digit<2>)
+     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment51 (seg_5_OBUF)
+     OBUF:I->O                 2.571          seg_5_OBUF (seg<5>)
     ----------------------------------------
-    Total                      6.461ns (3.564ns logic, 2.897ns route)
-                                       (55.2% logic, 44.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'btn<4>'
-  Total number of paths / destination ports: 246 / 15
--------------------------------------------------------------------------
-Offset:              7.393ns (Levels of Logic = 5)
-  Source:            inst_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
-  Destination:       seg<6> (PAD)
-  Source Clock:      btn<4> rising
-
-  Data Path: inst_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram to seg<6>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     RAMB16BWER:CLKA->DOA8    1   1.850   0.827  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (douta<25>)
-     end scope: 'inst_rom:douta<25>'
-     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_31 (mux8t1_4/Mmux_o_31)
-     MUXF7:I1->O           7   0.140   1.021  mux8t1_4/Mmux_o_2_f7_0 (digit<1>)
-     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment11 (seg_0_OBUF)
-     OBUF:I->O                 2.571          seg_0_OBUF (seg<0>)
-    ----------------------------------------
-    Total                      7.393ns (4.967ns logic, 2.426ns route)
-                                       (67.2% logic, 32.8% route)
+    Total                      8.223ns (3.963ns logic, 4.260ns route)
+                                       (48.2% logic, 51.8% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock btn<4>
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn<4>         |    2.322|         |         |         |
----------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock clk_100mhz
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    4.322|         |         |         |
+clk_100mhz     |    4.342|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.21 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.10 secs
  
 --> 
 
-Total memory usage is 232392 kilobytes
+Total memory usage is 231880 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   77 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of warnings :   68 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 
