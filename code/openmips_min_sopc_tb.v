@@ -38,7 +38,7 @@ module openmips_min_sopc_tb;
 	// Instantiate the Unit Under Test (UUT)
 	openmips_min_sopc uut (
 		.clk_100mhz(clk_100mhz), 
-		.rst(rst), 
+	//	.rst(rst), 
 		.btn(btn), 
 		.sw(sw), 
 		.seg(seg), 
@@ -53,11 +53,10 @@ module openmips_min_sopc_tb;
 	initial begin
 		// Initialize Inputs
 		
-		rst = `RstEnable;
 		btn = 5'b00000;
-		sw = 7'b0000000;
+		sw = 8'b10000000;
 		// Wait 100 ns for global reset to finish
-		#200	rst	=	`RstDisable;
+		#200	sw	=	8'b00000000;
 		#1000	$stop;
 		// Add stimulus here
 	end

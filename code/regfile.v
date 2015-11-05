@@ -35,6 +35,8 @@ module regfile(
     );
 	 
 	 reg [`RegBus]	regs[0:`RegNum-1];	//定义32个32位寄存器
+	 integer i;								
+ 
 	 
 	 //写操作，使能写且地址不为0号寄存器的时候，写入数据
 	 always @(posedge clk) begin
@@ -42,11 +44,14 @@ module regfile(
 			if ((we == `WriteEnable) && (waddr != `RegNumLog2'h0)) begin
 				regs[waddr] <= wdata;
 			end
+		end else begin
+			for(i=0;	i<	`RegNum;	i=i+1)
+				regs[i]	<=	`ZeroWord;
 		end
 	end
 	
 	//读操作，若读地址与写地址相同，直接传出将要写入的数据
-	always @(posedge clk) begin
+	always @(*) begin
 		if(rst == `RstEnable) begin
 			rdata1 <= `ZeroWord;
 		end else if(raddr1 == `RegNumLog2'h0) begin
@@ -60,7 +65,7 @@ module regfile(
 		end
 	end
 	
-	always @(posedge clk) begin
+	always @(*) begin
 		if(rst == `RstEnable) begin
 			rdata2 <= `ZeroWord;
 		end else if(raddr2 == `RegNumLog2'h0) begin

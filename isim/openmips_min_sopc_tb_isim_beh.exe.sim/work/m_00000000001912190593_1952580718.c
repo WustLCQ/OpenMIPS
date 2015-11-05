@@ -134,7 +134,11 @@ LAB17:
 LAB19:
 LAB18:    xsi_set_current_line(47, ng0);
 
-LAB25:
+LAB25:    xsi_set_current_line(48, ng0);
+    t2 = ((char*)((ng2)));
+    t4 = (t0 + 1656);
+    xsi_vlogvar_wait_assign_value(t4, t2, 0, 0, 32, 0LL);
+
 LAB20:
 LAB12:    goto LAB2;
 
@@ -202,7 +206,7 @@ LAB22:    t17 = *((unsigned int *)t6);
 
 }
 
-static void Always_53_1(char *t0)
+static void Always_54_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -220,7 +224,7 @@ LAB0:    t1 = (t0 + 2324U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(53, ng0);
+LAB2:    xsi_set_current_line(54, ng0);
     t2 = (t0 + 2528);
     *((int *)t2) = 1;
     t3 = (t0 + 2352);
@@ -228,19 +232,19 @@ LAB2:    xsi_set_current_line(53, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(53, ng0);
+LAB4:    xsi_set_current_line(54, ng0);
 
-LAB5:    xsi_set_current_line(54, ng0);
+LAB5:    xsi_set_current_line(55, ng0);
     t4 = (t0 + 1060U);
     t5 = *((char **)t4);
     t4 = (t0 + 1380);
     xsi_vlogvar_wait_assign_value(t4, t5, 0, 0, 5, 0LL);
-    xsi_set_current_line(55, ng0);
+    xsi_set_current_line(56, ng0);
     t2 = (t0 + 1152U);
     t3 = *((char **)t2);
     t2 = (t0 + 1472);
     xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 1, 0LL);
-    xsi_set_current_line(56, ng0);
+    xsi_set_current_line(57, ng0);
     t2 = (t0 + 784U);
     t3 = *((char **)t2);
 
@@ -251,14 +255,18 @@ LAB6:    t2 = ((char*)((ng1)));
 
 LAB8:
 LAB10:
-LAB9:    xsi_set_current_line(60, ng0);
+LAB9:    xsi_set_current_line(61, ng0);
 
-LAB13:
+LAB13:    xsi_set_current_line(62, ng0);
+    t2 = ((char*)((ng2)));
+    t4 = (t0 + 1564);
+    xsi_vlogvar_wait_assign_value(t4, t2, 0, 0, 32, 0LL);
+
 LAB11:    goto LAB2;
 
-LAB7:    xsi_set_current_line(57, ng0);
+LAB7:    xsi_set_current_line(58, ng0);
 
-LAB12:    xsi_set_current_line(58, ng0);
+LAB12:    xsi_set_current_line(59, ng0);
     t4 = (t0 + 1656);
     t5 = (t4 + 36U);
     t7 = *((char **)t5);
@@ -271,7 +279,7 @@ LAB12:    xsi_set_current_line(58, ng0);
 
 extern void work_m_00000000001912190593_1952580718_init()
 {
-	static char *pe[] = {(void *)Always_39_0,(void *)Always_53_1};
+	static char *pe[] = {(void *)Always_39_0,(void *)Always_54_1};
 	xsi_register_didat("work_m_00000000001912190593_1952580718", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000001912190593_1952580718.didat");
 	xsi_register_executes(pe);
 }

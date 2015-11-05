@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 `include "defines.v"
 module openmips_min_sopc(
-	input wire clk_100mhz,
-	input	wire	rst,
+	input	clk_100mhz,
+//	input	rst,
 	input [4:0]btn,
 	input [7:0]sw,
 	output reg 	[7:0]seg,
@@ -41,10 +41,12 @@ module openmips_min_sopc(
 	wire [7:0]				sw_ok;
 	wire [7:0]				seg_tmp;
 	wire [3:0]				an_tmp;
-	wire						rst_tmp;
 	wire						clk;
+	wire						rst;
 	
-	assign clk = btn[4];
+	assign 	clk = btn_pulse[0];
+	assign	rst = sw[7];
+
 	openmips openmips(
 		.clk(clk_100mhz),
 		.rst(rst),
@@ -85,14 +87,13 @@ module openmips_min_sopc(
 		.clk(clk_100mhz),
 		.btn(btn[4:0]),
 		.sw(sw[7:0]),
-		.rst(rst_tmp),
 		.btn_out(btn_out[4:0]),
 		.btn_pulse(btn_pulse[4:0]),
 		.sw_ok(sw_ok[7:0]));
 		
 	clk_div clk_div(
 		.clk(clk_100mhz),
-		.rst(rst_tmp),
+		.rst(rst),
 		.sw2(sw_ok[2]),
 		.clk_cpu(clk_cpu),
 		.clkdiv(clkdiv[31:0]));

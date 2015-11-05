@@ -45,6 +45,7 @@ module ex(
 					logicout	<= reg1_i | reg2_i;	//Âß¼­»òÔËËã
 				end
 				default:	begin
+					logicout	<=	`ZeroWord;
 				end
 			endcase
 		end
@@ -58,6 +59,7 @@ module ex(
 				wdata_o	<=	logicout;
 			end
 			default:	begin
+				wdata_o	<=	`ZeroWord;
 			end
 		endcase
 	end

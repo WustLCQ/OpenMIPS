@@ -19,16 +19,15 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module anti_jitter(
-   input  clk, 
-	input  wire  [4:0]  btn, 
-	input  wire  [7:0]  sw, 
+   input	clk, 
+	input	[4:0]  btn, 
+	input	[7:0]  sw, 
 	output  reg  [4:0]  btn_out, 
 	output  reg  [4:0]  btn_pulse, 
-	output  reg  [7:0]  sw_ok, 
-	output  reg  rst 
+	output  reg  [7:0]  sw_ok 
 	); 
 
-	reg  [31:0]  counter,  rst_counter; 
+	reg  [31:0]  counter; 
 	reg  [4:0]  btn_temp; 
 	reg  [7:0]  sw_temp; 
 	reg  pulse; 
@@ -37,7 +36,6 @@ module anti_jitter(
 		sw_temp  <=  sw; 
 		if  (btn_temp  !=  btn  ||  sw_temp  !=  sw)  begin 
 			counter  <=  32'h0000_0000; 
-			rst_counter  <=  0; 
 			pulse  <=  0; 
 		end  else  if  (counter<100000)  begin 
 			counter<=counter+1; 
@@ -50,11 +48,6 @@ module anti_jitter(
 			end  else  begin 
 				btn_pulse  <=  0; 
 			end 
-			if  (btn[3]  &&  rst_counter  <  200000000)  begin 
-				rst_counter  <=  rst_counter  +  1; 
-			end  else  begin 
-				rst  <=  btn[3];
-			end
 		end
 	end
 

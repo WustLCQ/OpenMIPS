@@ -23,7 +23,7 @@
 #endif
 static const char *ng0 = "E:/Workspace/ISE/OpenMIPS/code/openmips_min_sopc_tb.v";
 static unsigned int ng1[] = {0U, 0U};
-static unsigned int ng2[] = {1U, 0U};
+static unsigned int ng2[] = {128U, 0U};
 
 
 
@@ -145,43 +145,39 @@ LAB3:    goto *t2;
 LAB2:    xsi_set_current_line(53, ng0);
 
 LAB4:    xsi_set_current_line(56, ng0);
-    t2 = ((char*)((ng2)));
-    t3 = (t0 + 1104);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(57, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 1196);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 5);
-    xsi_set_current_line(58, ng0);
-    t2 = ((char*)((ng1)));
+    xsi_set_current_line(57, ng0);
+    t2 = ((char*)((ng2)));
     t3 = (t0 + 1288);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 8);
-    xsi_set_current_line(60, ng0);
+    xsi_set_current_line(59, ng0);
     t2 = (t0 + 1856);
     xsi_process_wait(t2, 200000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(60, ng0);
+LAB5:    xsi_set_current_line(59, ng0);
     t3 = ((char*)((ng1)));
-    t4 = (t0 + 1104);
-    xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
-    xsi_set_current_line(61, ng0);
+    t4 = (t0 + 1288);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 8);
+    xsi_set_current_line(60, ng0);
     t2 = (t0 + 1856);
     xsi_process_wait(t2, 1000000LL);
     *((char **)t1) = &&LAB6;
     goto LAB1;
 
-LAB6:    xsi_set_current_line(61, ng0);
+LAB6:    xsi_set_current_line(60, ng0);
     xsi_vlog_stop(1);
     goto LAB1;
 
 }
 
 
-extern void work_m_00000000000483272317_3322857904_init()
+extern void work_m_00000000000483272284_3322857904_init()
 {
 	static char *pe[] = {(void *)Initial_49_0,(void *)Initial_53_1};
-	xsi_register_didat("work_m_00000000000483272317_3322857904", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000000483272317_3322857904.didat");
+	xsi_register_didat("work_m_00000000000483272284_3322857904", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000000483272284_3322857904.didat");
 	xsi_register_executes(pe);
 }

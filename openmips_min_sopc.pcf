@@ -1,21 +1,8 @@
 //! **************************************************************************
-// Written by: Map O.61xd on Wed Nov 04 16:23:30 2015
+// Written by: Map O.61xd on Thu Nov 05 10:17:51 2015
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
-COMP "sw<1>" LOCATE = SITE "T9" LEVEL 1;
-COMP "seg<4>" LOCATE = SITE "U17" LEVEL 1;
-COMP "sw<2>" LOCATE = SITE "V9" LEVEL 1;
-COMP "seg<5>" LOCATE = SITE "T18" LEVEL 1;
-COMP "sw<3>" LOCATE = SITE "M8" LEVEL 1;
-COMP "seg<6>" LOCATE = SITE "T17" LEVEL 1;
-COMP "sw<4>" LOCATE = SITE "N8" LEVEL 1;
-COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
-COMP "sw<5>" LOCATE = SITE "U8" LEVEL 1;
-COMP "sw<6>" LOCATE = SITE "V8" LEVEL 1;
-COMP "sw<7>" LOCATE = SITE "T5" LEVEL 1;
-COMP "clk_100mhz" LOCATE = SITE "V10" LEVEL 1;
 COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
 COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
 COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
@@ -37,6 +24,45 @@ COMP "seg<0>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seg<1>" LOCATE = SITE "N14" LEVEL 1;
 COMP "seg<2>" LOCATE = SITE "M14" LEVEL 1;
 COMP "sw<0>" LOCATE = SITE "T10" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "T9" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "U17" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "V9" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "T18" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "M8" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "T17" LEVEL 1;
+COMP "sw<4>" LOCATE = SITE "N8" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
+COMP "sw<5>" LOCATE = SITE "U8" LEVEL 1;
+COMP "sw<6>" LOCATE = SITE "V8" LEVEL 1;
+COMP "sw<7>" LOCATE = SITE "T5" LEVEL 1;
+COMP "clk_100mhz" LOCATE = SITE "V10" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "clk_div/clkdiv_0" BEL "clk_div/clkdiv_1" BEL
+        "clk_div/clkdiv_2" BEL "clk_div/clkdiv_3" BEL "clk_div/clkdiv_4" BEL
+        "clk_div/clkdiv_5" BEL "clk_div/clkdiv_6" BEL "clk_div/clkdiv_7" BEL
+        "clk_div/clkdiv_8" BEL "clk_div/clkdiv_9" BEL "clk_div/clkdiv_10" BEL
+        "clk_div/clkdiv_11" BEL "clk_div/clkdiv_12" BEL "clk_div/clkdiv_13"
+        BEL "clk_div/clkdiv_14" BEL "clk_div/clkdiv_15" BEL
+        "clk_div/clkdiv_16" BEL "clk_div/clkdiv_17" BEL "clk_div/clkdiv_18"
+        BEL "clk_div/clkdiv_19" BEL "anti_jitter/sw_ok_7" BEL
+        "anti_jitter/sw_ok_6" BEL "anti_jitter/sw_ok_1" BEL
+        "anti_jitter/sw_temp_7" BEL "anti_jitter/sw_temp_6" BEL
+        "anti_jitter/sw_temp_5" BEL "anti_jitter/sw_temp_4" BEL
+        "anti_jitter/sw_temp_3" BEL "anti_jitter/sw_temp_2" BEL
+        "anti_jitter/sw_temp_1" BEL "anti_jitter/sw_temp_0" BEL
+        "anti_jitter/btn_temp_4" BEL "anti_jitter/btn_temp_3" BEL
+        "anti_jitter/btn_temp_2" BEL "anti_jitter/btn_temp_1" BEL
+        "anti_jitter/btn_temp_0" BEL "anti_jitter/pulse" BEL
+        "anti_jitter/counter_9" BEL "anti_jitter/counter_8" BEL
+        "anti_jitter/counter_7" BEL "anti_jitter/counter_6" BEL
+        "anti_jitter/counter_5" BEL "anti_jitter/counter_4" BEL
+        "anti_jitter/counter_3" BEL "anti_jitter/counter_2" BEL
+        "anti_jitter/counter_1" BEL "anti_jitter/counter_0" BEL
+        "anti_jitter/counter_10" BEL "anti_jitter/counter_11" BEL
+        "anti_jitter/counter_12" BEL "anti_jitter/counter_13" BEL
+        "anti_jitter/counter_14" BEL "anti_jitter/counter_15" BEL
+        "anti_jitter/btn_pulse_0" BEL "anti_jitter/counter_16" BEL
+        "clk_100mhz_BUFGP/BUFG";
 NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 SCHEMATIC END;
 

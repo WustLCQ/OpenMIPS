@@ -1,4 +1,5 @@
 # Output products list for <inst_rom>
+_xmsgs\pn_parser.xmsgs
 dist_mem_gen_ds322.pdf
 dist_mem_gen_v6_2_readme.txt
 inst_rom.asy

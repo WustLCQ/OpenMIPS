@@ -181,7 +181,7 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 53: Assignment to rom_ce ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
 WARNING:HDLCompiler:1499 - "E:\Workspace\ISE\OpenMIPS\ipcore_dir\inst_rom.v" Line 39: Empty module <inst_rom> remains a black box.
@@ -193,11 +193,10 @@ Elaborating module <mux8t1_4>.
 Elaborating module <mux4t1_4>.
 
 Elaborating module <anti_jitter>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 89: Assignment to btn_out ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 90: Assignment to btn_pulse ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 90: Assignment to btn_out ignored, since the identifier is never used
 
 Elaborating module <clk_div>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 97: Assignment to clk_cpu ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 98: Assignment to clk_cpu ignored, since the identifier is never used
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 77. All outputs of instance <if_id> of block <if_id> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 85. All outputs of instance <id> of block <id> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 102. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
@@ -213,11 +212,11 @@ WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 162. All out
 
 Synthesizing Unit <openmips_min_sopc>.
     Related source file is "e:/workspace/ise/openmips/code/openmips_min_sopc.v".
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 48: Output port <rom_ce_o> of the instance <openmips> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 84: Output port <btn_out> of the instance <anti_jitter> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 84: Output port <btn_pulse> of the instance <anti_jitter> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 93: Output port <clk_cpu> of the instance <clk_div> is unconnected or connected to loadless signal.
-    Found 8-bit 4-to-1 multiplexer for signal <led> created at line 104.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 50: Output port <rom_ce_o> of the instance <openmips> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 86: Output port <btn_out> of the instance <anti_jitter> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 86: Output port <btn_pulse> of the instance <anti_jitter> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "e:/workspace/ise/openmips/code/openmips_min_sopc.v" line 94: Output port <clk_cpu> of the instance <clk_div> is unconnected or connected to loadless signal.
+    Found 8-bit 4-to-1 multiplexer for signal <led> created at line 105.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <openmips_min_sopc> synthesized.
@@ -263,29 +262,25 @@ Synthesizing Unit <anti_jitter>.
     Related source file is "e:/workspace/ise/openmips/code/anti_jitter.v".
     Found 8-bit register for signal <sw_temp>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit register for signal <rst_counter>.
     Found 1-bit register for signal <pulse>.
     Found 5-bit register for signal <btn_out>.
     Found 8-bit register for signal <sw_ok>.
     Found 5-bit register for signal <btn_pulse>.
-    Found 1-bit register for signal <rst>.
     Found 5-bit register for signal <btn_temp>.
-    Found 32-bit adder for signal <counter[31]_GND_80_o_add_4_OUT> created at line 43.
-    Found 32-bit adder for signal <rst_counter[31]_GND_80_o_add_7_OUT> created at line 54.
-    Found 5-bit comparator not equal for signal <n0000> created at line 38
-    Found 8-bit comparator not equal for signal <n0002> created at line 38
-    Found 32-bit comparator greater for signal <counter[31]_GND_80_o_LessThan_4_o> created at line 42
-    Found 32-bit comparator greater for signal <rst_counter[31]_GND_80_o_LessThan_7_o> created at line 53
+    Found 32-bit adder for signal <counter[31]_GND_16_o_add_4_OUT> created at line 41.
+    Found 5-bit comparator not equal for signal <n0000> created at line 37
+    Found 8-bit comparator not equal for signal <n0002> created at line 37
+    Found 32-bit comparator greater for signal <counter[31]_GND_16_o_LessThan_4_o> created at line 40
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  97 D-type flip-flop(s).
-	inferred   4 Comparator(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  64 D-type flip-flop(s).
+	inferred   3 Comparator(s).
 Unit <anti_jitter> synthesized.
 
 Synthesizing Unit <clk_div>.
     Related source file is "e:/workspace/ise/openmips/code/clk_div.v".
     Found 32-bit register for signal <clkdiv>.
-    Found 32-bit adder for signal <clkdiv[31]_GND_81_o_add_0_OUT> created at line 33.
+    Found 32-bit adder for signal <clkdiv[31]_GND_17_o_add_0_OUT> created at line 33.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -299,15 +294,15 @@ Macro Statistics
 # RAMs                                                 : 2
  16x8-bit single-port Read Only RAM                    : 1
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 4
- 32-bit adder                                          : 4
-# Registers                                            : 12
- 1-bit register                                        : 3
- 32-bit register                                       : 4
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 3
+# Registers                                            : 10
+ 1-bit register                                        : 2
+ 32-bit register                                       : 3
  5-bit register                                        : 3
  8-bit register                                        : 2
-# Comparators                                          : 4
- 32-bit comparator greater                             : 2
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 1
  5-bit comparator not equal                            : 1
  8-bit comparator not equal                            : 1
 # Multiplexers                                         : 3
@@ -331,7 +326,6 @@ WARNING:Xst:2677 - Node <sw_ok_5> of sequential type is unconnected in block <an
 
 Synthesizing (advanced) Unit <anti_jitter>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-The following registers are absorbed into counter <rst_counter>: 1 register on signal <rst_counter>.
 Unit <anti_jitter> synthesized (advanced).
 
 Synthesizing (advanced) Unit <clk_div>.
@@ -377,14 +371,14 @@ Macro Statistics
 # RAMs                                                 : 2
  16x8-bit single-port distributed Read Only RAM        : 1
  4x4-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 3
- 32-bit up counter                                     : 3
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
 # Accumulators                                         : 1
  32-bit up accumulator                                 : 1
-# Registers                                            : 34
- Flip-Flops                                            : 34
-# Comparators                                          : 4
- 32-bit comparator greater                             : 2
+# Registers                                            : 33
+ Flip-Flops                                            : 33
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 1
  5-bit comparator not equal                            : 1
  8-bit comparator not equal                            : 1
 # Multiplexers                                         : 2
@@ -420,39 +414,35 @@ WARNING:Xst:2677 - Node <anti_jitter/sw_ok_4> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_3> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_2> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/sw_ok_0> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_4> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_3> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_2> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_1> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_0> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_4> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_3> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_2> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_1> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_out_0> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:1710 - FF/Latch <anti_jitter/rst_counter_28> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/rst_counter_29> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/rst_counter_30> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/rst_counter_31> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_17> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_18> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_19> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_20> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_21> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_22> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_23> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_24> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_25> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_26> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_27> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_28> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_29> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_4> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_3> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_2> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_1> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:1710 - FF/Latch <anti_jitter/counter_31> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_30> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_31> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_29> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_28> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_27> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_26> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_25> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_24> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_23> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_22> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_21> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_20> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_19> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_18> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <anti_jitter/counter_17> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -460,8 +450,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 113
- Flip-Flops                                            : 113
+# Registers                                            : 84
+ Flip-Flops                                            : 84
 
 =========================================================================
 
@@ -484,29 +474,28 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 412
+# BELS                             : 285
 #      GND                         : 2
-#      INV                         : 6
-#      LUT1                        : 91
+#      INV                         : 5
+#      LUT1                        : 64
 #      LUT2                        : 5
-#      LUT3                        : 22
-#      LUT4                        : 43
-#      LUT5                        : 11
-#      LUT6                        : 30
-#      MUXCY                       : 102
+#      LUT3                        : 21
+#      LUT4                        : 9
+#      LUT5                        : 9
+#      LUT6                        : 28
+#      MUXCY                       : 70
 #      MUXF7                       : 4
 #      VCC                         : 1
-#      XORCY                       : 95
-# FlipFlops/Latches                : 113
+#      XORCY                       : 67
+# FlipFlops/Latches                : 84
 #      FD                          : 14
 #      FDC                         : 20
-#      FDE                         : 4
+#      FDE                         : 3
 #      FDR                         : 47
-#      FDRE                        : 28
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 34
-#      IBUF                        : 14
+# IO Buffers                       : 33
+#      IBUF                        : 13
 #      OBUF                        : 20
 
 Device utilization summary:
@@ -516,20 +505,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             113  out of  18224     0%  
- Number of Slice LUTs:                  208  out of   9112     2%  
-    Number used as Logic:               208  out of   9112     2%  
+ Number of Slice Registers:              84  out of  18224     0%  
+ Number of Slice LUTs:                  141  out of   9112     1%  
+    Number used as Logic:               141  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    218
-   Number with an unused Flip Flop:     105  out of    218    48%  
-   Number with an unused LUT:            10  out of    218     4%  
-   Number of fully used LUT-FF pairs:   103  out of    218    47%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:    151
+   Number with an unused Flip Flop:      67  out of    151    44%  
+   Number with an unused LUT:            10  out of    151     6%  
+   Number of fully used LUT-FF pairs:    74  out of    151    49%  
+   Number of unique control sets:         5
 
 IO Utilization: 
- Number of IOs:                          35
- Number of bonded IOBs:                  35  out of    232    15%  
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    232    14%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -555,7 +544,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_100mhz                         | BUFGP                  | 113   |
+clk_100mhz                         | BUFGP                  | 84    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -566,9 +555,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.342ns (Maximum Frequency: 230.285MHz)
-   Minimum input arrival time before clock: 5.568ns
-   Maximum output required time after clock: 8.223ns
+   Minimum period: 4.101ns (Maximum Frequency: 243.849MHz)
+   Minimum input arrival time before clock: 5.623ns
+   Maximum output required time after clock: 8.153ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -577,73 +566,73 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100mhz'
-  Clock period: 4.342ns (frequency: 230.285MHz)
-  Total number of paths / destination ports: 4065 / 226
+  Clock period: 4.101ns (frequency: 243.849MHz)
+  Total number of paths / destination ports: 1638 / 120
 -------------------------------------------------------------------------
-Delay:               4.342ns (Levels of Logic = 2)
-  Source:            anti_jitter/sw_temp_6 (FF)
-  Destination:       anti_jitter/rst_counter_27 (FF)
+Delay:               4.101ns (Levels of Logic = 2)
+  Source:            anti_jitter/sw_temp_0 (FF)
+  Destination:       anti_jitter/counter_9 (FF)
   Source Clock:      clk_100mhz rising
   Destination Clock: clk_100mhz rising
 
-  Data Path: anti_jitter/sw_temp_6 to anti_jitter/rst_counter_27
+  Data Path: anti_jitter/sw_temp_0 to anti_jitter/counter_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.808  anti_jitter/sw_temp_6 (anti_jitter/sw_temp_6)
-     LUT6:I3->O            3   0.205   1.015  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o2 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o2)
-     LUT6:I0->O           28   0.203   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
-     FDRE:R                    0.430          anti_jitter/rst_counter_0
+     FD:C->Q               1   0.447   0.808  anti_jitter/sw_temp_0 (anti_jitter/sw_temp_0)
+     LUT6:I3->O            2   0.205   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
+     FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
-    Total                      4.342ns (1.285ns logic, 3.057ns route)
-                                       (29.6% logic, 70.4% route)
+    Total                      4.101ns (1.285ns logic, 2.816ns route)
+                                       (31.3% logic, 68.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 928 / 95
+  Total number of paths / destination ports: 397 / 57
 -------------------------------------------------------------------------
-Offset:              5.568ns (Levels of Logic = 3)
-  Source:            btn<3> (PAD)
-  Destination:       anti_jitter/rst_counter_27 (FF)
+Offset:              5.623ns (Levels of Logic = 3)
+  Source:            sw<7> (PAD)
+  Destination:       anti_jitter/counter_9 (FF)
   Destination Clock: clk_100mhz rising
 
-  Data Path: btn<3> to anti_jitter/rst_counter_27
+  Data Path: sw<7> to anti_jitter/counter_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            31   1.222   1.622  btn_3_IBUF (btn_3_IBUF)
-     LUT6:I1->O            3   0.203   0.651  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o4 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o4)
-     LUT6:I5->O           28   0.205   1.234  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
-     FDRE:R                    0.430          anti_jitter/rst_counter_0
+     IBUF:I->O            25   1.222   1.557  sw_7_IBUF (sw_7_IBUF)
+     LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
+     FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
-    Total                      5.568ns (2.060ns logic, 3.508ns route)
-                                       (37.0% logic, 63.0% route)
+    Total                      5.623ns (2.058ns logic, 3.565ns route)
+                                       (36.6% logic, 63.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 1636 / 19
+  Total number of paths / destination ports: 978 / 19
 -------------------------------------------------------------------------
-Offset:              8.223ns (Levels of Logic = 7)
-  Source:            openmips/pc_reg/pc_4 (FF)
+Offset:              8.153ns (Levels of Logic = 7)
+  Source:            openmips/pc_reg/pc_6 (FF)
   Destination:       seg<5> (PAD)
   Source Clock:      clk_100mhz rising
 
-  Data Path: openmips/pc_reg/pc_4 to seg<5>
+  Data Path: openmips/pc_reg/pc_6 to seg<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              9   0.447   1.174  openmips/pc_reg/pc_4 (openmips/pc_reg/pc_4)
-     begin scope: 'inst_rom:a<2>'
-     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1211_SW0 (N2)
-     LUT6:I5->O            8   0.205   0.907  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1211 (spo<0>)
-     end scope: 'inst_rom:spo<6>'
-     LUT6:I4->O            1   0.203   0.000  mux8t1_4/Mmux_o_42 (mux8t1_4/Mmux_o_42)
-     MUXF7:I0->O           7   0.131   1.021  mux8t1_4/Mmux_o_2_f7_1 (digit<2>)
-     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment51 (seg_5_OBUF)
-     OBUF:I->O                 2.571          seg_5_OBUF (seg<5>)
+     FDR:C->Q              8   0.447   1.147  openmips/pc_reg/pc_6 (openmips/pc_reg/pc_6)
+     begin scope: 'inst_rom:a<4>'
+     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1221_SW0 (N6)
+     LUT6:I5->O            2   0.205   0.864  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1221 (spo<8>)
+     end scope: 'inst_rom:spo<8>'
+     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_4 (mux8t1_4/Mmux_o_4)
+     MUXF7:I0->O           7   0.131   1.021  mux8t1_4/Mmux_o_2_f7 (digit<0>)
+     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment21 (seg_2_OBUF)
+     OBUF:I->O                 2.571          seg_2_OBUF (seg<2>)
     ----------------------------------------
-    Total                      8.223ns (3.963ns logic, 4.260ns route)
-                                       (48.2% logic, 51.8% route)
+    Total                      8.153ns (3.963ns logic, 4.190ns route)
+                                       (48.6% logic, 51.4% route)
 
 =========================================================================
 
@@ -655,20 +644,20 @@ Clock to Setup on destination clock clk_100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    4.342|         |         |         |
+clk_100mhz     |    4.101|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.10 secs
+Total CPU time to Xst completion: 4.02 secs
  
 --> 
 
-Total memory usage is 231880 kilobytes
+Total memory usage is 232904 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   68 (   0 filtered)
+Number of warnings :   63 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

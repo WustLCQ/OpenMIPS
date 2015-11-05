@@ -192,7 +192,7 @@ LAB5:    xsi_set_current_line(39, ng0);
     t4 = (t0 + 1012);
     t5 = (t4 + 36U);
     t6 = *((char **)t5);
-    t7 = ((char*)((ng1)));
+    t7 = ((char*)((ng2)));
     memset(t8, 0, 8);
     t9 = (t6 + 4);
     t10 = (t7 + 4);

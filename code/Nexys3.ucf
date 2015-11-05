@@ -1,7 +1,7 @@
 #  This  file  is  a  simple  SOC  .ucf  for  Nexys3  rev  B  board #Clock  signal 
 Net  "clk_100mhz"  LOC=V10  |IOSTANDARD=LVCMOS33;
-NET  "clk_100mhz"	PERIOD  =  10ns;	#  10ns  =  50Mhz
-#Net  "clk_100mhz"  TNM_NET  =  sys_clk_pin; 
+NeT  "clk_100mhz"	PERIOD  =  10ns;	#  10ns  =  50Mhz
+Net  "clk_100mhz"  TNM_NET  =  sys_clk_pin; 
 
 #NET  "clk"  CLOCK_DEDICATED_ROUTE  =  FALSE; 
 #PIN  "clk_BUFGP/BUFG.O"  CLOCK_DEDICATED_ROUTE  =  FALSE; #  7  segment  display 
