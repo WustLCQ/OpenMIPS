@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -169,6 +169,7 @@ Elaborating module <pc_reg>.
 Elaborating module <if_id>.
 
 Elaborating module <id>.
+WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 96: Size mismatch in connection of port <mem_wdata_i>. Formal port size is 32-bit while actual signal size is 1-bit.
 
 Elaborating module <regfile>.
 
@@ -181,6 +182,7 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
+WARNING:HDLCompiler:634 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 96: Net <mem_wdata> does not have a driver.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
@@ -199,12 +201,12 @@ Elaborating module <clk_div>.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 98: Assignment to clk_cpu ignored, since the identifier is never used
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 77. All outputs of instance <if_id> of block <if_id> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 85. All outputs of instance <id> of block <id> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 102. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 115. All outputs of instance <id_ex> of block <id_ex> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 131. All outputs of instance <ex> of block <ex> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 143. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 153. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 162. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 108. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 121. All outputs of instance <id_ex> of block <id_ex> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 137. All outputs of instance <ex> of block <ex> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 149. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 159. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 168. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -223,6 +225,7 @@ Unit <openmips_min_sopc> synthesized.
 
 Synthesizing Unit <openmips>.
     Related source file is "e:/workspace/ise/openmips/code/openmips.v".
+WARNING:Xst:653 - Signal <mem_wdata> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <openmips> synthesized.
@@ -651,13 +654,13 @@ clk_100mhz     |    4.101|         |         |         |
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.02 secs
+Total CPU time to Xst completion: 4.08 secs
  
 --> 
 
-Total memory usage is 232904 kilobytes
+Total memory usage is 234120 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   63 (   0 filtered)
+Number of warnings :   66 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

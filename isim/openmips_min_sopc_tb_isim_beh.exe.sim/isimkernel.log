@@ -2,27 +2,27 @@ Command line:
    openmips_min_sopc_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  56551
+     -socket  47562
 
-Thu Nov 05 15:18:17 2015
+Fri Nov 06 09:51:34 2015
 
 
  Elaboration Time: 0.0625 sec
 
- Current Memory Usage: 1144.24 Meg
+ Current Memory Usage: 1142.99 Meg
 
- Total Signals          : 187
- Total Nets             : 1223
+ Total Signals          : 194
+ Total Nets             : 1255
  Total Signal Drivers   : 91
  Total Blocks           : 21
  Total Primitive Blocks : 16
  Total Processes        : 124
  Total Traceable Variables  : 129
- Total Scalar Nets and Variables : 70404
+ Total Scalar Nets and Variables : 70436
 
- Total Simulation Time: 0.234375 sec
+ Total Simulation Time: 0.1875 sec
 
- Current Memory Usage: 672.608 Meg
+ Current Memory Usage: 1142.99 Meg
 
-Thu Nov 05 15:20:06 2015
+Fri Nov 06 09:52:06 2015
 

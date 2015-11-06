@@ -28,6 +28,16 @@ module id(
 	input [`RegBus]		reg1_data_i,
 	input [`RegBus]		reg2_data_i,
 	
+	//为解决RAW相关，将上条指令在执行阶段的结果前推
+	input						ex_wreg_i,
+	input	[`RegBus]		ex_wdata_i,
+	input	[`RegAddrBus]	ex_wd_i,
+	
+	//为解决RAW相关，将上上条指令在访存阶段的结果前推
+	input						mem_wreg_i,
+	input	[`RegBus]		mem_wdata_i,
+	input	[`RegAddrBus]	mem_wd_i,
+	
 	output reg				reg1_read_o,		//读使能
 	output reg				reg2_read_o,
 	output reg[`RegAddrBus]	reg1_addr_o,	//读地址
@@ -93,12 +103,17 @@ module id(
 		end
 	end
 	
+	//如果
 	always @(*)	begin
 		if(rst == `RstEnable) begin
 			reg1_o	<=	`ZeroWord;
-		end else if(reg1_read_o == 1'b1) begin
+		end else if((reg1_read_o == `ReadEnable)&&(ex_wreg_i == `WriteEnable)&&(reg1_addr_o == ex_wd_i)) begin
+			reg1_o	<=	ex_wdata_i;
+		end else if((reg1_read_o == `ReadEnable)&&(mem_wreg_i == `WriteEnable)&&(reg1_addr_o == mem_wd_i)) begin
+			reg1_o	<=	mem_wdata_i;
+		end else if(reg1_read_o == `ReadEnable) begin
 			reg1_o	<= reg1_data_i;				//读取寄存器的值
-		end else if(reg1_read_o == 1'b0)	begin
+		end else if(reg1_read_o == `ReadDisable)	begin
 			reg1_o	<=	imm;
 		end else begin
 			reg1_o	<=	`ZeroWord;
@@ -108,9 +123,13 @@ module id(
 	always @(*)	begin
 		if(rst == `RstEnable) begin
 			reg2_o	<=	`ZeroWord;
-		end else if(reg2_read_o == 1'b1) begin
+		end else if((reg2_read_o == `ReadEnable)&&(ex_wreg_i == `WriteEnable)&&(reg2_addr_o == ex_wd_i)) begin
+			reg2_o	<=	ex_wdata_i;
+		end else if((reg2_read_o == `ReadEnable)&&(mem_wreg_i == `WriteEnable)&&(reg2_addr_o == mem_wd_i)) begin
+			reg2_o	<=	mem_wdata_i;
+		end else if(reg2_read_o == `ReadEnable) begin
 			reg2_o	<= reg1_data_i;				//读取寄存器的值
-		end else if(reg2_read_o == 1'b0)	begin
+		end else if(reg2_read_o == `ReadDisable)	begin
 			reg2_o	<=	imm;
 		end else begin
 			reg2_o	<=	`ZeroWord;
