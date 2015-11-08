@@ -36,7 +36,9 @@ module pc_reg(
 	end
 	
 	always @(posedge clk) begin
-		if (ce == `ChipDisable) begin
+		//书上是if(ce == `ChipDisable)，但这样在复位后还需要再等一个时钟周期pc才开始变化
+		//个人认为改成rst == `RstEnable要好一些
+		if (rst == `RstEnable) begin
 			pc <= `ZeroWord;
 		end else begin
 			pc <= pc + 4'h4;

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-11-06T09:03:14</DateModified>
+  <DateModified>2015-11-08T13:37:01</DateModified>
   <ModuleName>openmips_min_sopc</ModuleName>
-  <SummaryTimeStamp>2015-11-05T10:34:56</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-11-08T13:36:33</SummaryTimeStamp>
   <SavedFilePath>E:/Workspace/ISE/OpenMIPS/iseconfig/openmips_min_sopc.xreport</SavedFilePath>
   <ImplementationReportsDirectory>E:/Workspace/ISE/OpenMIPS\</ImplementationReportsDirectory>
   <DateInitialized>2015-11-04T14:21:52</DateInitialized>

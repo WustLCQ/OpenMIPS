@@ -93,7 +93,7 @@ module openmips(
 		.ex_wdata_i(ex_wdata_o),
 		.mem_wreg_i(mem_wreg_o),
 		.mem_wd_i(mem_wd_o),
-		.mem_wdata_i(mem_wdata),
+		.mem_wdata_i(mem_wdata_o),
 		.reg1_read_o(reg1_read),
 		.reg2_read_o(reg2_read),
 		.reg1_addr_o(reg1_addr),

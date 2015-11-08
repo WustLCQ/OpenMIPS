@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -169,7 +169,6 @@ Elaborating module <pc_reg>.
 Elaborating module <if_id>.
 
 Elaborating module <id>.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 96: Size mismatch in connection of port <mem_wdata_i>. Formal port size is 32-bit while actual signal size is 1-bit.
 
 Elaborating module <regfile>.
 
@@ -182,7 +181,6 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
-WARNING:HDLCompiler:634 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 96: Net <mem_wdata> does not have a driver.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
@@ -225,7 +223,6 @@ Unit <openmips_min_sopc> synthesized.
 
 Synthesizing Unit <openmips>.
     Related source file is "e:/workspace/ise/openmips/code/openmips.v".
-WARNING:Xst:653 - Signal <mem_wdata> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <openmips> synthesized.
@@ -393,6 +390,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <openmips/pc_reg/ce> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:1710 - FF/Latch <openmips/pc_reg/pc_0> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips/pc_reg/pc_1> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_20> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -453,8 +451,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 84
- Flip-Flops                                            : 84
+# Registers                                            : 83
+ Flip-Flops                                            : 83
 
 =========================================================================
 
@@ -477,9 +475,9 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 285
+# BELS                             : 283
 #      GND                         : 2
-#      INV                         : 5
+#      INV                         : 3
 #      LUT1                        : 64
 #      LUT2                        : 5
 #      LUT3                        : 21
@@ -490,8 +488,8 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 4
 #      VCC                         : 1
 #      XORCY                       : 67
-# FlipFlops/Latches                : 84
-#      FD                          : 14
+# FlipFlops/Latches                : 83
+#      FD                          : 13
 #      FDC                         : 20
 #      FDE                         : 3
 #      FDR                         : 47
@@ -508,15 +506,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              84  out of  18224     0%  
- Number of Slice LUTs:                  141  out of   9112     1%  
-    Number used as Logic:               141  out of   9112     1%  
+ Number of Slice Registers:              83  out of  18224     0%  
+ Number of Slice LUTs:                  139  out of   9112     1%  
+    Number used as Logic:               139  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    151
-   Number with an unused Flip Flop:      67  out of    151    44%  
-   Number with an unused LUT:            10  out of    151     6%  
-   Number of fully used LUT-FF pairs:    74  out of    151    49%  
+ Number of LUT Flip Flop pairs used:    149
+   Number with an unused Flip Flop:      66  out of    149    44%  
+   Number with an unused LUT:            10  out of    149     6%  
+   Number of fully used LUT-FF pairs:    73  out of    149    48%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -547,7 +545,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_100mhz                         | BUFGP                  | 84    |
+clk_100mhz                         | BUFGP                  | 83    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -559,7 +557,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 4.101ns (Maximum Frequency: 243.849MHz)
-   Minimum input arrival time before clock: 5.623ns
+   Minimum input arrival time before clock: 6.004ns
    Maximum output required time after clock: 8.153ns
    Maximum combinational path delay: No path found
 
@@ -570,7 +568,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100mhz'
   Clock period: 4.101ns (frequency: 243.849MHz)
-  Total number of paths / destination ports: 1638 / 120
+  Total number of paths / destination ports: 1608 / 90
 -------------------------------------------------------------------------
 Delay:               4.101ns (Levels of Logic = 2)
   Source:            anti_jitter/sw_temp_0 (FF)
@@ -592,9 +590,9 @@ Delay:               4.101ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 397 / 57
+  Total number of paths / destination ports: 426 / 86
 -------------------------------------------------------------------------
-Offset:              5.623ns (Levels of Logic = 3)
+Offset:              6.004ns (Levels of Logic = 3)
   Source:            sw<7> (PAD)
   Destination:       anti_jitter/counter_9 (FF)
   Destination Clock: clk_100mhz rising
@@ -603,13 +601,13 @@ Offset:              5.623ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            25   1.222   1.557  sw_7_IBUF (sw_7_IBUF)
+     IBUF:I->O            54   1.222   1.938  sw_7_IBUF (sw_7_IBUF)
      LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o1)
      LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_63_o)
      FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
-    Total                      5.623ns (2.058ns logic, 3.565ns route)
-                                       (36.6% logic, 63.4% route)
+    Total                      6.004ns (2.058ns logic, 3.946ns route)
+                                       (34.3% logic, 65.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
@@ -654,13 +652,13 @@ clk_100mhz     |    4.101|         |         |         |
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.08 secs
+Total CPU time to Xst completion: 4.18 secs
  
 --> 
 
 Total memory usage is 234120 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   66 (   0 filtered)
+Number of warnings :   64 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 
