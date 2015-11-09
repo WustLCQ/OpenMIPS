@@ -8,6 +8,9 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 47: Assignment to <arg fmt="%s" index="1">clk</arg> ignored, since the identifier is never used
 </msg>
 
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"E:\Workspace\ISE\OpenMIPS\code\id.v" Line 64: Assignment to <arg fmt="%s" index="1">instvalid</arg> ignored, since the identifier is never used
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to <arg fmt="%s" index="1">rom_ce</arg> ignored, since the identifier is never used
 </msg>
 
@@ -77,7 +80,7 @@
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_o</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">openmips/pc_reg/ce</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">openmips/pc_reg/ce</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">openmips_min_sopc</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">openmips/pc_reg/pc_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">openmips_min_sopc</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

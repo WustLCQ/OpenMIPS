@@ -196,7 +196,7 @@ module id(
 					alusel_o	<=	`EXE_RES_LOGIC;
 					reg1_read_o	<=	1'b1;
 					reg2_read_o	<=	1'b0;
-					imm	<=	{16'h0,inst_i[15:0]};
+					imm	<=	{inst_i[15:0],16'h0};
 					wd_o	<=	inst_i[20:16];
 					instvalid	<=	`InstValid;
 				end
@@ -245,7 +245,7 @@ module id(
 		end
 	end
 	
-	//如果
+	//如果要读取的寄存器是上条或者上上条指令要写入的寄存器，则直接数据前推
 	always @(*)	begin
 		if(rst == `RstEnable) begin
 			reg1_o	<=	`ZeroWord;
