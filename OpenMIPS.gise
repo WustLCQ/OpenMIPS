@@ -57,8 +57,8 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem_wb.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="mem_wb.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
-    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
+    <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="oepnmips.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="oepnmips.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="oepnmips.xst"/>
