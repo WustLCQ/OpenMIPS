@@ -142,6 +142,7 @@ module id(
 								`EXE_SRAV:	begin
 									wreg_o	<=	`WriteEnable;
 									aluop_o	<=	`EXE_SRA_OP;
+									alusel_o	<=	`EXE_RES_SHIFT;
 									reg1_read_o	<=	1'b1;
 									reg2_read_o	<=	1'b1;
 									instvalid	<=	`InstValid;
@@ -234,7 +235,7 @@ module id(
 				end else if(op3 == `EXE_SRA)	begin
 					wreg_o	<=	`WriteEnable;
 					aluop_o	<=	`EXE_SRA_OP;
-					aluop_o	<=	`EXE_RES_SHIFT;
+					alusel_o	<=	`EXE_RES_SHIFT;
 					reg1_read_o	<=	1'b0;
 					reg2_read_o	<=	1'b1;
 					imm[4:0]	<=	inst_i[10:6];
@@ -270,7 +271,7 @@ module id(
 		end else if((reg2_read_o == `ReadEnable)&&(mem_wreg_i == `WriteEnable)&&(reg2_addr_o == mem_wd_i)) begin
 			reg2_o	<=	mem_wdata_i;
 		end else if(reg2_read_o == `ReadEnable) begin
-			reg2_o	<= reg1_data_i;				//读取寄存器的值
+			reg2_o	<= reg2_data_i;				//读取寄存器的值
 		end else if(reg2_read_o == `ReadDisable)	begin
 			reg2_o	<=	imm;
 		end else begin

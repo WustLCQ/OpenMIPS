@@ -1,10 +1,6 @@
-set -tmpdir "xst/projnav.tmp"
-set -xsthdpdir "xst"
-run
--ifn openmips_min_sopc.prj
--ifmt mixed
--ofn openmips_min_sopc
--ofmt NGC
+set -tmpdir "E:/Workspace/ISE/OpenMIPS/xst/projnav.tmp"
+set -xsthdpdir "E:/Workspace/ISE/OpenMIPS/xst"
+run -compileonly yes
 -p xc6slx16-3-csg324
 -top openmips_min_sopc
 -opt_mode Speed
@@ -52,3 +48,5 @@ run
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
+-ifn openmips_min_sopc.prj
+-ifmt mixed

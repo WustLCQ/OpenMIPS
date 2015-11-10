@@ -73,7 +73,7 @@ module ex(
 					shiftres	<=	reg2_i >> reg1_i[4:0];
 				end
 				`EXE_SRA_OP:	begin			//ËãÊıÓÒÒÆ
-					shiftres	<=	({32{reg2_i[31]}}<<(6'd32-{1'b0,reg1_i[4:0]})) | reg2_i>>reg1_i[4:0];
+					shiftres	<=	({32{reg2_i[31]}}<<(6'd32-{1'b0,reg1_i[4:0]})) | reg2_i>>reg1_i[4:0];	
 				end
 				default:	begin
 					shiftres	<=	`ZeroWord;
