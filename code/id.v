@@ -155,6 +155,10 @@ module id(
 									reg2_read_o	<=	1'b1;
 									instvalid	<=	`InstValid;
 								end
+								`EXE_MFHI:	begin
+								end
+								default:	begin
+								end
 							endcase
 						end
 						default:	begin

@@ -1,7 +1,7 @@
 Release 13.2 par O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-LCQ-PC::  Thu Nov 05 10:17:54 2015
+LCQ-PC::  Wed Nov 11 15:11:56 2015
 
 par -w -intstyle ise -ol high -mt off openmips_min_sopc_map.ncd
 openmips_min_sopc.ncd openmips_min_sopc.pcf 
@@ -28,29 +28,29 @@ Device speed data version:  "PRODUCTION 1.19 2011-06-20".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    86 out of  18,224    1%
-    Number used as Flip Flops:                  86
+  Number of Slice Registers:                    83 out of  18,224    1%
+    Number used as Flip Flops:                  83
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        129 out of   9,112    1%
-    Number used as logic:                      125 out of   9,112    1%
-      Number using O6 output only:              40
+  Number of Slice LUTs:                        152 out of   9,112    1%
+    Number used as logic:                      149 out of   9,112    1%
+      Number using O6 output only:              68
       Number using O5 output only:              61
-      Number using O5 and O6:                   24
+      Number using O5 and O6:                   20
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      4
-      Number with same-slice register load:      1
+    Number used exclusively as route-thrus:      3
+      Number with same-slice register load:      0
       Number with same-slice carry load:         3
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    47 out of   2,278    2%
-  Number of LUT Flip Flop pairs used:          138
-    Number with an unused Flip Flop:            62 out of     138   44%
-    Number with an unused LUT:                   9 out of     138    6%
-    Number of fully used LUT-FF pairs:          67 out of     138   48%
+  Number of occupied Slices:                    52 out of   2,278    2%
+  Number of LUT Flip Flop pairs used:          163
+    Number with an unused Flip Flop:            80 out of     163   49%
+    Number with an unused LUT:                  11 out of     163    6%
+    Number of fully used LUT-FF pairs:          72 out of     163   44%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -69,8 +69,8 @@ Specific Feature Utilization:
   Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
-    Number used as BUFGs:                        2
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
@@ -99,13 +99,13 @@ Finished initial Timing Analysis.  REAL time: 3 secs
 Starting Router
 
 
-Phase  1  : 526 unrouted;      REAL time: 3 secs 
+Phase  1  : 636 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 417 unrouted;      REAL time: 3 secs 
+Phase  2  : 531 unrouted;      REAL time: 3 secs 
 
-Phase  3  : 145 unrouted;      REAL time: 4 secs 
+Phase  3  : 175 unrouted;      REAL time: 3 secs 
 
-Phase  4  : 145 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  4  : 175 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
 Updating file: openmips_min_sopc.ncd with current fully routed design.
 
@@ -139,10 +139,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|    clk_100mhz_BUFGP | BUFGMUX_X3Y13| No   |   14 |  0.056     |  0.909      |
-+---------------------+--------------+------+------+------------+-------------+
-|anti_jitter/btn_puls |              |      |      |            |             |
-|            e_0_BUFG |  BUFGMUX_X2Y3| No   |    9 |  0.019     |  0.887      |
+|    clk_100mhz_BUFGP | BUFGMUX_X3Y13| No   |   23 |  0.043     |  0.893      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -162,8 +159,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10  | SETUP       |     3.614ns|     6.386ns|       0|           0
-  ns HIGH 50%                               | HOLD        |     0.472ns|            |       0|           0
+  NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10  | SETUP       |     2.951ns|     7.049ns|       0|           0
+  ns HIGH 50%                               | HOLD        |     0.436ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -175,9 +172,9 @@ Generating Pad Report.
 All signals are completely routed.
 
 Total REAL time to PAR completion: 5 secs 
-Total CPU time to PAR completion: 5 secs 
+Total CPU time to PAR completion: 4 secs 
 
-Peak Memory Usage:  274 MB
+Peak Memory Usage:  272 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

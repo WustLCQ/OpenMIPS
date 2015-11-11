@@ -26,7 +26,7 @@ module openmips_min_sopc_tb;
 
 	// Inputs
 	reg clk_100mhz;
-	reg rst;
+//	reg rst;
 	reg [4:0] btn;
 	reg [7:0] sw;
 

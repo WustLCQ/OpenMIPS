@@ -56,6 +56,12 @@
 `define EXE_XORI 6'b001110
 `define EXE_LUI 6'b001111
 
+`define EXE_MOVZ 6'b001010
+`define EXE_MOVN 6'b001011
+`define EXE_MFHI 6'b010000
+`define EXE_MTHI 6'b010001
+`define EXE_MFLO 6'b010010
+`define EXE_MTLO 6'b010011
 `define EXE_SLL  6'b000000
 `define EXE_SLLV  6'b000100
 `define EXE_SRL  6'b000010
