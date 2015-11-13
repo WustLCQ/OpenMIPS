@@ -29,6 +29,21 @@ module ex(
 	input	[`RegAddrBus]	wd_i,
 	input	wreg_i,
 	
+	input	[`RegBus]		hi_i,
+	input	[`RegBus]		lo_i,
+	
+	input	[`RegBus]		wb_hi_i,
+	input	[`RegBus]		wb_lo_i,
+	input						wb_whilo_i,
+	
+	input	[`RegBus]		mem_hi_i,
+	input	[`RegBus]		mem_lo_i,
+	input						mem_whilo_i,
+	
+	output	reg[`RegBus]	hi_o,
+	output	reg[`RegBus]	lo_o,
+	output	reg				whilo_o,
+	
 	output	reg[`RegAddrBus]	wd_o,		//运算结果要写入的目标寄存器地址
 	output	reg	wreg_o,					//使能写
 	output	reg[`RegBus]	wdata_o		//要写入目标寄存器的运算结果
@@ -36,6 +51,9 @@ module ex(
 	 
 	 reg[`RegBus]	logicout;				//保存逻辑运算结果
 	 reg[`RegBus]	shiftres;				//保存移位运算结果
+	 reg[`RegBus]	moveres;					//保存移位操作结果
+	 reg[`RegBus]	HI;
+	 reg[`RegBus]	LO;
 	 
 	 always @(*) begin
 		if(rst == `RstEnable) begin
@@ -61,6 +79,14 @@ module ex(
 		end
 	end
 
+	//得到最新的HI、LO寄存器的值
+	always @(*) begin
+		if(rst == `RstEnable)begin
+			HI	<=	`ZeroWord;
+			LO	<=	`ZeroWord;
+		end
+	end
+	
 	always @(*) begin
 		if(rst == `RstEnable) begin
 			shiftres	<=	`ZeroWord;
