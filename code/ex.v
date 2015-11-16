@@ -55,6 +55,7 @@ module ex(
 	 reg[`RegBus]	HI;
 	 reg[`RegBus]	LO;
 	 
+	 //逻辑运算
 	 always @(*) begin
 		if(rst == `RstEnable) begin
 			logicout	<= `ZeroWord;
@@ -79,14 +80,49 @@ module ex(
 		end
 	end
 
-	//得到最新的HI、LO寄存器的值
+	//得到最新的HI、LO寄存器的值，将访存和回写阶段HI和LO寄存器的数据前推
 	always @(*) begin
 		if(rst == `RstEnable)begin
 			HI	<=	`ZeroWord;
 			LO	<=	`ZeroWord;
+		end else if(mem_whilo_i == `WriteEnable) begin
+			HI <= mem_hi_i;
+			LO <= mem_lo_i;
+		end else if(wb_whilo_i == `WriteEnable) begin
+			HI <= wb_hi_i;
+			LO <= wb_lo_i;
+		end else begin
+			HI <= hi_i;
+			LO <= lo_i;
 		end
 	end
 	
+	//移动指令
+	always @(*) begin
+		if(rst == `RstEnable) begin
+			moveres	<=	`ZeroWord;
+		end else begin
+			moveres	<=	`ZeroWord;
+			case(aluop_i)
+				`EXE_MFHI_OP:	begin
+					moveres	<=	HI;
+				end
+				`EXE_MFLO_OP:	begin
+					moveres	<=	LO;
+				end
+				`EXE_MOVZ_OP:	begin
+					moveres	<=	reg1_i;
+				end
+				`EXE_MOVN_OP:	begin
+					moveres	<=	reg1_i;
+				end
+				default:	begin
+				end
+			endcase
+		end
+	end
+	
+	//移位运算
 	always @(*) begin
 		if(rst == `RstEnable) begin
 			shiftres	<=	`ZeroWord;
@@ -118,10 +154,34 @@ module ex(
 			`EXE_RES_SHIFT:	begin
 				wdata_o	<=	shiftres;
 			end
+			`EXE_RES_MOVE:	begin
+				wdata_o	<=	moveres;
+			end
 			default:	begin
 				wdata_o	<=	`ZeroWord;
 			end
 		endcase
+	end
+	
+	//MTHI和MTLO指令
+	always @(*) begin
+		if(rst == `RstEnable) begin
+			whilo_o	<=	`WriteDisable;
+			hi_o	<=	`ZeroWord;
+			lo_o	<=	`ZeroWord;
+		end else if(aluop_i	==	`EXE_MTHI_OP)	begin
+			whilo_o	<=	`WriteEnable;
+			hi_o	<=	reg1_i;
+			lo_o	<=	LO;
+		end else if(aluop_i	== `EXE_MTLO_OP)	begin
+			whilo_o	<=	`WriteEnable;
+			hi_o	<=	HI;
+			lo_o	<=	reg1_i;
+		end else begin
+			whilo_o	<=	`WriteDisable;
+			hi_o	<=	`ZeroWord;
+			lo_o	<=	`ZeroWord;
+		end
 	end
 
 endmodule

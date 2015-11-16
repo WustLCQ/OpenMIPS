@@ -184,3 +184,5 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off openmips_min_sopc_map.ncd openmips_min_sopc.ncd openmips_min_sopc.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml openmips_min_sopc.twx openmips_min_sopc.ncd -o openmips_min_sopc.twr openmips_min_sopc.pcf 
 bitgen -intstyle ise -f openmips_min_sopc.ut openmips_min_sopc.ncd 
+xst -intstyle ise -ifn "E:/Workspace/ISE/OpenMIPS/openmips_min_sopc.xst" -ofn "E:/Workspace/ISE/OpenMIPS/openmips_min_sopc.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim openmips_min_sopc.ngc openmips_min_sopc_synthesis.v 

@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -130,6 +130,9 @@ Parsing module <id_ex>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\id.v\" into library work
 Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
 Parsing module <id>.
+Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\hilo_reg.v\" into library work
+Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 21.
+Parsing module <hilo_reg>.
 Analyzing Verilog file \"E:\Workspace\ISE\OpenMIPS\code\ex_mem.v\" into library work
 Parsing verilog file "E:\Workspace\ISE\OpenMIPS\code\/defines.v" included at line 22.
 Parsing module <ex_mem>.
@@ -161,6 +164,7 @@ Parsing module <openmips_min_sopc>.
 
 Elaborating module <openmips_min_sopc>.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 47: Assignment to clk ignored, since the identifier is never used
+WARNING:HDLCompiler:1016 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 160: Port wb_hi_i is not connected to this instance
 
 Elaborating module <openmips>.
 
@@ -173,6 +177,8 @@ WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\id.v" Line 64: Assign
 
 Elaborating module <regfile>.
 
+Elaborating module <hilo_reg>.
+
 Elaborating module <id_ex>.
 
 Elaborating module <ex>.
@@ -182,6 +188,8 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
+WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 222: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:552 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 160: Input port wb_hi_i[31] is not connected on this instance
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
@@ -198,14 +206,15 @@ WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" 
 
 Elaborating module <clk_div>.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 98: Assignment to clk_cpu ignored, since the identifier is never used
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 77. All outputs of instance <if_id> of block <if_id> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 85. All outputs of instance <id> of block <id> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 108. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 121. All outputs of instance <id_ex> of block <id_ex> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 137. All outputs of instance <ex> of block <ex> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 149. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 159. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 168. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 91. All outputs of instance <if_id> of block <if_id> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 99. All outputs of instance <id> of block <id> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 122. All outputs of instance <regfile> of block <regfile> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 135. All outputs of instance <hilo_reg> of block <hilo_reg> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 144. All outputs of instance <id_ex> of block <id_ex> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 160. All outputs of instance <ex> of block <ex> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 177. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 193. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 208. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -224,6 +233,12 @@ Unit <openmips_min_sopc> synthesized.
 
 Synthesizing Unit <openmips>.
     Related source file is "e:/workspace/ise/openmips/code/openmips.v".
+WARNING:Xst:2898 - Port 'wb_hi_i', unconnected in block instance 'ex', is tied to GND.
+WARNING:Xst:2898 - Port 'wb_lo_i', unconnected in block instance 'ex', is tied to GND.
+WARNING:Xst:2898 - Port 'mem_hi_i', unconnected in block instance 'ex', is tied to GND.
+WARNING:Xst:2898 - Port 'mem_lo_i', unconnected in block instance 'ex', is tied to GND.
+WARNING:Xst:2898 - Port 'wb_whilo_i', unconnected in block instance 'ex', is tied to GND.
+WARNING:Xst:2898 - Port 'mem_whilo_i', unconnected in block instance 'ex', is tied to GND.
     Summary:
 	no macro.
 Unit <openmips> synthesized.
@@ -268,10 +283,10 @@ Synthesizing Unit <anti_jitter>.
     Found 8-bit register for signal <sw_ok>.
     Found 5-bit register for signal <btn_pulse>.
     Found 5-bit register for signal <btn_temp>.
-    Found 32-bit adder for signal <counter[31]_GND_17_o_add_4_OUT> created at line 41.
+    Found 32-bit adder for signal <counter[31]_GND_18_o_add_4_OUT> created at line 41.
     Found 5-bit comparator not equal for signal <n0000> created at line 37
     Found 8-bit comparator not equal for signal <n0002> created at line 37
-    Found 32-bit comparator greater for signal <counter[31]_GND_17_o_LessThan_4_o> created at line 40
+    Found 32-bit comparator greater for signal <counter[31]_GND_18_o_LessThan_4_o> created at line 40
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -281,7 +296,7 @@ Unit <anti_jitter> synthesized.
 Synthesizing Unit <clk_div>.
     Related source file is "e:/workspace/ise/openmips/code/clk_div.v".
     Found 32-bit register for signal <clkdiv>.
-    Found 32-bit adder for signal <clkdiv[31]_GND_18_o_add_0_OUT> created at line 33.
+    Found 32-bit adder for signal <clkdiv[31]_GND_19_o_add_0_OUT> created at line 33.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -582,8 +597,8 @@ Delay:               4.101ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               1   0.447   0.808  anti_jitter/sw_temp_0 (anti_jitter/sw_temp_0)
-     LUT6:I3->O            2   0.205   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o1)
-     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o)
+     LUT6:I3->O            2   0.205   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o)
      FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
     Total                      4.101ns (1.285ns logic, 2.816ns route)
@@ -603,8 +618,8 @@ Offset:              6.004ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            54   1.222   1.938  sw_7_IBUF (sw_7_IBUF)
-     LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o1)
-     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_140_o)
+     LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o)
      FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
     Total                      6.004ns (2.058ns logic, 3.946ns route)
@@ -652,14 +667,14 @@ clk_100mhz     |    4.101|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.40 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.65 secs
  
 --> 
 
-Total memory usage is 234440 kilobytes
+Total memory usage is 235080 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   65 (   0 filtered)
+Number of warnings :   75 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 
