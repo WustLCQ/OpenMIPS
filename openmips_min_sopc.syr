@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -164,7 +164,6 @@ Parsing module <openmips_min_sopc>.
 
 Elaborating module <openmips_min_sopc>.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 47: Assignment to clk ignored, since the identifier is never used
-WARNING:HDLCompiler:1016 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 160: Port wb_hi_i is not connected to this instance
 
 Elaborating module <openmips>.
 
@@ -188,8 +187,7 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 222: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:552 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 160: Input port wb_hi_i[31] is not connected on this instance
+WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 228: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
 WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\openmips_min_sopc.v" Line 55: Assignment to rom_ce ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
@@ -212,9 +210,9 @@ WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 122. All out
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 135. All outputs of instance <hilo_reg> of block <hilo_reg> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 144. All outputs of instance <id_ex> of block <id_ex> are unconnected in block <openmips>. Underlying logic will be removed.
 WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 160. All outputs of instance <ex> of block <ex> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 177. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 193. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
-WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 208. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 183. All outputs of instance <ex_mem> of block <ex_mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 199. All outputs of instance <mem> of block <mem> are unconnected in block <openmips>. Underlying logic will be removed.
+WARNING:Xst:2972 - "e:/workspace/ise/openmips/code/openmips.v" line 214. All outputs of instance <mem_wb> of block <mem_wb> are unconnected in block <openmips>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -233,12 +231,6 @@ Unit <openmips_min_sopc> synthesized.
 
 Synthesizing Unit <openmips>.
     Related source file is "e:/workspace/ise/openmips/code/openmips.v".
-WARNING:Xst:2898 - Port 'wb_hi_i', unconnected in block instance 'ex', is tied to GND.
-WARNING:Xst:2898 - Port 'wb_lo_i', unconnected in block instance 'ex', is tied to GND.
-WARNING:Xst:2898 - Port 'mem_hi_i', unconnected in block instance 'ex', is tied to GND.
-WARNING:Xst:2898 - Port 'mem_lo_i', unconnected in block instance 'ex', is tied to GND.
-WARNING:Xst:2898 - Port 'wb_whilo_i', unconnected in block instance 'ex', is tied to GND.
-WARNING:Xst:2898 - Port 'mem_whilo_i', unconnected in block instance 'ex', is tied to GND.
     Summary:
 	no macro.
 Unit <openmips> synthesized.
@@ -491,15 +483,15 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 309
+# BELS                             : 303
 #      GND                         : 2
 #      INV                         : 3
 #      LUT1                        : 64
 #      LUT2                        : 5
-#      LUT3                        : 20
-#      LUT4                        : 11
-#      LUT5                        : 21
-#      LUT6                        : 41
+#      LUT3                        : 21
+#      LUT4                        : 10
+#      LUT5                        : 18
+#      LUT6                        : 38
 #      MUXCY                       : 70
 #      MUXF7                       : 4
 #      VCC                         : 1
@@ -523,14 +515,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              83  out of  18224     0%  
- Number of Slice LUTs:                  165  out of   9112     1%  
-    Number used as Logic:               165  out of   9112     1%  
+ Number of Slice LUTs:                  159  out of   9112     1%  
+    Number used as Logic:               159  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    175
-   Number with an unused Flip Flop:      92  out of    175    52%  
-   Number with an unused LUT:            10  out of    175     5%  
-   Number of fully used LUT-FF pairs:    73  out of    175    41%  
+ Number of LUT Flip Flop pairs used:    169
+   Number with an unused Flip Flop:      86  out of    169    50%  
+   Number with an unused LUT:            10  out of    169     5%  
+   Number of fully used LUT-FF pairs:    73  out of    169    43%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -574,7 +566,7 @@ Speed Grade: -3
 
    Minimum period: 4.101ns (Maximum Frequency: 243.849MHz)
    Minimum input arrival time before clock: 6.004ns
-   Maximum output required time after clock: 8.659ns
+   Maximum output required time after clock: 8.489ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -627,29 +619,29 @@ Offset:              6.004ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 2210 / 19
+  Total number of paths / destination ports: 1965 / 19
 -------------------------------------------------------------------------
-Offset:              8.659ns (Levels of Logic = 7)
-  Source:            openmips/pc_reg/pc_5 (FF)
+Offset:              8.489ns (Levels of Logic = 7)
+  Source:            openmips/pc_reg/pc_3 (FF)
   Destination:       seg<6> (PAD)
   Source Clock:      clk_100mhz rising
 
-  Data Path: openmips/pc_reg/pc_5 to seg<6>
+  Data Path: openmips/pc_reg/pc_3 to seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             21   0.447   1.458  openmips/pc_reg/pc_5 (openmips/pc_reg/pc_5)
-     begin scope: 'inst_rom:a<3>'
-     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1121_SW0 (N10)
-     LUT6:I5->O            8   0.205   1.050  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1121 (spo<4>)
-     end scope: 'inst_rom:spo<25>'
-     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_31 (mux8t1_4/Mmux_o_31)
-     MUXF7:I1->O           7   0.140   1.021  mux8t1_4/Mmux_o_2_f7_0 (digit<1>)
-     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment11 (seg_0_OBUF)
-     OBUF:I->O                 2.571          seg_0_OBUF (seg<0>)
+     FDR:C->Q             17   0.447   1.372  openmips/pc_reg/pc_3 (openmips/pc_reg/pc_3)
+     begin scope: 'inst_rom:a<1>'
+     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1311_SW0 (N14)
+     LUT6:I5->O            6   0.205   0.992  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1311 (spo<6>)
+     end scope: 'inst_rom:spo<11>'
+     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_43 (mux8t1_4/Mmux_o_43)
+     MUXF7:I0->O           7   0.131   1.002  mux8t1_4/Mmux_o_2_f7_2 (digit<3>)
+     LUT4:I1->O            1   0.205   0.579  seg<6>1 (seg_6_OBUF)
+     OBUF:I->O                 2.571          seg_6_OBUF (seg<6>)
     ----------------------------------------
-    Total                      8.659ns (3.972ns logic, 4.687ns route)
-                                       (45.9% logic, 54.1% route)
+    Total                      8.489ns (3.965ns logic, 4.524ns route)
+                                       (46.7% logic, 53.3% route)
 
 =========================================================================
 
@@ -667,14 +659,14 @@ clk_100mhz     |    4.101|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.65 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.43 secs
  
 --> 
 
-Total memory usage is 235080 kilobytes
+Total memory usage is 234696 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   75 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

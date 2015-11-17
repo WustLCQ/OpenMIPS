@@ -28,13 +28,27 @@ module hilo_reg(
 	output	reg[`RegBus]	hi_o,
 	output	reg[`RegBus]	lo_o
     );
+	 
+	 reg [`RegBus]	hi;
+	 reg [`RegBus]	lo;
+	 
 	always @(posedge clk)	begin
+		if(rst == `RstEnable) begin
+			hi	<=	`ZeroWord;
+			lo	<=	`ZeroWord;
+		end else if (we == `WriteEnable) begin
+			hi	<=	hi_i;
+			lo	<=	lo_i;
+		end
+	end
+	
+	always @(*)	begin
 		if(rst == `RstEnable) begin
 			hi_o	<=	`ZeroWord;
 			lo_o	<=	`ZeroWord;
-		end else if (we == `WriteEnable) begin
-			hi_o	<=	hi_i;
-			lo_o	<=	lo_o;
+		end else begin
+			hi_o	<=	hi;
+			lo_o	<=	lo;
 		end
 	end
 
