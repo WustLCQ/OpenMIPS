@@ -56,6 +56,23 @@
 `define EXE_XORI 6'b001110
 `define EXE_LUI 6'b001111
 
+`define EXE_SLT  6'b101010
+`define EXE_SLTU  6'b101011
+`define EXE_SLTI  6'b001010
+`define EXE_SLTIU  6'b001011   
+`define EXE_ADD  6'b100000
+`define EXE_ADDU  6'b100001
+`define EXE_SUB  6'b100010
+`define EXE_SUBU  6'b100011
+`define EXE_ADDI  6'b001000
+`define EXE_ADDIU  6'b001001
+`define EXE_CLZ  6'b100000
+`define EXE_CLO  6'b100001
+
+`define EXE_MULT  6'b011000
+`define EXE_MULTU  6'b011001
+`define EXE_MUL  6'b000010
+
 `define EXE_MOVZ 6'b001010
 `define EXE_MOVN 6'b001011
 `define EXE_MFHI 6'b010000
@@ -103,6 +120,23 @@
 `define EXE_MFLO_OP  8'b00010010
 `define EXE_MTLO_OP  8'b00010011
 
+`define EXE_SLT_OP  8'b00101010
+`define EXE_SLTU_OP  8'b00101011
+`define EXE_SLTI_OP  8'b01010111
+`define EXE_SLTIU_OP  8'b01011000   
+`define EXE_ADD_OP  8'b00100000
+`define EXE_ADDU_OP  8'b00100001
+`define EXE_SUB_OP  8'b00100010
+`define EXE_SUBU_OP  8'b00100011
+`define EXE_ADDI_OP  8'b01010101
+`define EXE_ADDIU_OP  8'b01010110
+`define EXE_CLZ_OP  8'b10110000
+`define EXE_CLO_OP  8'b10110001
+
+`define EXE_MULT_OP  8'b00011000
+`define EXE_MULTU_OP  8'b00011001
+`define EXE_MUL_OP  8'b10101001
+
 `define EXE_NOP_OP    8'b00000000
 
 //AluSel
@@ -110,6 +144,8 @@
 `define EXE_RES_LOGIC 3'b001
 `define EXE_RES_SHIFT 3'b010
 `define EXE_RES_MOVE	3'b011
+`define EXE_RES_ARITHMETIC 3'b100	
+`define EXE_RES_MUL 3'b101
 
 //指令存储器inst_rom
 `define InstAddrBus 31:0				//ROM的地址总线宽度
