@@ -7,7 +7,7 @@
 // \   \   \/     Version: O.61xd
 //  \   \         Application: netgen
 //  /   /         Filename: openmips_min_sopc_synthesis.v
-// /___/   /\     Timestamp: Tue Nov 17 19:37:37 2015
+// /___/   /\     Timestamp: Tue Nov 24 17:07:31 2015
 // \   \  /  \ 
 //  \___\/\___\
 //             
@@ -122,13 +122,13 @@ module openmips_min_sopc (
   wire \anti_jitter/Mcompar_counter[31]_GND_18_o_LessThan_4_o_cy<0>_257 ;
   wire \anti_jitter/Mcompar_counter[31]_GND_18_o_LessThan_4_o_lut<0>_258 ;
   wire \anti_jitter/Mcompar_counter[31]_GND_18_o_LessThan_4_o_lutdi_259 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1_308 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o2_309 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o3_310 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o4_311 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o5_312 ;
-  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o6_313 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o1_308 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o2_309 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o3_310 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4_311 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o5_312 ;
+  wire \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6_313 ;
   wire \clk_div/Mcount_clkdiv_cy<1>_rt_348 ;
   wire \clk_div/Mcount_clkdiv_cy<2>_rt_349 ;
   wire \clk_div/Mcount_clkdiv_cy<3>_rt_350 ;
@@ -1702,80 +1702,80 @@ module openmips_min_sopc (
   );
   LUT6 #(
     .INIT ( 64'h7FDFF7FD3FCFF3FC ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o1  (
     .I0(sw_7_IBUF_5),
     .I1(sw_0_IBUF_12),
     .I2(btn_1_IBUF_3),
     .I3(\anti_jitter/sw_temp [0]),
     .I4(\anti_jitter/btn_temp [1]),
     .I5(\anti_jitter/sw_temp [7]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1_308 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o1_308 )
   );
   LUT6 #(
     .INIT ( 64'h5FF50FF0DFFDCFFC ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o2  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o2  (
     .I0(sw_5_IBUF_7),
     .I1(sw_7_IBUF_5),
     .I2(sw_6_IBUF_6),
     .I3(\anti_jitter/sw_temp [6]),
     .I4(\anti_jitter/sw_temp [5]),
     .I5(\anti_jitter/sw_temp [7]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o2_309 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o2_309 )
   );
   LUT6 #(
     .INIT ( 64'h5FF50FF0DFFDCFFC ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o3  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o3  (
     .I0(sw_3_IBUF_9),
     .I1(sw_5_IBUF_7),
     .I2(sw_4_IBUF_8),
     .I3(\anti_jitter/sw_temp [4]),
     .I4(\anti_jitter/sw_temp [3]),
     .I5(\anti_jitter/sw_temp [5]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o3_310 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o3_310 )
   );
   LUT6 #(
     .INIT ( 64'h3FCFF3FCBFEFFBFE ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o4  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4  (
     .I0(btn_4_IBUF_0),
     .I1(btn_3_IBUF_1),
     .I2(btn_2_IBUF_2),
     .I3(\anti_jitter/btn_temp [3]),
     .I4(\anti_jitter/btn_temp [2]),
     .I5(\anti_jitter/btn_temp [4]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o4_311 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4_311 )
   );
   LUT6 #(
     .INIT ( 64'h5FF50FF0DFFDCFFC ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o5  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o5  (
     .I0(sw_1_IBUF_11),
     .I1(sw_3_IBUF_9),
     .I2(sw_2_IBUF_10),
     .I3(\anti_jitter/sw_temp [2]),
     .I4(\anti_jitter/sw_temp [1]),
     .I5(\anti_jitter/sw_temp [3]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o5_312 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o5_312 )
   );
   LUT6 #(
     .INIT ( 64'h5FF50FF0DFFDCFFC ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o6  (
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6  (
     .I0(btn_4_IBUF_0),
     .I1(sw_1_IBUF_11),
     .I2(btn_0_IBUF_4),
     .I3(\anti_jitter/btn_temp [0]),
     .I4(\anti_jitter/btn_temp [4]),
     .I5(\anti_jitter/sw_temp [1]),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o6_313 )
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6_313 )
   );
   LUT6 #(
     .INIT ( 64'hFFFFFFFFFFFFFFFE ))
-  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o7  (
-    .I0(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1_308 ),
-    .I1(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o4_311 ),
-    .I2(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o6_313 ),
-    .I3(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o5_312 ),
-    .I4(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o3_310 ),
-    .I5(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o2_309 ),
-    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o )
+  \anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o7  (
+    .I0(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o1_308 ),
+    .I1(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4_311 ),
+    .I2(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6_313 ),
+    .I3(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o5_312 ),
+    .I4(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o3_310 ),
+    .I5(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o2_309 ),
+    .O(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o )
   );
   IBUF   btn_4_IBUF (
     .I(btn[4]),
@@ -2303,12 +2303,12 @@ module openmips_min_sopc (
   LUT6 #(
     .INIT ( 64'h0000000000000001 ))
   \anti_jitter/_n0054_inv1_cepot  (
-    .I0(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o1_308 ),
-    .I1(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o4_311 ),
-    .I2(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o6_313 ),
-    .I3(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o5_312 ),
-    .I4(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o3_310 ),
-    .I5(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o2_309 ),
+    .I0(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o1_308 ),
+    .I1(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4_311 ),
+    .I2(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6_313 ),
+    .I3(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o5_312 ),
+    .I4(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o3_310 ),
+    .I5(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o2_309 ),
     .O(\anti_jitter/_n0054_inv1_cepot_412 )
   );
   LUT3 #(
@@ -2338,97 +2338,97 @@ module openmips_min_sopc (
   FDR   \anti_jitter/counter_9  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_9_rstpot_416 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [9])
   );
   FDR   \anti_jitter/counter_8  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_8_rstpot_417 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [8])
   );
   FDR   \anti_jitter/counter_7  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_7_rstpot_418 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [7])
   );
   FDR   \anti_jitter/counter_6  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_6_rstpot_419 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [6])
   );
   FDR   \anti_jitter/counter_5  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_5_rstpot_420 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [5])
   );
   FDR   \anti_jitter/counter_4  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_4_rstpot_421 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [4])
   );
   FDR   \anti_jitter/counter_3  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_3_rstpot_422 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [3])
   );
   FDR   \anti_jitter/counter_2  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_2_rstpot_423 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [2])
   );
   FDR   \anti_jitter/counter_1  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_1_rstpot_424 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [1])
   );
   FDR   \anti_jitter/counter_0  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_0_rstpot_425 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [0])
   );
   FDR   \anti_jitter/counter_10  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_10_rstpot_426 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [10])
   );
   FDR   \anti_jitter/counter_11  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_11_rstpot_427 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [11])
   );
   FDR   \anti_jitter/counter_12  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_12_rstpot_428 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [12])
   );
   FDR   \anti_jitter/counter_13  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_13_rstpot_429 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [13])
   );
   FDR   \anti_jitter/counter_14  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_14_rstpot_430 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [14])
   );
   FDR   \anti_jitter/counter_15  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_15_rstpot_431 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [15])
   );
   LUT3 #(
@@ -2562,7 +2562,7 @@ module openmips_min_sopc (
   FDR   \anti_jitter/counter_16  (
     .C(clk_100mhz_BUFGP_13),
     .D(\anti_jitter/counter_16_rstpot_432 ),
-    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_256_o ),
+    .R(\anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o ),
     .Q(\anti_jitter/counter [16])
   );
   LUT3 #(

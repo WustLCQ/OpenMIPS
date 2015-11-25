@@ -55,6 +55,56 @@ module ex(
 	 reg[`RegBus]	HI;
 	 reg[`RegBus]	LO;
 	 
+	 wire				ov_sum;					//保存溢出情况
+	 wire				reg1_eq_reg2;			//第一个操作数是否等于第二个操作数
+	 wire				reg1_lt_reg2;			//第一个操作数是否小羽第二个操作数
+	 reg[`RegBus]	arithmeticres;			//保存算术运算的结果
+	 wire[`RegBus]	reg2_i_mux;				//保存输入的第二个操作数的补码
+	 wire[`RegBus]	reg1_i_not;				//保存输入的第一个操作数的反码
+	 wire[`RegBus]	result_sum;				//保存加法结果
+	 wire[`RegBus]	opdata1_mult;			//乘法操作中的被乘数
+	 wire[`RegBus]	opdata2_mult;			//乘法操作中的乘数
+	 wire[`DoubleRegBus]	hilo_temp;		//临时保存乘法结果，宽度为64位
+	 reg[`DoubleRegBus]	mulres;			//保存乘法结果，宽度为64位
+	 
+	 //如果是减法或者有符号比较运算，那么reg2_i_mux等于第二个操作数reg2_i的补码
+	 //否则reg2_i_mux就等于第二个操作数
+	 assign	reg2_i_mux	=	((aluop_i == `EXE_SUB_OP)||
+									 (aluop_i == `EXE_SUBU_OP)||
+									 (aluop_i == `EXE_SLT_OP))?
+									(~reg2_i)+1:reg2_i;
+	
+	//分三种情况：
+	//A、如果是加法运算，此时reg2_i_mux就是第二个操作数reg2_i
+	//	所以result_sum就是加法运算的结果
+	//B、如果是减法运算，此时reg2_i_mux就是第二个操作数reg2_i的补码
+	//	所以result_sum就是减法运算的结果
+	//C、如果是有符号比较运算，此时reg2_i_mux就是第二个操作数reg2_i的补码
+	//	所以result_sum是减法运算的结果，可以通过判断减法的结果是否小于零来比较
+	assign result_sum	=	reg1_i + reg2_i_mux;
+	
+	//在加法指令和减法指令执行的时候要判断溢出，以下两种情况会发生溢出：
+	//A、reg1_i为正数，reg2_i_mux为正数，但两者之和为负数
+	//B、reg1_i为负数，reg2_i_mux为负数，但两者之和为正数
+	assign ov_sum = ((!reg1_i[31] && !reg_i_mux[31]) && result_sum[31])||
+							((reg1_i[31] && reg2_i_mux[31]) && (!result_sum[31]));
+	
+	
+	//计算操作数1是否小于操作数2，分为两种情况：
+	//A、aluop_i为EXE_SLT_OP表示有符号比较运算，此时又分三种情况：
+	//	A1、reg1_i为负数、reg2_i为正数，显然reg1_i小于reg2_i
+	//	A2、reg1_i为正数、reg2_i为正数，并且reg1_i减去reg2_i小于0,此时reg1_i小于reg2_i
+	//	A3、reg1_i为负数、reg2_i为负数，并且reg1_i减去reg2_i小于0,此时reg1_i小于reg2_i
+	//B、无符号数比较的时候，直接使用比较运算符比较reg1_i与reg2_i
+	assign reg1_lt_reg2 = (aluop_i == `EXE_SLT_OP)?
+								((reg1_i[31] && !reg2_i[31])||
+								((!reg1_i[31] && !reg2_i[31]) && result_sum[31])||
+								(reg1_i[31] && reg2_i[31] && result_sum[31])):
+								(reg1_i < reg2_i);
+	
+	//第一个操作数的反码
+	assign reg1_i_not = ~reg1_i;
+	 
 	 //逻辑运算
 	 always @(*) begin
 		if(rst == `RstEnable) begin
@@ -139,6 +189,59 @@ module ex(
 				end
 				default:	begin
 					shiftres	<=	`ZeroWord;
+				end
+			endcase
+		end
+	end
+	
+	//算术运算
+	always @(*) begin
+		if(rst == `RstEnable) begin
+			arithmeticres	<=	`ZeroWord;
+		end else begin
+			case (aluop_i)
+				`EXE_SLT_OP,`EXE_SLTU_OP:	begin
+					arithmeticres	<=	reg1_lt_reg2;
+				end
+				`EXE_ADD_OP,`EXE_ADDU_OP,`EXE_ADDI_OP,`EXE_ADDIU_OP:	begin
+					arithmeticres	<=	result_sum;
+				end
+				`EXE_SUB_OP,`EXE_SUBU_OP:	begin
+					arithmeticres	<=	result_sum;
+				end
+				`EXE_CLZ_OP:	begin
+					arithmeticres	<=	reg1_i[31] ? 0 :
+											reg1_i[30] ? 1	:
+											reg1_i[29] ? 2 :
+											reg1_i[28] ? 3	:
+											reg1_i[27] ? 4 :
+											reg1_i[26] ? 5	:
+											reg1_i[25] ? 6 :
+											reg1_i[24] ? 7	:
+											reg1_i[23] ? 8 :
+											reg1_i[22] ? 9	:
+											reg1_i[21] ? 10 :
+											reg1_i[20] ? 11 :
+											reg1_i[19] ? 12 :
+											reg1_i[18] ? 13 :
+											reg1_i[17] ? 14 :
+											reg1_i[16] ? 15 :
+											reg1_i[15] ? 16 :
+											reg1_i[14] ? 17 :
+											reg1_i[13] ? 18 :
+											reg1_i[12] ? 19 :
+											reg1_i[11] ? 20 :
+											reg1_i[10] ? 21 :
+											reg1_i[9] ? 22 :
+											reg1_i[8] ? 23	:
+											reg1_i[7] ? 24 :
+											reg1_i[6] ? 25	:
+											reg1_i[5] ? 26 :
+											reg1_i[4] ? 27 :
+											reg1_i[3] ? 28 :
+											reg1_i[2] ? 29 :
+											reg1_i[1] ? 30 :
+											reg1_i[0] ? 31 : 32;
 				end
 			endcase
 		end

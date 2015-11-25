@@ -1,7 +1,7 @@
 Release 13.2 Drc O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Wed Nov 11 15:12:16 2015
+Tue Nov 24 17:11:39 2015
 
 drc -z openmips_min_sopc.ncd openmips_min_sopc.pcf
 
