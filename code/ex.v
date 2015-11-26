@@ -104,6 +104,17 @@ module ex(
 	
 	//第一个操作数的反码
 	assign reg1_i_not = ~reg1_i;
+	
+	//取得乘法运算的被乘数，如果是有符号乘法且被乘数是负数，则取补码
+	assign opdata1_mult = (((aluop_i == `EXE_MUL_OP)||(aluop_i == `EXE_MULT_OP)) && 
+								(reg1_i[31] == 1'b1)) ? (~reg1_i + 1) : reg1_i;
+	
+	//取得乘法运算的乘数，如果是有符号乘法且乘数是负数，则取补码
+	assign opdata2_mult = (((aluop_i == `EXE_MUL_OP)||(aluop_i == `EXE_MULT_OP)) && 
+								(reg2_i[31] == 1'b1)) ? (~reg2i + 1) : reg2_i;
+								
+	//得到临时乘法结果，保存在变量hilo_temp中
+	assign hilo_temp = opdata1_mult * opdata2_mult;
 	 
 	 //逻辑运算
 	 always @(*) begin
@@ -243,7 +254,53 @@ module ex(
 											reg1_i[1] ? 30 :
 											reg1_i[0] ? 31 : 32;
 				end
+				`EXE_CLO_OP:	begin
+					arithmeticres	<=	reg1_i_not[31] ? 0 :
+											reg1_i_not[30] ? 1 :
+											reg1_i_not[29] ? 2 :
+											reg1_i_not[28] ? 3 :
+											reg1_i_not[27] ? 4 :
+											reg1_i_not[26] ? 5 :
+											reg1_i_not[25] ? 6 :
+											reg1_i_not[24] ? 7 :
+											reg1_i_not[23] ? 8 :
+											reg1_i_not[22] ? 9 :
+											reg1_i_not[21] ? 10 :
+											reg1_i_not[20] ? 11 :
+											reg1_i_not[19] ? 12 :
+											reg1_i_not[18] ? 13 :
+											reg1_i_not[17] ? 14 :
+											reg1_i_not[16] ? 15 :
+											reg1_i_not[15] ? 16 :
+											reg1_i_not[14] ? 17 :
+											reg1_i_not[13] ? 18 :
+											reg1_i_not[12] ? 19 :
+											reg1_i_not[11] ? 20 :
+											reg1_i_not[10] ? 21 :
+											reg1_i_not[9] ? 22 :
+											reg1_i_not[8] ? 23 :
+											reg1_i_not[7] ? 24 :
+											reg1_i_not[6] ? 25 :
+											reg1_i_not[5] ? 26 :
+											reg1_i_not[4] ? 27 :
+											reg1_i_not[3] ? 28 :
+											reg1_i_not[2] ? 29 :
+											reg1_i_not[1] ? 30 :
+											reg1_i_not[0] ? 31 : 32;
+				end
+				default:	begin
+					arithmeticres	<=	`ZeroWord;
+				end
 			endcase
+		end
+	end
+	
+	always @(*) begin
+		if(rst == `RstEnable) begin
+			mulres	<=	{`ZeroWord,`ZeroWord};
+		end else if ((aluop_i == `EXE_MULT_OP) || (aluop_i == `EXE_MUL_OP)) begin
+			if(reg1_i[31] ^ reg2_i[31] == 1'b1) begin
+			end
 		end
 	end
 	
