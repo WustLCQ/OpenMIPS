@@ -86,7 +86,7 @@ module ex(
 	//在加法指令和减法指令执行的时候要判断溢出，以下两种情况会发生溢出：
 	//A、reg1_i为正数，reg2_i_mux为正数，但两者之和为负数
 	//B、reg1_i为负数，reg2_i_mux为负数，但两者之和为正数
-	assign ov_sum = ((!reg1_i[31] && !reg_i_mux[31]) && result_sum[31])||
+	assign ov_sum = ((!reg1_i[31] && !reg2_i_mux[31]) && result_sum[31])||
 							((reg1_i[31] && reg2_i_mux[31]) && (!result_sum[31]));
 	
 	
@@ -111,7 +111,7 @@ module ex(
 	
 	//取得乘法运算的乘数，如果是有符号乘法且乘数是负数，则取补码
 	assign opdata2_mult = (((aluop_i == `EXE_MUL_OP)||(aluop_i == `EXE_MULT_OP)) && 
-								(reg2_i[31] == 1'b1)) ? (~reg2i + 1) : reg2_i;
+								(reg2_i[31] == 1'b1)) ? (~reg2_i + 1) : reg2_i;
 								
 	//得到临时乘法结果，保存在变量hilo_temp中
 	assign hilo_temp = opdata1_mult * opdata2_mult;
@@ -295,12 +295,19 @@ module ex(
 		end
 	end
 	
+	//乘法运算
+	//如果是有符号乘法mult、mul且被乘数与乘数一正一负时，需要对hilo_temp求补码
 	always @(*) begin
 		if(rst == `RstEnable) begin
 			mulres	<=	{`ZeroWord,`ZeroWord};
 		end else if ((aluop_i == `EXE_MULT_OP) || (aluop_i == `EXE_MUL_OP)) begin
 			if(reg1_i[31] ^ reg2_i[31] == 1'b1) begin
+				mulres	<=	~hilo_temp	+	1;
+			end else begin
+				mulres	<=	hilo_temp;
 			end
+		end else begin
+			mulres	<=	hilo_temp;
 		end
 	end
 	
@@ -317,6 +324,12 @@ module ex(
 			`EXE_RES_MOVE:	begin
 				wdata_o	<=	moveres;
 			end
+			`EXE_RES_ARITHMETIC:	begin
+				wdata_o	<=	arithmeticres;
+			end
+			`EXE_RES_MUL:	begin
+				wdata_o	<=	mulres[31:0];
+			end
 			default:	begin
 				wdata_o	<=	`ZeroWord;
 			end
@@ -329,6 +342,11 @@ module ex(
 			whilo_o	<=	`WriteDisable;
 			hi_o	<=	`ZeroWord;
 			lo_o	<=	`ZeroWord;
+		end else if((aluop_i == `EXE_MULT_OP) || 
+						(aluop_i	== `EXE_MULTU_OP))	begin
+			whilo_o	<=	`WriteEnable;
+			hi_o	<=	mulres[63:32];
+			lo_o	<=	mulres[31:0];
 		end else if(aluop_i	==	`EXE_MTHI_OP)	begin
 			whilo_o	<=	`WriteEnable;
 			hi_o	<=	reg1_i;
