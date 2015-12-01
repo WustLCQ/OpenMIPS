@@ -11,9 +11,6 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"E:\Workspace\ISE\OpenMIPS\code\id.v" Line 64: Assignment to <arg fmt="%s" index="1">instvalid</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"E:\Workspace\ISE\OpenMIPS\code\ex.v" Line 89: Assignment to <arg fmt="%s" index="1">ov_sum</arg> ignored, since the identifier is never used
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="189" delta="new" >"E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 228: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wb_whilo</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
 </msg>
 

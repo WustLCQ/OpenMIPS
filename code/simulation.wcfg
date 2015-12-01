@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="/openmips_min_sopc_tb/seg" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">seg[7:0]</obj_property>
       <obj_property name="ObjectShortName">seg[7:0]</obj_property>
@@ -50,11 +50,6 @@
       <obj_property name="ObjectShortName">regs[3,31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/regfile/regs[4]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[4,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regs[4,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/hilo_reg/hi" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">hi[31:0]</obj_property>
       <obj_property name="ObjectShortName">hi[31:0]</obj_property>
@@ -64,23 +59,5 @@
       <obj_property name="ElementShortName">lo[31:0]</obj_property>
       <obj_property name="ObjectShortName">lo[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/hilo_reg/we" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">we</obj_property>
-      <obj_property name="ObjectShortName">we</obj_property>
-   </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/hi_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">hi_o[31:0]</obj_property>
-      <obj_property name="ObjectShortName">hi_o[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/HI" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">HI[31:0]</obj_property>
-      <obj_property name="ObjectShortName">HI[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/aluop_i" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">aluop_i[7:0]</obj_property>
-      <obj_property name="ObjectShortName">aluop_i[7:0]</obj_property>
    </wvobject>
 </wave_config>

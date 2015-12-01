@@ -181,7 +181,6 @@ Elaborating module <hilo_reg>.
 Elaborating module <id_ex>.
 
 Elaborating module <ex>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\ex.v" Line 89: Assignment to ov_sum ignored, since the identifier is never used
 
 Elaborating module <ex_mem>.
 
@@ -484,15 +483,15 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 303
+# BELS                             : 315
 #      GND                         : 2
 #      INV                         : 3
 #      LUT1                        : 64
 #      LUT2                        : 5
-#      LUT3                        : 21
+#      LUT3                        : 20
 #      LUT4                        : 10
-#      LUT5                        : 18
-#      LUT6                        : 38
+#      LUT5                        : 25
+#      LUT6                        : 44
 #      MUXCY                       : 70
 #      MUXF7                       : 4
 #      VCC                         : 1
@@ -516,14 +515,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              83  out of  18224     0%  
- Number of Slice LUTs:                  159  out of   9112     1%  
-    Number used as Logic:               159  out of   9112     1%  
+ Number of Slice LUTs:                  171  out of   9112     1%  
+    Number used as Logic:               171  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    169
-   Number with an unused Flip Flop:      86  out of    169    50%  
-   Number with an unused LUT:            10  out of    169     5%  
-   Number of fully used LUT-FF pairs:    73  out of    169    43%  
+ Number of LUT Flip Flop pairs used:    181
+   Number with an unused Flip Flop:      98  out of    181    54%  
+   Number with an unused LUT:            10  out of    181     5%  
+   Number of fully used LUT-FF pairs:    73  out of    181    40%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -567,7 +566,7 @@ Speed Grade: -3
 
    Minimum period: 4.101ns (Maximum Frequency: 243.849MHz)
    Minimum input arrival time before clock: 6.004ns
-   Maximum output required time after clock: 8.489ns
+   Maximum output required time after clock: 8.610ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -590,8 +589,8 @@ Delay:               4.101ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               1   0.447   0.808  anti_jitter/sw_temp_0 (anti_jitter/sw_temp_0)
-     LUT6:I3->O            2   0.205   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o1)
-     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o)
+     LUT6:I3->O            2   0.205   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o)
      FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
     Total                      4.101ns (1.285ns logic, 2.816ns route)
@@ -611,8 +610,8 @@ Offset:              6.004ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            54   1.222   1.938  sw_7_IBUF (sw_7_IBUF)
-     LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o1)
-     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_369_o)
+     LUT6:I0->O            2   0.203   0.981  anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o1 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o1)
+     LUT6:I0->O           17   0.203   1.027  anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o7 (anti_jitter/btn_temp[4]_sw_temp[7]_OR_390_o)
      FDR:R                     0.430          anti_jitter/counter_9
     ----------------------------------------
     Total                      6.004ns (2.058ns logic, 3.946ns route)
@@ -620,29 +619,29 @@ Offset:              6.004ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 1965 / 19
+  Total number of paths / destination ports: 1937 / 19
 -------------------------------------------------------------------------
-Offset:              8.489ns (Levels of Logic = 7)
-  Source:            openmips/pc_reg/pc_3 (FF)
+Offset:              8.610ns (Levels of Logic = 7)
+  Source:            openmips/pc_reg/pc_7 (FF)
   Destination:       seg<6> (PAD)
   Source Clock:      clk_100mhz rising
 
-  Data Path: openmips/pc_reg/pc_3 to seg<6>
+  Data Path: openmips/pc_reg/pc_7 to seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             17   0.447   1.372  openmips/pc_reg/pc_3 (openmips/pc_reg/pc_3)
-     begin scope: 'inst_rom:a<1>'
-     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1311_SW0 (N14)
-     LUT6:I5->O            6   0.205   0.992  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1311 (spo<6>)
-     end scope: 'inst_rom:spo<11>'
-     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_43 (mux8t1_4/Mmux_o_43)
-     MUXF7:I0->O           7   0.131   1.002  mux8t1_4/Mmux_o_2_f7_2 (digit<3>)
-     LUT4:I1->O            1   0.205   0.579  seg<6>1 (seg_6_OBUF)
-     OBUF:I->O                 2.571          seg_6_OBUF (seg<6>)
+     FDR:C->Q             24   0.447   1.537  openmips/pc_reg/pc_7 (openmips/pc_reg/pc_7)
+     begin scope: 'inst_rom:a<5>'
+     LUT6:I0->O            1   0.203   0.580  spo<7>_SW0 (N14)
+     LUT5:I4->O            4   0.205   0.931  spo<7> (spo<6>)
+     end scope: 'inst_rom:spo<9>'
+     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_41 (mux8t1_4/Mmux_o_41)
+     MUXF7:I0->O           7   0.131   1.021  mux8t1_4/Mmux_o_2_f7_0 (digit<1>)
+     LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment11 (seg_0_OBUF)
+     OBUF:I->O                 2.571          seg_0_OBUF (seg<0>)
     ----------------------------------------
-    Total                      8.489ns (3.965ns logic, 4.524ns route)
-                                       (46.7% logic, 53.3% route)
+    Total                      8.610ns (3.963ns logic, 4.647ns route)
+                                       (46.0% logic, 54.0% route)
 
 =========================================================================
 
@@ -660,14 +659,14 @@ clk_100mhz     |    4.101|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.84 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.35 secs
  
 --> 
 
-Total memory usage is 236104 kilobytes
+Total memory usage is 235656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   68 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

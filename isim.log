@@ -15,6 +15,12 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 Finished circuit initialization process.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+Finished circuit initialization process.
+Stopped at time : 2200 ns :  in File "E:/Workspace/ISE/OpenMIPS/code/openmips_min_sopc_tb.v" Line 60 
 ISim O.61xd (signature 0x6dd86d03)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
@@ -27,99 +33,5 @@ WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance
 Simulator is doing circuit initialization process.
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
-ISim O.61xd (signature 0x6dd86d03)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-WARNING: File "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 56.  For instance openmips/mem_wb/, width 32 of formal port wb_whilo is not equal to width 1 of actual signal wb_whilo_i.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-Finished circuit initialization process.
+# run all
+Stopped at time : 2200 ns :  in File "E:/Workspace/ISE/OpenMIPS/code/openmips_min_sopc_tb.v" Line 60 

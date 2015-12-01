@@ -351,6 +351,16 @@ module id(
 					wd_o	<=	inst_i[20:16];
 					instvalid	<=	`InstValid;
 				end
+				`EXE_ADDI:	begin
+					wreg_o	<=	`WriteEnable;
+					aluop_o	<=	`EXE_ADDI_OP;
+					alusel_o	<=	`EXE_RES_ARITHMETIC;
+					reg1_read_o	<=	1'b1;
+					reg2_read_o	<=	1'b0;
+					imm	<=	{{16{inst_i[15]}},inst_i[15:0]};
+					wd_o	<=	inst_i[20:16];
+					instvalid	<=	`InstValid;
+				end
 				`EXE_ADDIU:	begin
 					wreg_o	<=	`WriteEnable;
 					aluop_o	<=	`EXE_ADDIU_OP;
@@ -382,6 +392,7 @@ module id(
 						`EXE_MUL:	begin
 							wreg_o	<=	`WriteEnable;
 							aluop_o	<=	`EXE_MUL_OP;
+							alusel_o	<=	`EXE_RES_MUL;
 							reg1_read_o	<=	1'b1;
 							reg2_read_o	<=	1'b1;
 							instvalid	<=	`InstValid;
