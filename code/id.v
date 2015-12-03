@@ -48,7 +48,8 @@ module id(
 	output reg[`RegBus]		reg1_o,			//要操作的数，有可能是从寄存器读取的，有可能是立即数
 	output reg[`RegBus]		reg2_o,
 	output reg[`RegAddrBus]	wd_o,				//写地址
-	output reg					wreg_o			//写使能
+	output reg					wreg_o,			//写使能
+	output reg				stallreq_from_id	//流水线暂停指令
     );
 	 
 	 wire[5:0] op = inst_i[31:26];
@@ -73,6 +74,7 @@ module id(
 			reg1_addr_o	<= `NOPRegAddr;
 			reg2_addr_o <= `NOPRegAddr;
 			imm		<= `ZeroWord;
+			stallreq_from_id	<=	`NoStop;
 		end else begin
 			//先初始化，然后根据操作码赋值
 			aluop_o	<= `EXE_NOP_OP;
@@ -85,7 +87,7 @@ module id(
 			reg1_addr_o	<= inst_i[25:21];
 			reg2_addr_o	<= inst_i[20:16];
 			imm 		<= `ZeroWord;
-			
+			stallreq_from_id	<=	`NoStop;
 			case (op)
 				`EXE_SPECIAL_INST:	begin
 					case(op2)

@@ -46,7 +46,8 @@ module ex(
 	
 	output	reg[`RegAddrBus]	wd_o,		//运算结果要写入的目标寄存器地址
 	output	reg	wreg_o,					//使能写
-	output	reg[`RegBus]	wdata_o		//要写入目标寄存器的运算结果
+	output	reg[`RegBus]	wdata_o,		//要写入目标寄存器的运算结果
+	output	reg	stallreq_from_ex		//流水线暂停指令
     );
 	 
 	 reg[`RegBus]	logicout;				//保存逻辑运算结果

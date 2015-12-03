@@ -23,6 +23,7 @@
 module ex_mem(
 	input	clk,
 	input	rst,
+	input	[5:0]	stall,
 	
 	input	[`RegAddrBus]	ex_wd,
 	input						ex_wreg,
@@ -47,7 +48,14 @@ module ex_mem(
 			mem_hi	<=	`ZeroWord;
 			mem_lo	<=	`ZeroWord;
 			mem_whilo	<=	`WriteDisable;
-		end else begin
+		end else if(stall[3] == `Stop && stall[4] == `NoStop) begin
+			mem_wd <= `NOPRegAddr;
+			mem_wreg <= `WriteDisable;
+			mem_wdata	<= `ZeroWord;
+			mem_hi	<=	`ZeroWord;
+			mem_lo	<=	`ZeroWord;
+			mem_whilo	<=	`WriteDisable;
+		end else if(stall[3] == `NoStop) begin
 			mem_wd <= ex_wd;
 			mem_wreg <= ex_wreg;
 			mem_wdata	<= ex_wdata;

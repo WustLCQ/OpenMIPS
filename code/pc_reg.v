@@ -23,6 +23,7 @@
 module pc_reg(
 	input clk,
 	input rst,
+	input [5:0]	stall,
 	output reg[`InstAddrBus] pc,
 	output reg	ce
     );
@@ -40,7 +41,7 @@ module pc_reg(
 		//个人认为改成rst == `RstEnable要好一些
 		if (rst == `RstEnable) begin
 			pc <= `ZeroWord;
-		end else begin
+		end else if(stall[0] == `NoStop) begin
 			pc <= pc + 4'h4;
 		end
 	end

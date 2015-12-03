@@ -30,8 +30,8 @@
 `define AluSelBus 2:0
 `define InstValid 1'b0					//指令有效
 `define InstInvalid 1'b1				//指令无效
-`define Stop 1'b1				
-`define NoStop 1'b0
+`define Stop 1'b1							//流水线暂停信号			
+`define NoStop 1'b0						//流水线暂停信号
 `define InDelaySlot 1'b1
 `define NotInDelaySlot 1'b0
 `define Branch 1'b1
