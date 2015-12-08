@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="20" />
    <wvobject fp_name="/openmips_min_sopc_tb/seg" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">seg[7:0]</obj_property>
       <obj_property name="ObjectShortName">seg[7:0]</obj_property>
@@ -45,11 +45,6 @@
       <obj_property name="ObjectShortName">regs[2,31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/regfile/regs[3]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[3,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regs[3,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/hilo_reg/hi" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">hi[31:0]</obj_property>
       <obj_property name="ObjectShortName">hi[31:0]</obj_property>
@@ -58,6 +53,56 @@
    <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/hilo_reg/lo" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">lo[31:0]</obj_property>
       <obj_property name="ObjectShortName">lo[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/id_inst_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">id_inst_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">id_inst_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/reg1_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg1_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/reg2_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg2_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex/wdata_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wdata_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata_o[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex_mem/ex_wdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ex_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ex_wdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/ex_mem/mem_wdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/mem_wb/wb_wdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_wdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/mem_wb/mem_wdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/mem/wdata_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wdata_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/openmips_min_sopc_tb/uut/openmips/mem/wdata_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wdata_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata_o[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>

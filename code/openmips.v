@@ -71,6 +71,10 @@ module openmips(
 	wire[`RegBus]	ex_hi_o;
 	wire[`RegBus]	ex_lo_o;
 	wire				ex_whilo_o;
+	wire[`DoubleRegBus]	ex_hilo_temp_i;
+	wire[1:0]				ex_cnt_i;
+	wire[`DoubleRegBus]	ex_hilo_temp_o;
+	wire[1:0]				ex_cnt_o;
 	
 	wire	mem_wreg_i;
 	wire[`RegAddrBus]	mem_wd_i;
@@ -179,6 +183,8 @@ module openmips(
 		.reg2_i(ex_reg2_i),
 		.wd_i(ex_wd_i),
 		.wreg_i(ex_wreg_i),
+		.cnt_i(ex_cnt_i),
+		.hilo_temp_i(ex_hilo_temp_i),
 		.hi_i(hi_data),
 		.lo_i(lo_data),
 		.wb_hi_i(wb_hi_i),
@@ -193,6 +199,8 @@ module openmips(
 		.hi_o(ex_hi_o),
 		.lo_o(ex_lo_o),
 		.whilo_o(ex_whilo_o),
+		.cnt_o(ex_cnt_o),
+		.hilo_temp_o(ex_hilo_temp_o),
 		.stallreq_from_ex(stallreq_from_ex));
 		
 	ex_mem ex_mem(
@@ -205,12 +213,16 @@ module openmips(
 		.ex_hi(ex_hi_o),
 		.ex_lo(ex_lo_o),
 		.ex_whilo(ex_whilo_o),
+		.cnt_i(ex_cnt_o),
+		.hilo_i(ex_hilo_temp_o),
 		.mem_wd(mem_wd_i),
 		.mem_wreg(mem_wreg_i),
 		.mem_wdata(mem_wdata_i),
 		.mem_hi(mem_hi_i),
 		.mem_lo(mem_lo_i),
-		.mem_whilo(mem_whilo_i));
+		.mem_whilo(mem_whilo_i),
+		.cnt_o(ex_cnt_i),
+		.hilo_o(ex_hilo_i));
 		
 	mem mem(
 		.rst(rst),

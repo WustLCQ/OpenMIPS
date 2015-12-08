@@ -399,6 +399,38 @@ module id(
 							reg2_read_o	<=	1'b1;
 							instvalid	<=	`InstValid;
 						end
+						`EXE_MADD:	begin
+							wreg_o	<=	`WriteDisable;
+							aluop_o	<=	`EXE_MADD_OP;
+							alusel_o	<=	`EXE_RES_MUL;
+							reg1_read_o	<=	1'b1;
+							reg2_read_o	<=	1'b1;
+							instvalid	<=	`InstValid;
+						end
+						`EXE_MADDU:	begin
+							wreg_o	<=	`WriteDisable;
+							aluop_o	<=	`EXE_MADDU_OP;
+							alusel_o	<=	`EXE_RES_MUL;
+							reg1_read_o	<=	1'b1;
+							reg2_read_o	<=	1'b1;
+							instvalid	<=	`InstValid;
+						end
+						`EXE_SUB:	begin
+							wreg_o	<=	`WriteDisable;
+							aluop_o	<=	`EXE_SUB_OP;
+							alusel_o	<=	`EXE_RES_MUL;
+							reg1_read_o	<=	1'b1;
+							reg2_read_o	<=	1'b1;
+							instvalid	<=	`InstValid;
+						end
+						`EXE_SUBU:	begin
+							wreg_o	<=	`WriteDisable;
+							aluop_o	<=	`EXE_SUBU_OP;
+							alusel_o	<=	`EXE_RES_MUL;
+							reg1_read_o	<=	1'b1;
+							reg2_read_o	<=	1'b1;
+							instvalid	<=	`InstValid;
+						end
 						default:	begin
 						end
 					endcase

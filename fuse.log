@@ -13,6 +13,7 @@ Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/id.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/hilo_reg.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/ex_mem.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/ex.v\" into library work
+Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/ctrl.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/ipcore_dir/inst_rom.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/openmips.v\" into library work
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/mux8t1_4.v\" into library work
@@ -24,11 +25,13 @@ Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/openmips_min_sopc.v\" in
 Analyzing Verilog file \"E:/Workspace/ISE/OpenMIPS/code/openmips_min_sopc_tb.v\" into library work
 Analyzing Verilog file \"D:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v\" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 228: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 225: Size mismatch in connection of port <hilo_o>. Formal port size is 64-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:/Workspace/ISE/OpenMIPS/code/openmips.v" Line 257: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
 Completed static elaboration
 Fuse Memory Usage: 149300 KB
-Fuse CPU Usage: 171 ms
+Fuse CPU Usage: 140 ms
 Compiling module pc_reg
+Compiling module ctrl
 Compiling module if_id
 Compiling module id
 Compiling module regfile
@@ -50,8 +53,8 @@ Compiling module openmips_min_sopc
 Compiling module openmips_min_sopc_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 14 sub-compilation(s) to finish...
-Compiled 21 Verilog Units
+Waiting for 15 sub-compilation(s) to finish...
+Compiled 22 Verilog Units
 Built simulation executable E:/Workspace/ISE/OpenMIPS/openmips_min_sopc_tb_isim_beh.exe
-Fuse Memory Usage: 154716 KB
-Fuse CPU Usage: 374 ms
+Fuse Memory Usage: 157468 KB
+Fuse CPU Usage: 358 ms
