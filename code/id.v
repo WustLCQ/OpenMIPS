@@ -415,17 +415,17 @@ module id(
 							reg2_read_o	<=	1'b1;
 							instvalid	<=	`InstValid;
 						end
-						`EXE_SUB:	begin
+						`EXE_MSUB:	begin
 							wreg_o	<=	`WriteDisable;
-							aluop_o	<=	`EXE_SUB_OP;
+							aluop_o	<=	`EXE_MSUB_OP;
 							alusel_o	<=	`EXE_RES_MUL;
 							reg1_read_o	<=	1'b1;
 							reg2_read_o	<=	1'b1;
 							instvalid	<=	`InstValid;
 						end
-						`EXE_SUBU:	begin
+						`EXE_MSUBU:	begin
 							wreg_o	<=	`WriteDisable;
-							aluop_o	<=	`EXE_SUBU_OP;
+							aluop_o	<=	`EXE_MSUBU_OP;
 							alusel_o	<=	`EXE_RES_MUL;
 							reg1_read_o	<=	1'b1;
 							reg2_read_o	<=	1'b1;

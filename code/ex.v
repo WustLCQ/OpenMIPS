@@ -310,7 +310,7 @@ module ex(
 		if(rst == `RstEnable) begin
 			mulres	<=	{`ZeroWord,`ZeroWord};
 		end else if ((aluop_i == `EXE_MULT_OP) || (aluop_i == `EXE_MUL_OP)||
-						(aluop_i == `EXE_MADD_OP) || (aluop_i == `EXE_SUB_OP)) begin
+						(aluop_i == `EXE_MADD_OP) || (aluop_i == `EXE_MSUB_OP)) begin
 			if(reg1_i[31] ^ reg2_i[31] == 1'b1) begin
 				mulres	<=	~hilo_temp	+	1;
 			end else begin
@@ -346,6 +346,7 @@ module ex(
 					if(cnt_i == 2'b00)	begin
 						hilo_temp_o <= ~mulres + 1;
 						cnt_o	<=	2'b01;
+						hilo_temp1	<=	{`ZeroWord,`ZeroWord};
 						stallreq_for_madd_msub	<=	`Stop;
 					end else if(cnt_i == 2'b01)	begin
 						hilo_temp_o <= {`ZeroWord,`ZeroWord};

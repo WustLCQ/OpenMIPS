@@ -222,7 +222,7 @@ module openmips(
 		.mem_lo(mem_lo_i),
 		.mem_whilo(mem_whilo_i),
 		.cnt_o(ex_cnt_i),
-		.hilo_o(ex_hilo_i));
+		.hilo_o(ex_hilo_temp_i));
 		
 	mem mem(
 		.rst(rst),

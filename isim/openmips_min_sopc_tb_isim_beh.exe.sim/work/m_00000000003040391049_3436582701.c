@@ -65,8 +65,10 @@ static unsigned int ng40[] = {169U, 0U};
 static unsigned int ng41[] = {5U, 0U};
 static unsigned int ng42[] = {166U, 0U};
 static unsigned int ng43[] = {168U, 0U};
-static int ng44[] = {4, 0};
-static int ng45[] = {0, 0};
+static unsigned int ng44[] = {170U, 0U};
+static unsigned int ng45[] = {171U, 0U};
+static int ng46[] = {4, 0};
+static int ng47[] = {0, 0};
 
 
 
@@ -1422,12 +1424,12 @@ LAB157:    t2 = ((char*)((ng1)));
     if (t30 == 1)
         goto LAB158;
 
-LAB159:    t2 = ((char*)((ng24)));
+LAB159:    t2 = ((char*)((ng7)));
     t30 = xsi_vlog_unsigned_case_compare(t7, 6, t2, 6);
     if (t30 == 1)
         goto LAB160;
 
-LAB161:    t2 = ((char*)((ng25)));
+LAB161:    t2 = ((char*)((ng41)));
     t30 = xsi_vlog_unsigned_case_compare(t7, 6, t2, 6);
     if (t30 == 1)
         goto LAB162;
@@ -2432,7 +2434,7 @@ LAB172:    xsi_set_current_line(419, ng0);
     t21 = (t0 + 2944);
     xsi_vlogvar_wait_assign_value(t21, t4, 0, 0, 1, 0LL);
     xsi_set_current_line(420, ng0);
-    t2 = ((char*)((ng24)));
+    t2 = ((char*)((ng44)));
     t4 = (t0 + 2484);
     xsi_vlogvar_wait_assign_value(t4, t2, 0, 0, 8, 0LL);
     xsi_set_current_line(421, ng0);
@@ -2460,7 +2462,7 @@ LAB173:    xsi_set_current_line(427, ng0);
     t21 = (t0 + 2944);
     xsi_vlogvar_wait_assign_value(t21, t4, 0, 0, 1, 0LL);
     xsi_set_current_line(428, ng0);
-    t2 = ((char*)((ng25)));
+    t2 = ((char*)((ng45)));
     t4 = (t0 + 2484);
     xsi_vlogvar_wait_assign_value(t4, t2, 0, 0, 8, 0LL);
     xsi_set_current_line(429, ng0);
@@ -2648,8 +2650,8 @@ LAB191:    xsi_set_current_line(444, ng0);
     t28 = (t0 + 3128);
     t29 = (t28 + 44U);
     t33 = *((char **)t29);
-    t34 = ((char*)((ng44)));
-    t35 = ((char*)((ng45)));
+    t34 = ((char*)((ng46)));
+    t35 = ((char*)((ng47)));
     xsi_vlog_convert_partindices(t36, t37, t38, ((int*)(t33)), 2, t34, 32, 1, t35, 32, 1);
     t45 = (t36 + 4);
     t15 = *((unsigned int *)t45);
@@ -2745,8 +2747,8 @@ LAB201:    xsi_set_current_line(453, ng0);
     t28 = (t0 + 3128);
     t29 = (t28 + 44U);
     t33 = *((char **)t29);
-    t34 = ((char*)((ng44)));
-    t35 = ((char*)((ng45)));
+    t34 = ((char*)((ng46)));
+    t35 = ((char*)((ng47)));
     xsi_vlog_convert_partindices(t36, t37, t38, ((int*)(t33)), 2, t34, 32, 1, t35, 32, 1);
     t45 = (t36 + 4);
     t15 = *((unsigned int *)t45);
@@ -2842,8 +2844,8 @@ LAB211:    xsi_set_current_line(462, ng0);
     t28 = (t0 + 3128);
     t29 = (t28 + 44U);
     t33 = *((char **)t29);
-    t34 = ((char*)((ng44)));
-    t35 = ((char*)((ng45)));
+    t34 = ((char*)((ng46)));
+    t35 = ((char*)((ng47)));
     xsi_vlog_convert_partindices(t36, t37, t38, ((int*)(t33)), 2, t34, 32, 1, t35, 32, 1);
     t45 = (t36 + 4);
     t15 = *((unsigned int *)t45);

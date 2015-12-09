@@ -2,9 +2,9 @@ Command line:
    openmips_min_sopc_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  21766
+     -socket  29667
 
-Tue Dec 08 16:57:33 2015
+Wed Dec 09 19:28:05 2015
 
 
  Elaboration Time: 0.0625 sec
