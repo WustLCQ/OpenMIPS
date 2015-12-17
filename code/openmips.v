@@ -89,6 +89,14 @@ module openmips(
 	wire[`RegBus]	mem_lo_o;
 	wire				mem_whilo_o;
 	
+	//除法指令部分
+	wire				signed_div;
+	wire[`RegBus]	div_opdata1;
+	wire[`RegBus]	div_opdata2;
+	wire				div_start;
+	wire[`DoubleRegBus]	div_result;
+	wire				div_ready;
+	
 	pc_reg	pc_reg(
 		.clk(clk),
 		.rst(rst),
@@ -193,6 +201,8 @@ module openmips(
 		.mem_hi_i(mem_hi_i),
 		.mem_lo_i(mem_lo_i),
 		.mem_whilo_i(mem_whilo_i),
+		.div_result_i(div_result),
+		.div_ready_i(div_ready),
 		.wd_o(ex_wd_o),
 		.wreg_o(ex_wreg_o),
 		.wdata_o(ex_wdata_o),
@@ -201,6 +211,10 @@ module openmips(
 		.whilo_o(ex_whilo_o),
 		.cnt_o(ex_cnt_o),
 		.hilo_temp_o(ex_hilo_temp_o),
+		.div_opdata1_o(div_opdata1),
+		.div_opdata2_o(div_opdata2),
+		.div_start_o(div_start),
+		.signed_div_o(signed_div),
 		.stallreq_from_ex(stallreq_from_ex));
 		
 	ex_mem ex_mem(
@@ -255,5 +269,16 @@ module openmips(
 		.wb_hi(wb_hi_i),
 		.wb_lo(wb_lo_i),
 		.wb_whilo(wb_whilo_i));
+		
+	div div(
+		.clk(clk),
+		.rst(rst),
+		.signed_div_i(signed_div),
+		.opdata1_i(div_opdata1),
+		.opdata2_i(div_opdata2),
+		.start_i(div_start),
+		.annul_i(1'b0),
+		.result_o(div_result),
+		.ready_o(div_ready));
 
 endmodule
