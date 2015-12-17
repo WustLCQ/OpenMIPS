@@ -57,7 +57,7 @@ module openmips_min_sopc_tb;
 		sw = 8'b10000000;
 		// Wait 100 ns for global reset to finish
 		#200	sw	=	8'b00000000;
-		#2000	$stop;
+		#3000	$stop;
 		// Add stimulus here
 	end
       
