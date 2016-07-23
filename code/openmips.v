@@ -97,10 +97,22 @@ module openmips(
 	wire[`DoubleRegBus]	div_result;
 	wire				div_ready;
 	
+	//转移指令部分
+	wire				branch_flag;
+	wire[`RegBus]	branch_target_address;
+	wire				is_in_delayslot_i;
+	wire				next_inst_in_delayslot;
+	wire[`RegBus]	id_link_address;
+	wire				is_in_delayslot_o;
+	wire[`RegBus]	ex_link_address;
+	wire				ex_is_in_delayslot;
+	
 	pc_reg	pc_reg(
 		.clk(clk),
 		.rst(rst),
 		.stall(stall),
+		.branch_flag_i(branch_flag),
+		.branch_target_address_i(branch_target_address),
 		.pc(pc),
 		.ce(rom_ce_o));
 	assign	rom_addr_o = pc;
@@ -132,6 +144,7 @@ module openmips(
 		.mem_wreg_i(mem_wreg_o),
 		.mem_wd_i(mem_wd_o),
 		.mem_wdata_i(mem_wdata_o),
+		.is_in_delayslot_i(is_in_delayslot_i),
 		.reg1_read_o(reg1_read),
 		.reg2_read_o(reg2_read),
 		.reg1_addr_o(reg1_addr),
@@ -142,7 +155,12 @@ module openmips(
 		.reg2_o(id_reg2_o),
 		.wd_o(id_wd_o),
 		.wreg_o(id_wreg_o),
-		.stallreq_from_id(stallreq_from_id));
+		.stallreq_from_id(stallreq_from_id),
+		.next_inst_in_delayslot_o(next_inst_in_delayslot),
+		.branch_flag_o(branch_flag),
+		.branch_target_address_o(branch_target_address),
+		.link_addr_o(id_link_address),
+		.is_in_delayslot_o(is_in_delayslot_o));
 		
 	regfile regfile(
 		.clk(clk),
@@ -176,12 +194,18 @@ module openmips(
 		.id_reg2(id_reg2_o),
 		.id_wd(id_wd_o),
 		.id_wreg(id_wreg_o),
+		.id_link_address(id_link_address),
+		.id_is_in_delayslot(is_in_delayslot_o),
+		.next_inst_in_delayslot_i(next_inst_in_delayslot),
 		.ex_aluop(ex_aluop_i),
 		.ex_alusel(ex_alusel_i),
 		.ex_reg1(ex_reg1_i),
 		.ex_reg2(ex_reg2_i),
 		.ex_wd(ex_wd_i),
-		.ex_wreg(ex_wreg_i));
+		.ex_wreg(ex_wreg_i),
+		.ex_link_address(ex_link_address),
+		.ex_is_in_delayslot(ex_is_in_delayslot),
+		.is_in_delayslot_o(is_in_delayslot_i));
 		
 	ex ex(
 		.rst(rst),
@@ -203,6 +227,8 @@ module openmips(
 		.mem_whilo_i(mem_whilo_i),
 		.div_result_i(div_result),
 		.div_ready_i(div_ready),
+		.link_address_i(ex_link_address),
+		.is_in_delayslot_i(ex_is_in_delayslot),
 		.wd_o(ex_wd_o),
 		.wreg_o(ex_wreg_o),
 		.wdata_o(ex_wdata_o),

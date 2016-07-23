@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: openmips_min_sopc.prj
 
@@ -180,7 +180,7 @@ Elaborating module <ctrl>.
 Elaborating module <if_id>.
 
 Elaborating module <id>.
-WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\id.v" Line 65: Assignment to instvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\Workspace\ISE\OpenMIPS\code\id.v" Line 77: Assignment to instvalid ignored, since the identifier is never used
 
 Elaborating module <regfile>.
 
@@ -195,7 +195,6 @@ Elaborating module <ex_mem>.
 Elaborating module <mem>.
 
 Elaborating module <mem_wb>.
-WARNING:HDLCompiler:189 - "E:\Workspace\ISE\OpenMIPS\code\openmips.v" Line 271: Size mismatch in connection of port <wb_whilo>. Formal port size is 32-bit while actual signal size is 1-bit.
 
 Elaborating module <div>.
 WARNING:HDLCompiler:413 - "E:\Workspace\ISE\OpenMIPS\code\div.v" Line 92: Result of 7-bit expression is truncated to fit in 6-bit target.
@@ -242,10 +241,11 @@ Synthesizing Unit <pc_reg>.
 WARNING:Xst:647 - Input <stall<5:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32-bit register for signal <pc>.
     Found 1-bit register for signal <ce>.
-    Found 32-bit adder for signal <pc[31]_GND_3_o_add_5_OUT> created at line 45.
+    Found 32-bit adder for signal <pc[31]_GND_3_o_add_6_OUT> created at line 50.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <pc_reg> synthesized.
 
 Synthesizing Unit <ctrl>.
@@ -266,14 +266,18 @@ Unit <if_id> synthesized.
 
 Synthesizing Unit <id>.
     Related source file is "e:/workspace/ise/openmips/code/id.v".
-WARNING:Xst:647 - Input <pc_i<31:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit comparator equal for signal <reg1_addr_o[4]_ex_wd_i[4]_equal_133_o> created at line 493
-    Found 5-bit comparator equal for signal <reg1_addr_o[4]_mem_wd_i[4]_equal_136_o> created at line 495
-    Found 5-bit comparator equal for signal <reg2_addr_o[4]_ex_wd_i[4]_equal_147_o> created at line 509
-    Found 5-bit comparator equal for signal <reg2_addr_o[4]_mem_wd_i[4]_equal_150_o> created at line 511
+    Found 32-bit adder for signal <pc_plus_8> created at line 73.
+    Found 32-bit adder for signal <pc_plus_4> created at line 74.
+    Found 32-bit adder for signal <imm_sll2_signedext[31]_pc_plus_4[31]_add_68_OUT> created at line 468.
+    Found 32-bit comparator equal for signal <reg1_o[31]_reg2_o[31]_equal_68_o> created at line 467
+    Found 5-bit comparator equal for signal <reg1_addr_o[4]_ex_wd_i[4]_equal_206_o> created at line 677
+    Found 5-bit comparator equal for signal <reg1_addr_o[4]_mem_wd_i[4]_equal_209_o> created at line 679
+    Found 5-bit comparator equal for signal <reg2_addr_o[4]_ex_wd_i[4]_equal_220_o> created at line 693
+    Found 5-bit comparator equal for signal <reg2_addr_o[4]_mem_wd_i[4]_equal_223_o> created at line 695
     Summary:
-	inferred   4 Comparator(s).
-	inferred  57 Multiplexer(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+	inferred  81 Multiplexer(s).
 Unit <id> synthesized.
 
 Synthesizing Unit <regfile>.
@@ -307,26 +311,30 @@ WARNING:Xst:647 - Input <stall<4:5>> is never used. This port will be preserved 
     Found 32-bit register for signal <ex_reg2>.
     Found 5-bit register for signal <ex_wd>.
     Found 1-bit register for signal <ex_wreg>.
+    Found 32-bit register for signal <ex_link_address>.
+    Found 1-bit register for signal <ex_is_in_delayslot>.
+    Found 1-bit register for signal <is_in_delayslot_o>.
     Found 8-bit register for signal <ex_aluop>.
     Summary:
-	inferred  81 D-type flip-flop(s).
+	inferred 115 D-type flip-flop(s).
 Unit <id_ex> synthesized.
 
 Synthesizing Unit <ex>.
     Related source file is "e:/workspace/ise/openmips/code/ex.v".
-    Found 6-bit subtractor for signal <PWR_11_o_GND_10_o_sub_61_OUT> created at line 215.
-    Found 32-bit adder for signal <result_sum> created at line 98.
-    Found 32-bit adder for signal <reg1_i[31]_GND_10_o_add_16_OUT> created at line 125.
-    Found 32-bit adder for signal <reg2_i[31]_GND_10_o_add_24_OUT> created at line 130.
-    Found 64-bit adder for signal <hilo_temp[63]_GND_10_o_add_155_OUT> created at line 322.
-    Found 64-bit adder for signal <hilo_temp_i[63]_HI[31]_add_162_OUT> created at line 348.
-    Found 64-bit adder for signal <mulres[63]_GND_10_o_add_171_OUT> created at line 354.
-    Found 32x32-bit multiplier for signal <hilo_temp> created at line 133.
-    Found 32-bit shifter logical left for signal <reg2_i[31]_reg1_i[4]_shift_left_58_OUT> created at line 209
-    Found 32-bit shifter logical right for signal <reg2_i[31]_reg1_i[4]_shift_right_59_OUT> created at line 212
-    Found 32-bit shifter logical left for signal <reg2_i[31]_PWR_11_o_shift_left_61_OUT> created at line 215
-    Found 32-bit 7-to-1 multiplexer for signal <wdata_o> created at line 448.
-    Found 32-bit 4-to-1 multiplexer for signal <_n0580> created at line 140.
+WARNING:Xst:647 - Input <is_in_delayslot_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 6-bit subtractor for signal <PWR_11_o_GND_10_o_sub_61_OUT> created at line 217.
+    Found 32-bit adder for signal <result_sum> created at line 100.
+    Found 32-bit adder for signal <reg1_i[31]_GND_10_o_add_16_OUT> created at line 127.
+    Found 32-bit adder for signal <reg2_i[31]_GND_10_o_add_24_OUT> created at line 132.
+    Found 64-bit adder for signal <hilo_temp[63]_GND_10_o_add_155_OUT> created at line 324.
+    Found 64-bit adder for signal <hilo_temp_i[63]_HI[31]_add_162_OUT> created at line 350.
+    Found 64-bit adder for signal <mulres[63]_GND_10_o_add_171_OUT> created at line 356.
+    Found 32x32-bit multiplier for signal <hilo_temp> created at line 135.
+    Found 32-bit shifter logical left for signal <reg2_i[31]_reg1_i[4]_shift_left_58_OUT> created at line 211
+    Found 32-bit shifter logical right for signal <reg2_i[31]_reg1_i[4]_shift_right_59_OUT> created at line 214
+    Found 32-bit shifter logical left for signal <reg2_i[31]_PWR_11_o_shift_left_61_OUT> created at line 217
+    Found 32-bit 8-to-1 multiplexer for signal <wdata_o> created at line 450.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0581> created at line 142.
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp_o<62>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp_o<61>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp_o<60>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -458,7 +466,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp1<2>>. Latches may be g
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hilo_temp_o<63>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator greater for signal <reg1_i[31]_reg2_i[31]_LessThan_9_o> created at line 117
+    Found 32-bit comparator greater for signal <reg1_i[31]_reg2_i[31]_LessThan_9_o> created at line 119
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   7 Adder/Subtractor(s).
@@ -497,10 +505,10 @@ WARNING:Xst:647 - Input <stall<0:3>> is never used. This port will be preserved 
     Found 32-bit register for signal <wb_wdata>.
     Found 32-bit register for signal <wb_hi>.
     Found 32-bit register for signal <wb_lo>.
-    Found 32-bit register for signal <wb_whilo>.
+    Found 1-bit register for signal <wb_whilo>.
     Found 5-bit register for signal <wb_wd>.
     Summary:
-	inferred 134 D-type flip-flop(s).
+	inferred 103 D-type flip-flop(s).
 Unit <mem_wb> synthesized.
 
 Synthesizing Unit <div>.
@@ -596,14 +604,14 @@ Macro Statistics
  4x4-bit single-port Read Only RAM                     : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 16
- 32-bit adder                                          : 10
+# Adders/Subtractors                                   : 19
+ 32-bit adder                                          : 13
  33-bit subtractor                                     : 1
  6-bit adder                                           : 1
  6-bit subtractor                                      : 1
  64-bit adder                                          : 3
-# Registers                                            : 40
- 1-bit register                                        : 7
+# Registers                                            : 43
+ 1-bit register                                        : 10
  1024-bit register                                     : 1
  2-bit register                                        : 1
  3-bit register                                        : 1
@@ -615,19 +623,20 @@ Macro Statistics
  8-bit register                                        : 3
 # Latches                                              : 131
  1-bit latch                                           : 131
-# Comparators                                          : 10
+# Comparators                                          : 11
+ 32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
  5-bit comparator equal                                : 6
  5-bit comparator not equal                            : 1
  8-bit comparator not equal                            : 1
-# Multiplexers                                         : 342
- 1-bit 2-to-1 multiplexer                              : 148
+# Multiplexers                                         : 367
+ 1-bit 2-to-1 multiplexer                              : 155
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 5
- 32-bit 2-to-1 multiplexer                             : 156
+ 32-bit 2-to-1 multiplexer                             : 174
  32-bit 32-to-1 multiplexer                            : 2
  32-bit 4-to-1 multiplexer                             : 1
- 32-bit 7-to-1 multiplexer                             : 1
+ 32-bit 8-to-1 multiplexer                             : 1
  4-bit 8-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 7
  6-bit 2-to-1 multiplexer                              : 4
@@ -656,37 +665,6 @@ WARNING:Xst:2677 - Node <sw_ok_2> of sequential type is unconnected in block <an
 WARNING:Xst:2677 - Node <sw_ok_3> of sequential type is unconnected in block <anti_jitter>.
 WARNING:Xst:2677 - Node <sw_ok_4> of sequential type is unconnected in block <anti_jitter>.
 WARNING:Xst:2677 - Node <sw_ok_5> of sequential type is unconnected in block <anti_jitter>.
-WARNING:Xst:2677 - Node <wb_whilo_1> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_2> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_3> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_4> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_5> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_6> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_7> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_8> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_9> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_10> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_11> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_12> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_13> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_14> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_15> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_16> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_17> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_18> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_19> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_20> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_21> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_22> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_23> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_24> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_25> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_26> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_27> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_28> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_29> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_30> of sequential type is unconnected in block <mem_wb>.
-WARNING:Xst:2677 - Node <wb_whilo_31> of sequential type is unconnected in block <mem_wb>.
 
 Synthesizing (advanced) Unit <anti_jitter>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
@@ -724,10 +702,6 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_o> will be implemented on LUTs eithe
     -----------------------------------------------------------------------
 Unit <mux4t1_4> synthesized (advanced).
 
-Synthesizing (advanced) Unit <pc_reg>.
-The following registers are absorbed into accumulator <pc>: 1 register on signal <pc>.
-Unit <pc_reg> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -737,31 +711,30 @@ Macro Statistics
  4x4-bit single-port distributed Read Only RAM         : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 13
- 32-bit adder                                          : 7
+# Adders/Subtractors                                   : 17
+ 32-bit adder                                          : 11
  33-bit subtractor                                     : 1
  6-bit adder                                           : 1
  6-bit subtractor                                      : 1
  64-bit adder                                          : 3
 # Counters                                             : 2
  32-bit up counter                                     : 2
-# Accumulators                                         : 1
- 32-bit up accumulator                                 : 1
-# Registers                                            : 1737
- Flip-Flops                                            : 1737
-# Comparators                                          : 10
+# Registers                                            : 1772
+ Flip-Flops                                            : 1772
+# Comparators                                          : 11
+ 32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
  5-bit comparator equal                                : 6
  5-bit comparator not equal                            : 1
  8-bit comparator not equal                            : 1
-# Multiplexers                                         : 464
- 1-bit 2-to-1 multiplexer                              : 274
+# Multiplexers                                         : 489
+ 1-bit 2-to-1 multiplexer                              : 281
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 5
- 32-bit 2-to-1 multiplexer                             : 152
+ 32-bit 2-to-1 multiplexer                             : 170
  32-bit 32-to-1 multiplexer                            : 2
  32-bit 4-to-1 multiplexer                             : 1
- 32-bit 7-to-1 multiplexer                             : 1
+ 32-bit 8-to-1 multiplexer                             : 1
  4-bit 8-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 7
  6-bit 2-to-1 multiplexer                              : 4
@@ -782,37 +755,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <wb_whilo_31> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_30> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_29> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_28> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_27> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_26> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_25> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_24> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_23> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_22> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_21> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_20> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_19> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_18> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_17> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_16> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_15> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_14> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_13> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_12> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_11> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_10> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_9> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_8> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_7> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_6> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_5> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_4> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_3> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_2> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wb_whilo_1> (without init value) has a constant value of 0 in block <mem_wb>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <openmips/div/FSM_0> on signal <state[1:2]> with sequential encoding.
 -------------------
@@ -823,8 +765,6 @@ Optimizing FSM <openmips/div/FSM_0> on signal <state[1:2]> with sequential encod
  01    | 10
  11    | 11
 -------------------
-WARNING:Xst:1710 - FF/Latch <pc_reg/pc_0> (without init value) has a constant value of 0 in block <openmips>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pc_reg/pc_1> (without init value) has a constant value of 0 in block <openmips>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_20> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_21> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_22> of sequential type is unconnected in block <openmips_min_sopc>.
@@ -838,7 +778,7 @@ WARNING:Xst:2677 - Node <clk_div/clkdiv_29> of sequential type is unconnected in
 WARNING:Xst:2677 - Node <clk_div/clkdiv_30> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <clk_div/clkdiv_31> of sequential type is unconnected in block <openmips_min_sopc>.
 INFO:Xst:2261 - The FF/Latch <cnt_o_0> in Unit <ex> is equivalent to the following FF/Latch, which will be removed : <stallreq_for_madd_msub> 
-WARNING:Xst:2016 - Found a loop when searching source clock on port 'Mmux__n05851:O'
+WARNING:Xst:2016 - Found a loop when searching source clock on port 'Mmux__n05861:O'
 Last warning will be issued only once.
 
 Optimizing unit <openmips_min_sopc> ...
@@ -848,6 +788,8 @@ Optimizing unit <anti_jitter> ...
 Optimizing unit <openmips> ...
 
 Optimizing unit <if_id> ...
+
+Optimizing unit <pc_reg> ...
 
 Optimizing unit <regfile> ...
 
@@ -881,38 +823,8 @@ WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_2> of sequential type is unconnec
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_1> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <anti_jitter/btn_pulse_0> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:2677 - Node <openmips/pc_reg/ce> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_31> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_30> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_29> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_28> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_27> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_26> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_25> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_24> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_23> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_22> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_21> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_20> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_19> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_18> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_17> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_16> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_15> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_14> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_13> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_12> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_11> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_10> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_9> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_8> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_7> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_6> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_5> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_4> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_3> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_2> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_1> of sequential type is unconnected in block <openmips_min_sopc>.
-WARNING:Xst:2677 - Node <openmips/if_id/id_pc_0> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips/id_ex/ex_is_in_delayslot> of sequential type is unconnected in block <openmips_min_sopc>.
+WARNING:Xst:2677 - Node <openmips/id_ex/is_in_delayslot_o> of sequential type is unconnected in block <openmips_min_sopc>.
 WARNING:Xst:1710 - FF/Latch <openmips/regfile/regs_31_1014> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips/regfile/regs_31_1013> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips/regfile/regs_31_1012> (without init value) has a constant value of 0 in block <openmips_min_sopc>. This FF/Latch will be trimmed during the optimization process.
@@ -963,16 +875,16 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <openmips/regfile/re
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 58.
+Found area constraint ratio of 100 (+ 5) on block openmips_min_sopc, actual ratio is 61.
 FlipFlop openmips/id_ex/ex_aluop_0 has been replicated 1 time(s)
 FlipFlop openmips/id_ex/ex_aluop_1 has been replicated 1 time(s)
 FlipFlop openmips/id_ex/ex_aluop_3 has been replicated 1 time(s)
 FlipFlop openmips/id_ex/ex_aluop_4 has been replicated 1 time(s)
-FlipFlop openmips/id_ex/ex_reg1_0 has been replicated 1 time(s)
-FlipFlop openmips/id_ex/ex_reg1_1 has been replicated 1 time(s)
-FlipFlop openmips/id_ex/ex_reg1_2 has been replicated 1 time(s)
-FlipFlop openmips/id_ex/ex_reg1_3 has been replicated 1 time(s)
-FlipFlop openmips/id_ex/ex_reg1_31 has been replicated 1 time(s)
+FlipFlop openmips/id_ex/ex_aluop_7 has been replicated 1 time(s)
+FlipFlop openmips/id_ex/ex_reg1_0 has been replicated 2 time(s)
+FlipFlop openmips/id_ex/ex_reg1_1 has been replicated 2 time(s)
+FlipFlop openmips/id_ex/ex_reg1_2 has been replicated 2 time(s)
+FlipFlop openmips/id_ex/ex_reg1_3 has been replicated 2 time(s)
 FlipFlop openmips/id_ex/ex_reg1_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
@@ -981,8 +893,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1704
- Flip-Flops                                            : 1704
+# Registers                                            : 1774
+ Flip-Flops                                            : 1774
 
 =========================================================================
 
@@ -1005,25 +917,25 @@ Top Level Output File Name         : openmips_min_sopc.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 5351
+# BELS                             : 5839
 #      GND                         : 2
-#      INV                         : 191
-#      LUT1                        : 69
-#      LUT2                        : 272
-#      LUT3                        : 1216
-#      LUT4                        : 326
-#      LUT5                        : 328
-#      LUT6                        : 1826
-#      MUXCY                       : 523
-#      MUXF7                       : 81
+#      INV                         : 193
+#      LUT1                        : 126
+#      LUT2                        : 223
+#      LUT3                        : 1354
+#      LUT4                        : 255
+#      LUT5                        : 418
+#      LUT6                        : 1956
+#      MUXCY                       : 620
+#      MUXF7                       : 86
 #      VCC                         : 1
-#      XORCY                       : 516
-# FlipFlops/Latches                : 1834
+#      XORCY                       : 605
+# FlipFlops/Latches                : 1904
 #      FD                          : 13
 #      FDC                         : 20
 #      FDE                         : 106
 #      FDR                         : 68
-#      FDRE                        : 1497
+#      FDRE                        : 1567
 #      LDC                         : 66
 #      LDE_1                       : 64
 # Clock Buffers                    : 3
@@ -1042,15 +954,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1834  out of  18224    10%  
- Number of Slice LUTs:                 4228  out of   9112    46%  
-    Number used as Logic:              4228  out of   9112    46%  
+ Number of Slice Registers:            1904  out of  18224    10%  
+ Number of Slice LUTs:                 4525  out of   9112    49%  
+    Number used as Logic:              4525  out of   9112    49%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5207
-   Number with an unused Flip Flop:    3373  out of   5207    64%  
-   Number with an unused LUT:           979  out of   5207    18%  
-   Number of fully used LUT-FF pairs:   855  out of   5207    16%  
+ Number of LUT Flip Flop pairs used:   5771
+   Number with an unused Flip Flop:    3867  out of   5771    67%  
+   Number with an unused LUT:          1246  out of   5771    21%  
+   Number of fully used LUT-FF pairs:   658  out of   5771    11%  
    Number of unique control sets:        17
 
 IO Utilization: 
@@ -1082,9 +994,9 @@ Clock Information:
 -----------------------------------------------+------------------------------------+-------+
 Clock Signal                                   | Clock buffer(FF name)              | Load  |
 -----------------------------------------------+------------------------------------+-------+
-clk_100mhz                                     | BUFGP                              | 1704  |
+clk_100mhz                                     | BUFGP                              | 1774  |
 sw<7>                                          | IBUF+BUFG                          | 64    |
-openmips/ex/_n0585(openmips/ex/Mmux__n058511:O)| BUFG(*)(openmips/ex/hilo_temp_o_63)| 66    |
+openmips/ex/_n0586(openmips/ex/Mmux__n058611:O)| BUFG(*)(openmips/ex/hilo_temp_o_63)| 66    |
 -----------------------------------------------+------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -1098,9 +1010,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 21.613ns (Maximum Frequency: 46.269MHz)
-   Minimum input arrival time before clock: 16.367ns
-   Maximum output required time after clock: 8.624ns
+   Minimum period: 21.580ns (Maximum Frequency: 46.340MHz)
+   Minimum input arrival time before clock: 17.044ns
+   Maximum output required time after clock: 10.231ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1109,101 +1021,79 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100mhz'
-  Clock period: 21.613ns (frequency: 46.269MHz)
-  Total number of paths / destination ports: 49765475507 / 3201
+  Clock period: 21.580ns (frequency: 46.340MHz)
+  Total number of paths / destination ports: 95225787920 / 3343
 -------------------------------------------------------------------------
-Delay:               21.613ns (Levels of Logic = 39)
-  Source:            openmips/id_ex/ex_aluop_5 (FF)
-  Destination:       openmips/ex_mem/mem_hi_31 (FF)
+Delay:               21.580ns (Levels of Logic = 17)
+  Source:            openmips/id_ex/ex_aluop_2 (FF)
+  Destination:       openmips/pc_reg/pc_24 (FF)
   Source Clock:      clk_100mhz rising
   Destination Clock: clk_100mhz rising
 
-  Data Path: openmips/id_ex/ex_aluop_5 to openmips/ex_mem/mem_hi_31
+  Data Path: openmips/id_ex/ex_aluop_2 to openmips/pc_reg/pc_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            12   0.447   1.137  openmips/id_ex/ex_aluop_5 (openmips/id_ex/ex_aluop_5)
-     LUT6:I3->O            2   0.205   0.721  openmips/ex/aluop_i[7]_aluop_i[7]_OR_327_o671_1 (openmips/ex/aluop_i[7]_aluop_i[7]_OR_327_o671)
-     LUT6:I4->O           18   0.203   1.050  openmips/ex/aluop_i[7]_aluop_i[7]_OR_327_o69_1 (openmips/ex/aluop_i[7]_aluop_i[7]_OR_327_o69)
+     FDRE:C->Q            14   0.447   0.958  openmips/id_ex/ex_aluop_2 (openmips/id_ex/ex_aluop_2)
+     LUT4:I3->O            3   0.205   0.755  openmips/ex/aluop_i[7]_aluop_i[7]_OR_473_o694_SW0 (N222)
+     LUT6:I4->O           18   0.203   1.050  openmips/ex/aluop_i[7]_aluop_i[7]_OR_473_o694_1 (openmips/ex/aluop_i[7]_aluop_i[7]_OR_473_o694)
      LUT4:I3->O            2   0.205   0.616  openmips/ex/Mmux_opdata1_mult110 (openmips/ex/opdata1_mult<0>)
      DSP48A1:A0->P47      18   4.560   1.049  openmips/ex/Mmult_hilo_temp (openmips/ex/Mmult_hilo_temp_P47_to_Mmult_hilo_temp1)
      DSP48A1:C30->PCOUT47    1   2.689   0.000  openmips/ex/Mmult_hilo_temp1 (openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_47)
-     DSP48A1:PCIN47->P47   18   2.264   1.049  openmips/ex/Mmult_hilo_temp2 (openmips/ex/Mmult_hilo_temp2_P47_to_Mmult_hilo_temp3)
-     DSP48A1:C30->P0       4   2.687   0.683  openmips/ex/Mmult_hilo_temp3 (openmips/ex/hilo_temp<34>)
-     INV:I->O              1   0.206   0.000  openmips/ex/n0546<34>1_INV_0 (openmips/ex/n0546<34>)
-     MUXCY:S->O            1   0.172   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<34> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<34>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<36> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<36>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<37> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<37>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<38> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<38>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<40> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<40>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<41> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<41>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<42> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<42>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<44> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<44>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<45> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<45>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<46> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<46>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<48> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<48>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<49> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<49>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<50> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<50>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<52> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<52>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<53> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<53>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<54> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<54>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<56> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<56>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<57> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<57>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<58> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<58>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<60> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<60>)
-     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<61> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<61>)
-     MUXCY:CI->O           0   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<62> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<62>)
-     XORCY:CI->O           3   0.180   0.651  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63> (openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>)
-     LUT6:I5->O            1   0.205   0.000  openmips/ex/Mmux_HI1913 (openmips/ex_hi_o<31>)
-     FDRE:D                    0.102          openmips/ex_mem/mem_hi_31
+     DSP48A1:PCIN47->P0    5   2.264   0.714  openmips/ex/Mmult_hilo_temp2 (openmips/ex/hilo_temp<17>)
+     INV:I->O              1   0.206   0.000  openmips/ex/n0547<17>1_INV_0 (openmips/ex/n0547<17>)
+     MUXCY:S->O            1   0.172   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<17> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<18> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<19> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<20> (openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<20>)
+     XORCY:CI->O           4   0.180   0.684  openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<21> (openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<21>)
+     LUT6:I5->O            4   0.205   1.048  openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT1373 (openmips/id_reg1_o<21>)
+     LUT6:I0->O            1   0.203   0.580  openmips/id/Mmux_branch_target_address_o1012 (openmips/id/Mmux_branch_target_address_o1012)
+     LUT6:I5->O            4   0.205   0.684  openmips/id/Mmux_branch_target_address_o1017 (openmips/id/Mmux_branch_target_address_o1017)
+     LUT6:I5->O           17   0.205   1.132  openmips/id/Mmux_next_inst_in_delayslot_o11 (openmips/branch_flag)
+     LUT6:I4->O            1   0.203   0.000  openmips/pc_reg/Mmux_pc[31]_branch_target_address_i[31]_mux_7_OUT1 (openmips/pc_reg/pc[31]_branch_target_address_i[31]_mux_7_OUT<0>)
+     FDRE:D                    0.102          openmips/pc_reg/pc_0
     ----------------------------------------
-    Total                     21.613ns (14.657ns logic, 6.956ns route)
-                                       (67.8% logic, 32.2% route)
+    Total                     21.580ns (12.311ns logic, 9.269ns route)
+                                       (57.0% logic, 43.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 12170 / 2380
+  Total number of paths / destination ports: 416672 / 2588
 -------------------------------------------------------------------------
-Offset:              16.367ns (Levels of Logic = 14)
+Offset:              17.044ns (Levels of Logic = 14)
   Source:            sw<7> (PAD)
-  Destination:       openmips/id_ex/ex_wreg (FF)
+  Destination:       openmips/pc_reg/pc_24 (FF)
   Destination Clock: clk_100mhz rising
 
-  Data Path: sw<7> to openmips/id_ex/ex_wreg
+  Data Path: sw<7> to openmips/pc_reg/pc_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2423   1.222   2.653  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
-     LUT2:I0->O          257   0.203   2.431  openmips/id/Mmux_reg2_addr_o21 (openmips/reg2_addr<1>)
-     LUT6:I0->O            1   0.203   0.827  openmips/regfile/Mmux_raddr2[4]_regs[31][31]_wide_mux_57_OUT_867 (openmips/regfile/Mmux_raddr2[4]_regs[31][31]_wide_mux_57_OUT_867)
-     LUT6:I2->O            1   0.203   0.000  openmips/regfile/Mmux_raddr2[4]_regs[31][31]_wide_mux_57_OUT_322 (openmips/regfile/Mmux_raddr2[4]_regs[31][31]_wide_mux_57_OUT_322)
-     MUXF7:I1->O           1   0.140   0.808  openmips/regfile/Mmux_raddr2[4]_regs[31][31]_wide_mux_57_OUT_2_f7_21 (openmips/regfile/raddr2[4]_regs[31][31]_wide_mux_57_OUT<2>)
-     LUT6:I3->O            1   0.205   0.580  openmips/id/Mmux_GND_6_o_imm[31]_mux_152_OUT1961 (openmips/id/Mmux_GND_6_o_imm[31]_mux_152_OUT196)
-     LUT6:I5->O            1   0.205   0.684  openmips/id/Mmux_GND_6_o_imm[31]_mux_152_OUT1962 (openmips/id/Mmux_GND_6_o_imm[31]_mux_152_OUT1961)
-     LUT6:I4->O            2   0.203   0.981  openmips/id/Mmux_GND_6_o_imm[31]_mux_152_OUT1963 (openmips/id_reg2_o<2>)
-     LUT6:I0->O            1   0.203   0.580  openmips/id/n0004<31>2 (openmips/id/n0004<31>1)
-     LUT6:I5->O            1   0.205   0.808  openmips/id/n0004<31>3 (openmips/id/n0004<31>2)
-     LUT6:I3->O            1   0.205   0.944  openmips/id/n0004<31>5 (openmips/id/n0004<31>4)
-     LUT6:I0->O            1   0.203   0.580  openmips/id/n0004<31>1_SW0 (N305)
-     LUT6:I5->O            1   0.205   0.580  openmips/id/Mmux_wreg_o13 (openmips/id/Mmux_wreg_o12)
-     LUT6:I5->O            1   0.205   0.000  openmips/id/Mmux_wreg_o15 (openmips/id_wreg_o)
-     FDRE:D                    0.102          openmips/id_ex/ex_wreg
+     IBUF:I->O          2487   1.222   2.668  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
+     LUT2:I0->O          257   0.203   2.431  openmips/id/Mmux_reg1_addr_o21 (openmips/reg1_addr<1>)
+     LUT6:I0->O            1   0.203   0.827  openmips/regfile/Mmux_raddr1[4]_regs[31][31]_wide_mux_46_OUT_867 (openmips/regfile/Mmux_raddr1[4]_regs[31][31]_wide_mux_46_OUT_867)
+     LUT6:I2->O            1   0.203   0.000  openmips/regfile/Mmux_raddr1[4]_regs[31][31]_wide_mux_46_OUT_322 (openmips/regfile/Mmux_raddr1[4]_regs[31][31]_wide_mux_46_OUT_322)
+     MUXF7:I1->O           1   0.140   0.808  openmips/regfile/Mmux_raddr1[4]_regs[31][31]_wide_mux_46_OUT_2_f7_21 (openmips/regfile/raddr1[4]_regs[31][31]_wide_mux_46_OUT<2>)
+     LUT6:I3->O            1   0.205   0.580  openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT1551 (openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT155)
+     LUT6:I5->O            1   0.205   0.827  openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT1552 (openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT1551)
+     LUT5:I1->O            6   0.203   0.992  openmips/id/Mmux_GND_6_o_imm[31]_mux_225_OUT1553 (openmips/id_reg1_o<2>)
+     LUT6:I2->O            1   0.203   0.580  openmips/id/Mmux_branch_target_address_o1014_SW0 (N479)
+     LUT6:I5->O            1   0.205   0.924  openmips/id/Mmux_branch_target_address_o1015 (openmips/id/Mmux_branch_target_address_o1015)
+     LUT6:I1->O            1   0.203   0.684  openmips/id/Mmux_branch_target_address_o1016 (openmips/id/Mmux_branch_target_address_o1016)
+     LUT6:I4->O            4   0.203   0.684  openmips/id/Mmux_branch_target_address_o1017 (openmips/id/Mmux_branch_target_address_o1017)
+     LUT6:I5->O           17   0.205   1.132  openmips/id/Mmux_next_inst_in_delayslot_o11 (openmips/branch_flag)
+     LUT6:I4->O            1   0.203   0.000  openmips/pc_reg/Mmux_pc[31]_branch_target_address_i[31]_mux_7_OUT1 (openmips/pc_reg/pc[31]_branch_target_address_i[31]_mux_7_OUT<0>)
+     FDRE:D                    0.102          openmips/pc_reg/pc_0
     ----------------------------------------
-    Total                     16.367ns (3.912ns logic, 12.455ns route)
-                                       (23.9% logic, 76.1% route)
+    Total                     17.044ns (3.908ns logic, 13.136ns route)
+                                       (22.9% logic, 77.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'sw<7>'
-  Total number of paths / destination ports: 2279 / 64
+  Total number of paths / destination ports: 3597 / 64
 -------------------------------------------------------------------------
-Offset:              7.740ns (Levels of Logic = 68)
+Offset:              7.756ns (Levels of Logic = 68)
   Source:            sw<7> (PAD)
   Destination:       openmips/ex/hilo_temp1_63 (LATCH)
   Destination Clock: sw<7> rising
@@ -1212,7 +1102,7 @@ Offset:              7.740ns (Levels of Logic = 68)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2423   1.222   2.913  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
+     IBUF:I->O          2487   1.222   2.928  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
      LUT6:I0->O            2   0.203   0.617  openmips/ex/Mmux_HI1102 (openmips/ex/LO<0>)
      LUT2:I1->O            1   0.205   0.000  openmips/ex/Madd_hilo_temp_i[63]_HI[31]_add_162_OUT_lut<0> (openmips/ex/Madd_hilo_temp_i[63]_HI[31]_add_162_OUT_lut<0>)
      MUXCY:S->O            1   0.172   0.000  openmips/ex/Madd_hilo_temp_i[63]_HI[31]_add_162_OUT_cy<0> (openmips/ex/Madd_hilo_temp_i[63]_HI[31]_add_162_OUT_cy<0>)
@@ -1282,23 +1172,23 @@ Offset:              7.740ns (Levels of Logic = 68)
      LUT3:I0->O            1   0.205   0.000  openmips/ex/Mmux_aluop_i[7]_hilo_temp1[63]_select_187_OUT601 (openmips/ex/aluop_i[7]_hilo_temp1[63]_select_187_OUT<63>)
      LDE_1:D                   0.037          openmips/ex/hilo_temp1_63
     ----------------------------------------
-    Total                      7.740ns (3.402ns logic, 4.338ns route)
-                                       (44.0% logic, 56.0% route)
+    Total                      7.756ns (3.402ns logic, 4.354ns route)
+                                       (43.9% logic, 56.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'openmips/ex/_n0585'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'openmips/ex/_n0586'
   Total number of paths / destination ports: 2210 / 130
 -------------------------------------------------------------------------
-Offset:              6.792ns (Levels of Logic = 67)
+Offset:              6.807ns (Levels of Logic = 67)
   Source:            sw<7> (PAD)
   Destination:       openmips/ex/hilo_temp_o_63 (LATCH)
-  Destination Clock: openmips/ex/_n0585 falling
+  Destination Clock: openmips/ex/_n0586 falling
 
   Data Path: sw<7> to openmips/ex/hilo_temp_o_63
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2423   1.222   2.913  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
+     IBUF:I->O          2487   1.222   2.928  sw_7_IBUF (openmips/id_ex/Reset_OR_DriverANDClockEnable)
      LUT6:I0->O            1   0.203   0.000  openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_lut<0> (openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_lut<0>)
      MUXCY:S->O            1   0.172   0.000  openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_cy<0> (openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_cy<0>)
      MUXCY:CI->O           1   0.019   0.000  openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_cy<1> (openmips/ex/Madd_mulres[63]_GND_10_o_add_171_OUT_cy<1>)
@@ -1367,34 +1257,35 @@ Offset:              6.792ns (Levels of Logic = 67)
      LUT6:I4->O            1   0.203   0.000  openmips/ex/aluop_i[7]_hilo_temp_o[63]_select_185_OUT<63>1 (openmips/ex/aluop_i[7]_hilo_temp_o[63]_select_185_OUT<63>)
      LDC:D                     0.037          openmips/ex/hilo_temp_o_63
     ----------------------------------------
-    Total                      6.792ns (3.195ns logic, 3.597ns route)
-                                       (47.0% logic, 53.0% route)
+    Total                      6.807ns (3.195ns logic, 3.612ns route)
+                                       (46.9% logic, 53.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 2105 / 19
+  Total number of paths / destination ports: 3381 / 19
 -------------------------------------------------------------------------
-Offset:              8.624ns (Levels of Logic = 7)
-  Source:            openmips/pc_reg/pc_4 (FF)
+Offset:              10.231ns (Levels of Logic = 8)
+  Source:            openmips/pc_reg/pc_5 (FF)
   Destination:       seg<6> (PAD)
   Source Clock:      clk_100mhz rising
 
-  Data Path: openmips/pc_reg/pc_4 to seg<6>
+  Data Path: openmips/pc_reg/pc_5 to seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            15   0.447   1.326  openmips/pc_reg/pc_4 (openmips/pc_reg/pc_4)
-     begin scope: 'inst_rom:a<2>'
-     LUT5:I0->O            1   0.203   0.580  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1121_SW0 (N12)
-     LUT6:I5->O           12   0.205   1.156  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int1121 (spo<5>)
-     end scope: 'inst_rom:spo<9>'
-     LUT6:I2->O            1   0.203   0.000  mux8t1_4/Mmux_o_41 (mux8t1_4/Mmux_o_41)
-     MUXF7:I0->O           7   0.131   1.021  mux8t1_4/Mmux_o_2_f7_0 (digit<1>)
+     FDRE:C->Q            49   0.447   1.878  openmips/pc_reg/pc_5 (openmips/pc_reg/pc_5)
+     begin scope: 'inst_rom:a<3>'
+     LUT6:I1->O            1   0.203   0.924  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int84113 (U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int84112)
+     LUT6:I1->O            1   0.203   0.808  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int84115 (U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int84114)
+     LUT3:I0->O            2   0.205   0.845  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int84116 (spo<29>)
+     end scope: 'inst_rom:spo<29>'
+     LUT6:I3->O            1   0.205   0.000  mux8t1_4/Mmux_o_31 (mux8t1_4/Mmux_o_31)
+     MUXF7:I1->O           7   0.140   1.021  mux8t1_4/Mmux_o_2_f7_0 (digit<1>)
      LUT4:I0->O            1   0.203   0.579  decoder_7seg/Mram_segment11 (seg_0_OBUF)
      OBUF:I->O                 2.571          seg_0_OBUF (seg<0>)
     ----------------------------------------
-    Total                      8.624ns (3.963ns logic, 4.661ns route)
-                                       (46.0% logic, 54.0% route)
+    Total                     10.231ns (4.177ns logic, 6.054ns route)
+                                       (40.8% logic, 59.2% route)
 
 =========================================================================
 
@@ -1406,17 +1297,17 @@ Clock to Setup on destination clock clk_100mhz
                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------+---------+---------+---------+---------+
-clk_100mhz        |   21.613|         |         |         |
-openmips/ex/_n0585|         |    4.184|         |         |
-sw<7>             |    4.506|         |         |         |
+clk_100mhz        |   21.580|         |         |         |
+openmips/ex/_n0586|         |    4.082|         |         |
+sw<7>             |    4.600|         |         |         |
 ------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock openmips/ex/_n0585
+Clock to Setup on destination clock openmips/ex/_n0586
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |         |         |   22.870|         |
+clk_100mhz     |         |         |   22.725|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sw<7>
@@ -1424,20 +1315,20 @@ Clock to Setup on destination clock sw<7>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    6.721|         |         |         |
+clk_100mhz     |    6.551|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 27.33 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 29.50 secs
  
 --> 
 
-Total memory usage is 248136 kilobytes
+Total memory usage is 256936 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  325 (   0 filtered)
+Number of warnings :  230 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

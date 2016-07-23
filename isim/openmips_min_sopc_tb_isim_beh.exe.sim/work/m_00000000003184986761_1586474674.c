@@ -349,7 +349,7 @@ LAB13:    xsi_set_current_line(44, ng0);
     xsi_set_current_line(49, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 2024);
-    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
     goto LAB12;
 
 LAB16:    t21 = (t30 + 4);
@@ -499,7 +499,7 @@ LAB39:    xsi_set_current_line(51, ng0);
     xsi_set_current_line(56, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 2024);
-    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
     goto LAB38;
 
 LAB42:    t21 = (t30 + 4);
@@ -537,17 +537,16 @@ LAB47:    xsi_set_current_line(58, ng0);
     xsi_set_current_line(63, ng0);
     t2 = (t0 + 1336U);
     t3 = *((char **)t2);
-    memcpy(t6, t3, 8);
     t2 = (t0 + 2024);
-    xsi_vlogvar_wait_assign_value(t2, t6, 0, 0, 32, 0LL);
+    xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 1, 0LL);
     goto LAB46;
 
 }
 
 
-extern void work_m_00000000000844331914_1586474674_init()
+extern void work_m_00000000003184986761_1586474674_init()
 {
 	static char *pe[] = {(void *)Always_42_0};
-	xsi_register_didat("work_m_00000000000844331914_1586474674", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000000844331914_1586474674.didat");
+	xsi_register_didat("work_m_00000000003184986761_1586474674", "isim/openmips_min_sopc_tb_isim_beh.exe.sim/work/m_00000000003184986761_1586474674.didat");
 	xsi_register_executes(pe);
 }

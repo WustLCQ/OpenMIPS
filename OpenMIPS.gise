@@ -60,8 +60,8 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mem_wb.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="mem_wb.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
-    <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
-    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="oepnmips.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="oepnmips.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="oepnmips.xst"/>
@@ -123,17 +123,13 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1447225974" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1447225974">
+    <transform xil_pn:end_ts="1468897715" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1468897715">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1450352602" xil_pn:in_ck="-395932549359705622" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1450352602">
+    <transform xil_pn:end_ts="1469242844" xil_pn:in_ck="-395932549359705622" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1469242844">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="code/anti_jitter.v"/>
       <outfile xil_pn:name="code/clk_div.v"/>
       <outfile xil_pn:name="code/ctrl.v"/>
@@ -164,20 +160,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1450352406" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1450352406">
+    <transform xil_pn:end_ts="1469151884" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1469151884">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/inst_rom.ngc"/>
       <outfile xil_pn:name="ipcore_dir/inst_rom.v"/>
     </transform>
-    <transform xil_pn:end_ts="1450352602" xil_pn:in_ck="223818017661853064" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1450352602">
+    <transform xil_pn:end_ts="1469242851" xil_pn:in_ck="-395932549359705622" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1469242851">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="code/anti_jitter.v"/>
       <outfile xil_pn:name="code/clk_div.v"/>
       <outfile xil_pn:name="code/ctrl.v"/>
@@ -199,17 +190,10 @@
       <outfile xil_pn:name="code/openmips_min_sopc_tb.v"/>
       <outfile xil_pn:name="code/pc_reg.v"/>
       <outfile xil_pn:name="code/regfile.v"/>
-      <outfile xil_pn:name="ipcore_dir/inst_rom.v"/>
     </transform>
-    <transform xil_pn:end_ts="1450352611" xil_pn:in_ck="223818017661853064" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9111462882530470597" xil_pn:start_ts="1450352602">
+    <transform xil_pn:end_ts="1469242858" xil_pn:in_ck="223818017661853064" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9111462882530470597" xil_pn:start_ts="1469242851">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -217,13 +201,9 @@
       <outfile xil_pn:name="openmips_min_sopc_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1450352746" xil_pn:in_ck="-9216636567683657152" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3299781228638621726" xil_pn:start_ts="1450352746">
+    <transform xil_pn:end_ts="1469242859" xil_pn:in_ck="-9216636567683657152" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3299781228638621726" xil_pn:start_ts="1469242858">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="openmips_min_sopc_tb_isim_beh.wdb"/>
@@ -236,7 +216,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1450352358" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1450352358">
+    <transform xil_pn:end_ts="1469242024" xil_pn:in_ck="2046775813201119890" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5782824379105648262" xil_pn:start_ts="1469242024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/inst_rom.ngc"/>
@@ -258,13 +238,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1450352387" xil_pn:in_ck="3435532352925413347" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7765323860876020885" xil_pn:start_ts="1450352358">
+    <transform xil_pn:end_ts="1469242809" xil_pn:in_ck="3435532352925413347" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7765323860876020885" xil_pn:start_ts="1469242777">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="openmips_min_sopc.lso"/>
@@ -285,11 +263,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1448356277" xil_pn:in_ck="-1222346198094581208" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1412782974647899591" xil_pn:start_ts="1448356273">
+    <transform xil_pn:end_ts="1451269945" xil_pn:in_ck="-1222346198094581208" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1412782974647899591" xil_pn:start_ts="1451269939">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -297,7 +274,7 @@
       <outfile xil_pn:name="openmips_min_sopc.ngd"/>
       <outfile xil_pn:name="openmips_min_sopc_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1448356284" xil_pn:in_ck="-7072420607115071063" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1448356277">
+    <transform xil_pn:end_ts="1451270002" xil_pn:in_ck="-7072420607115071063" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1451269945">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -314,8 +291,9 @@
       <outfile xil_pn:name="openmips_min_sopc_summary.xml"/>
       <outfile xil_pn:name="openmips_min_sopc_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1448356296" xil_pn:in_ck="-3416862313887011518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1448356284">
+    <transform xil_pn:end_ts="1451270062" xil_pn:in_ck="-3416862313887011518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1451270002">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
@@ -329,7 +307,7 @@
       <outfile xil_pn:name="openmips_min_sopc_pad.txt"/>
       <outfile xil_pn:name="openmips_min_sopc_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1448356317" xil_pn:in_ck="-6470490051138628187" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1448356296">
+    <transform xil_pn:end_ts="1468808526" xil_pn:in_ck="-6470490051138628187" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="335873702051717080" xil_pn:start_ts="1468808494">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -344,7 +322,7 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1448356296" xil_pn:in_ck="-7072420607115071195" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1448356292">
+    <transform xil_pn:end_ts="1451270062" xil_pn:in_ck="-7072420607115071195" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1451270052">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -352,10 +330,9 @@
       <outfile xil_pn:name="openmips_min_sopc.twr"/>
       <outfile xil_pn:name="openmips_min_sopc.twx"/>
     </transform>
-    <transform xil_pn:end_ts="1450352390" xil_pn:in_ck="3386841028902176424" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="3528897565860843958" xil_pn:start_ts="1450352387">
+    <transform xil_pn:end_ts="1469242811" xil_pn:in_ck="3386841028902176424" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="3528897565860843958" xil_pn:start_ts="1469242809">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="netgen"/>
       <outfile xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.nlf"/>
       <outfile xil_pn:name="netgen/synthesis/openmips_min_sopc_synthesis.v"/>

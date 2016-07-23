@@ -525,7 +525,7 @@ module id(
 							end
 						end
 						`EXE_BGEZAL:	begin
-							wreg_o	<=	`WriteDisable;
+							wreg_o	<=	`WriteEnable;
 							aluop_o	<=	`EXE_BGEZAL_OP;
 							alusel_o	<=	`EXE_RES_JUMP_BRANCH;
 							reg1_read_o	<=	1'b1;
@@ -553,7 +553,7 @@ module id(
 							end
 						end
 						`EXE_BLTZAL:	begin
-							wreg_o	<=	`WriteDisable;
+							wreg_o	<=	`WriteEnable;
 							aluop_o	<=	`EXE_BLTZAL_OP;
 							alusel_o	<=	`EXE_RES_JUMP_BRANCH;
 							reg1_read_o	<=	1'b1;

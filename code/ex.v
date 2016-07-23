@@ -43,6 +43,8 @@ module ex(
 	input						mem_whilo_i,
 	input	[`DoubleRegBus]	div_result_i,	//除法运算结果
 	input							div_ready_i,	//除法运算是否结束
+	input	[`RegBus]		link_address_i,	//处于执行阶段的转移指令要保存的返回地址
+	input						is_in_delayslot_i,//当前执行阶段的指令是否位于延迟槽
 	
 	output	reg[`RegBus]	hi_o,
 	output	reg[`RegBus]	lo_o,
@@ -460,6 +462,9 @@ module ex(
 			end
 			`EXE_RES_MUL:	begin
 				wdata_o	<=	mulres[31:0];
+			end
+			`EXE_RES_JUMP_BRANCH:	begin
+				wdata_o	<=	link_address_i;
 			end
 			default:	begin
 				wdata_o	<=	`ZeroWord;

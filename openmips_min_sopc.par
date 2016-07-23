@@ -1,7 +1,7 @@
 Release 13.2 par O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-LCQ-PC::  Tue Nov 24 17:11:25 2015
+LCQ-PC::  Mon Dec 28 10:33:22 2015
 
 par -w -intstyle ise -ol high -mt off openmips_min_sopc_map.ncd
 openmips_min_sopc.ncd openmips_min_sopc.pcf 
@@ -28,29 +28,29 @@ Device speed data version:  "PRODUCTION 1.19 2011-06-20".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    85 out of  18,224    1%
-    Number used as Flip Flops:                  85
+  Number of Slice Registers:                 1,318 out of  18,224    7%
+    Number used as Flip Flops:               1,318
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        140 out of   9,112    1%
-    Number used as logic:                      137 out of   9,112    1%
-      Number using O6 output only:              47
-      Number using O5 output only:              61
-      Number using O5 and O6:                   29
+  Number of Slice LUTs:                      2,714 out of   9,112   29%
+    Number used as logic:                    2,709 out of   9,112   29%
+      Number using O6 output only:           1,822
+      Number using O5 output only:             121
+      Number using O5 and O6:                  766
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      3
+    Number used exclusively as route-thrus:      5
       Number with same-slice register load:      0
-      Number with same-slice carry load:         3
+      Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    49 out of   2,278    2%
-  Number of LUT Flip Flop pairs used:          149
-    Number with an unused Flip Flop:            73 out of     149   48%
-    Number with an unused LUT:                   9 out of     149    6%
-    Number of fully used LUT-FF pairs:          67 out of     149   44%
+  Number of occupied Slices:                   850 out of   2,278   37%
+  Number of LUT Flip Flop pairs used:        2,775
+    Number with an unused Flip Flop:         1,858 out of   2,775   66%
+    Number with an unused LUT:                  61 out of   2,775    2%
+    Number of fully used LUT-FF pairs:         856 out of   2,775   30%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -69,8 +69,8 @@ Specific Feature Utilization:
   Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
-    Number used as BUFGs:                        2
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
@@ -80,7 +80,7 @@ Specific Feature Utilization:
   Number of BUFHs:                               0 out of     128    0%
   Number of BUFPLLs:                             0 out of       8    0%
   Number of BUFPLL_MCBs:                         0 out of       4    0%
-  Number of DSP48A1s:                            0 out of      32    0%
+  Number of DSP48A1s:                            4 out of      32   12%
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
@@ -93,35 +93,37 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 5 secs 
+Finished initial Timing Analysis.  REAL time: 5 secs 
 
 Starting Router
 
 
-Phase  1  : 614 unrouted;      REAL time: 3 secs 
+Phase  1  : 15321 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 500 unrouted;      REAL time: 3 secs 
+Phase  2  : 13711 unrouted;      REAL time: 6 secs 
 
-Phase  3  : 196 unrouted;      REAL time: 4 secs 
+Phase  3  : 4875 unrouted;      REAL time: 12 secs 
 
-Phase  4  : 196 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  4  : 4931 unrouted; (Setup:2208914, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
 
 Updating file: openmips_min_sopc.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  5  : 0 unrouted; (Setup:2340949, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  6  : 0 unrouted; (Setup:2306841, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Updating file: openmips_min_sopc.ncd with current fully routed design.
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  7  : 0 unrouted; (Setup:2119407, Hold:0, Component Switching Limit:0)     REAL time: 43 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  8  : 0 unrouted; (Setup:2119407, Hold:0, Component Switching Limit:0)     REAL time: 43 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
-Total REAL time to Router completion: 5 secs 
-Total CPU time to Router completion: 5 secs 
+Phase  9  : 0 unrouted; (Setup:2119407, Hold:0, Component Switching Limit:0)     REAL time: 43 secs 
+
+Phase 10  : 0 unrouted; (Setup:2105499, Hold:0, Component Switching Limit:0)     REAL time: 45 secs 
+Total REAL time to Router completion: 45 secs 
+Total CPU time to Router completion: 47 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -139,10 +141,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|    clk_100mhz_BUFGP | BUFGMUX_X3Y13| No   |   15 |  0.022     |  0.874      |
-+---------------------+--------------+------+------+------------+-------------+
-|anti_jitter/btn_puls |              |      |      |            |             |
-|            e_0_BUFG |  BUFGMUX_X2Y3| No   |    8 |  0.012     |  0.886      |
+|    clk_100mhz_BUFGP | BUFGMUX_X3Y13| No   |  334 |  0.064     |  0.913      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -153,7 +152,23 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+Timing Score: 2105499 (Setup: 2105499, Hold: 0, Component Switching Limit: 0)
+
+WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in your design.
+
+   Review the timing report using Timing Analyzer (In ISE select "Post-Place &
+   Route Static Timing Report"). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+   Try the Design Goal and Strategies for Timing Performance(In ISE select Project -> Design Goals & Strategies) to ensure the best options
+   are set in the tools for timing closure.
+
+   Use the Xilinx "SmartXplorer" script to try special combinations of
+   options known to produce very good results.
+
+   Visit the Xilinx technical support web at http://support.xilinx.com and go to
+   either "Troubleshoot->Tech Tips->Timing & Constraints" or "
+   TechXclusives->Timing Closure" for tips and suggestions for meeting timing
+   in your design.
 
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
@@ -162,29 +177,29 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10  | SETUP       |     4.061ns|     5.939ns|       0|           0
-  ns HIGH 50%                               | HOLD        |     0.458ns|            |       0|           0
+* NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10  | SETUP       |   -10.079ns|    20.079ns|     454|     2105499
+  ns HIGH 50%                               | HOLD        |     0.374ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
-All constraints were met.
+1 constraint not met.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 5 secs 
-Total CPU time to PAR completion: 5 secs 
+Total REAL time to PAR completion: 47 secs 
+Total CPU time to PAR completion: 49 secs 
 
-Peak Memory Usage:  274 MB
+Peak Memory Usage:  320 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
-Timing: Completed - No errors found.
+Timing: Completed - 454 errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
+Number of warning messages: 1
 Number of info messages: 0
 
 Writing design to file openmips_min_sopc.ncd

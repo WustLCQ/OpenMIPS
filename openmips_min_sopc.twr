@@ -27,19 +27,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 ================================================================================
 Timing constraint: NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 
- 1258 paths analyzed, 157 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   5.939ns.
+ 88403013677 paths analyzed, 5307 endpoints analyzed, 454 failing endpoints
+ 454 timing errors detected. (454 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  20.079ns.
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/btn_pulse_0 (SLICE_X17Y26.A6), 18 paths
+Paths for end point openmips/ex_mem/mem_hi_24 (SLICE_X29Y22.A5), 1905572996 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     4.061ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/sw_temp_1 (FF)
-  Destination:          anti_jitter/btn_pulse_0 (FF)
+Slack (setup path):     -10.079ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      5.877ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.328 - 0.355)
+  Data Path Delay:      20.016ns (Levels of Logic = 15)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.028ns (0.354 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -50,33 +50,70 @@ Slack (setup path):     4.061ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/sw_temp_1 to anti_jitter/btn_pulse_0
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_24
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y15.BQ      Tcko                  0.391   anti_jitter/sw_temp<3>
-                                                       anti_jitter/sw_temp_1
-    SLICE_X14Y44.A6      net (fanout=2)        1.907   anti_jitter/sw_temp<1>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.A6      net (fanout=3)        0.940   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.CLK     Tas                   0.322   anti_jitter/btn_pulse<0>
-                                                       anti_jitter/btn_pulse_0_rstpot
-                                                       anti_jitter/btn_pulse_0
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT0    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN0     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_0
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.AMUX    Tcina                 0.202   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X29Y22.A5      net (fanout=1)        0.817   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<56>
+    SLICE_X29Y22.CLK     Tas                   0.322   openmips/ex_mem/mem_hi<24>
+                                                       openmips/ex/Mmux_HI1753
+                                                       openmips/ex_mem/mem_hi_24
     -------------------------------------------------  ---------------------------
-    Total                                      5.877ns (1.121ns logic, 4.756ns route)
-                                                       (19.1% logic, 80.9% route)
+    Total                                     20.016ns (13.698ns logic, 6.318ns route)
+                                                       (68.4% logic, 31.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.068ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_0 (FF)
-  Destination:          anti_jitter/btn_pulse_0 (FF)
+Slack (setup path):     -10.079ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.863ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.034ns (0.415 - 0.449)
+  Data Path Delay:      20.016ns (Levels of Logic = 15)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.028ns (0.354 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -87,33 +124,70 @@ Slack (setup path):     5.068ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_0 to anti_jitter/btn_pulse_0
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_24
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.AQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_0
-    SLICE_X14Y44.A3      net (fanout=1)        0.837   anti_jitter/btn_temp<0>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.A6      net (fanout=3)        0.940   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.CLK     Tas                   0.322   anti_jitter/btn_pulse<0>
-                                                       anti_jitter/btn_pulse_0_rstpot
-                                                       anti_jitter/btn_pulse_0
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT9    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN9     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_9
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.AMUX    Tcina                 0.202   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X29Y22.A5      net (fanout=1)        0.817   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<56>
+    SLICE_X29Y22.CLK     Tas                   0.322   openmips/ex_mem/mem_hi<24>
+                                                       openmips/ex/Mmux_HI1753
+                                                       openmips/ex_mem/mem_hi_24
     -------------------------------------------------  ---------------------------
-    Total                                      4.863ns (1.177ns logic, 3.686ns route)
-                                                       (24.2% logic, 75.8% route)
+    Total                                     20.016ns (13.698ns logic, 6.318ns route)
+                                                       (68.4% logic, 31.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.075ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_3 (FF)
-  Destination:          anti_jitter/btn_pulse_0 (FF)
+Slack (setup path):     -10.079ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.856ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.034ns (0.415 - 0.449)
+  Data Path Delay:      20.016ns (Levels of Logic = 15)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.028ns (0.354 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -124,36 +198,73 @@ Slack (setup path):     5.075ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_3 to anti_jitter/btn_pulse_0
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_24
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.DQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_3
-    SLICE_X15Y44.D2      net (fanout=1)        0.594   anti_jitter/btn_temp<3>
-    SLICE_X15Y44.D       Tilo                  0.259   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A3      net (fanout=3)        2.089   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.A6      net (fanout=3)        0.940   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X17Y26.CLK     Tas                   0.322   anti_jitter/btn_pulse<0>
-                                                       anti_jitter/btn_pulse_0_rstpot
-                                                       anti_jitter/btn_pulse_0
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT1    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN1     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_1
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.AMUX    Tcina                 0.202   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X29Y22.A5      net (fanout=1)        0.817   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<56>
+    SLICE_X29Y22.CLK     Tas                   0.322   openmips/ex_mem/mem_hi<24>
+                                                       openmips/ex/Mmux_HI1753
+                                                       openmips/ex_mem/mem_hi_24
     -------------------------------------------------  ---------------------------
-    Total                                      4.856ns (1.233ns logic, 3.623ns route)
-                                                       (25.4% logic, 74.6% route)
+    Total                                     20.016ns (13.698ns logic, 6.318ns route)
+                                                       (68.4% logic, 31.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/sw_ok_6 (SLICE_X16Y15.C1), 18 paths
+Paths for end point openmips/ex_mem/mem_hi_29 (SLICE_X28Y23.B6), 2313544311 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     4.545ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/sw_temp_1 (FF)
-  Destination:          anti_jitter/sw_ok_6 (FF)
+Slack (setup path):     -10.015ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_29 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      5.411ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.154 - 0.163)
+  Data Path Delay:      19.949ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -164,33 +275,73 @@ Slack (setup path):     4.545ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/sw_temp_1 to anti_jitter/sw_ok_6
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_29
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y15.BQ      Tcko                  0.391   anti_jitter/sw_temp<3>
-                                                       anti_jitter/sw_temp_1
-    SLICE_X14Y44.A6      net (fanout=2)        1.907   anti_jitter/sw_temp<1>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.341   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_6_dpot
-                                                       anti_jitter/sw_ok_6
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT0    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN0     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_0
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.BMUX    Tcinb                 0.292   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.B6      net (fanout=1)        0.562   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<61>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1853
+                                                       openmips/ex_mem/mem_hi_29
     -------------------------------------------------  ---------------------------
-    Total                                      5.411ns (1.140ns logic, 4.271ns route)
-                                                       (21.1% logic, 78.9% route)
+    Total                                     19.949ns (13.883ns logic, 6.066ns route)
+                                                       (69.6% logic, 30.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.542ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_0 (FF)
-  Destination:          anti_jitter/sw_ok_6 (FF)
+Slack (setup path):     -10.015ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_29 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.397ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.423 - 0.449)
+  Data Path Delay:      19.949ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -201,33 +352,73 @@ Slack (setup path):     5.542ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_0 to anti_jitter/sw_ok_6
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_29
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.AQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_0
-    SLICE_X14Y44.A3      net (fanout=1)        0.837   anti_jitter/btn_temp<0>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.341   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_6_dpot
-                                                       anti_jitter/sw_ok_6
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT9    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN9     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_9
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.BMUX    Tcinb                 0.292   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.B6      net (fanout=1)        0.562   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<61>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1853
+                                                       openmips/ex_mem/mem_hi_29
     -------------------------------------------------  ---------------------------
-    Total                                      4.397ns (1.196ns logic, 3.201ns route)
-                                                       (27.2% logic, 72.8% route)
+    Total                                     19.949ns (13.883ns logic, 6.066ns route)
+                                                       (69.6% logic, 30.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.549ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_3 (FF)
-  Destination:          anti_jitter/sw_ok_6 (FF)
+Slack (setup path):     -10.015ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_29 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.390ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.423 - 0.449)
+  Data Path Delay:      19.949ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -238,36 +429,76 @@ Slack (setup path):     5.549ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_3 to anti_jitter/sw_ok_6
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_29
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.DQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_3
-    SLICE_X15Y44.D2      net (fanout=1)        0.594   anti_jitter/btn_temp<3>
-    SLICE_X15Y44.D       Tilo                  0.259   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A3      net (fanout=3)        2.089   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.341   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_6_dpot
-                                                       anti_jitter/sw_ok_6
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT1    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN1     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_1
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.BMUX    Tcinb                 0.292   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.B6      net (fanout=1)        0.562   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<61>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1853
+                                                       openmips/ex_mem/mem_hi_29
     -------------------------------------------------  ---------------------------
-    Total                                      4.390ns (1.252ns logic, 3.138ns route)
-                                                       (28.5% logic, 71.5% route)
+    Total                                     19.949ns (13.883ns logic, 6.066ns route)
+                                                       (69.6% logic, 30.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/sw_ok_7 (SLICE_X16Y15.C1), 18 paths
+Paths for end point openmips/ex_mem/mem_hi_30 (SLICE_X28Y23.D6), 2395138574 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     4.673ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/sw_temp_1 (FF)
-  Destination:          anti_jitter/sw_ok_7 (FF)
+Slack (setup path):     -10.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_30 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      5.283ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.154 - 0.163)
+  Data Path Delay:      19.934ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -278,33 +509,73 @@ Slack (setup path):     4.673ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/sw_temp_1 to anti_jitter/sw_ok_7
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_30
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y15.BQ      Tcko                  0.391   anti_jitter/sw_temp<3>
-                                                       anti_jitter/sw_temp_1
-    SLICE_X14Y44.A6      net (fanout=2)        1.907   anti_jitter/sw_temp<1>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.213   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_7_dpot
-                                                       anti_jitter/sw_ok_7
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT0    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN0     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_0
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CMUX    Tcinc                 0.261   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.D6      net (fanout=1)        0.578   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<62>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1893
+                                                       openmips/ex_mem/mem_hi_30
     -------------------------------------------------  ---------------------------
-    Total                                      5.283ns (1.012ns logic, 4.271ns route)
-                                                       (19.2% logic, 80.8% route)
+    Total                                     19.934ns (13.852ns logic, 6.082ns route)
+                                                       (69.5% logic, 30.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.670ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_0 (FF)
-  Destination:          anti_jitter/sw_ok_7 (FF)
+Slack (setup path):     -10.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_30 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.269ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.423 - 0.449)
+  Data Path Delay:      19.934ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -315,33 +586,73 @@ Slack (setup path):     5.670ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_0 to anti_jitter/sw_ok_7
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_30
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.AQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_0
-    SLICE_X14Y44.A3      net (fanout=1)        0.837   anti_jitter/btn_temp<0>
-    SLICE_X14Y44.A       Tilo                  0.203   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A6      net (fanout=3)        1.909   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o6
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.213   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_7_dpot
-                                                       anti_jitter/sw_ok_7
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT9    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN9     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_9
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CMUX    Tcinc                 0.261   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.D6      net (fanout=1)        0.578   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<62>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1893
+                                                       openmips/ex_mem/mem_hi_30
     -------------------------------------------------  ---------------------------
-    Total                                      4.269ns (1.068ns logic, 3.201ns route)
-                                                       (25.0% logic, 75.0% route)
+    Total                                     19.934ns (13.852ns logic, 6.082ns route)
+                                                       (69.5% logic, 30.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     5.677ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               anti_jitter/btn_temp_3 (FF)
-  Destination:          anti_jitter/sw_ok_7 (FF)
+Slack (setup path):     -10.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               openmips/id_ex/ex_aluop_0_1 (FF)
+  Destination:          openmips/ex_mem/mem_hi_30 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      4.262ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.423 - 0.449)
+  Data Path Delay:      19.934ns (Levels of Logic = 16)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.031ns (0.351 - 0.382)
   Source Clock:         clk_100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -352,112 +663,149 @@ Slack (setup path):     5.677ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: anti_jitter/btn_temp_3 to anti_jitter/sw_ok_7
+  Maximum Data Path at Slow Process Corner: openmips/id_ex/ex_aluop_0_1 to openmips/ex_mem/mem_hi_30
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y44.DQ      Tcko                  0.447   anti_jitter/btn_temp<3>
-                                                       anti_jitter/btn_temp_3
-    SLICE_X15Y44.D2      net (fanout=1)        0.594   anti_jitter/btn_temp<3>
-    SLICE_X15Y44.D       Tilo                  0.259   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-                                                       anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A3      net (fanout=3)        2.089   anti_jitter/btn_temp[4]_sw_temp[7]_OR_362_o4
-    SLICE_X16Y15.A       Tilo                  0.205   anti_jitter/sw_ok<6>
-                                                       anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.C1      net (fanout=3)        0.455   anti_jitter/_n0054_inv1_rstpot
-    SLICE_X16Y15.CLK     Tas                   0.213   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_7_dpot
-                                                       anti_jitter/sw_ok_7
+    SLICE_X28Y14.DQ      Tcko                  0.408   openmips/id_ex/ex_aluop_0_1
+                                                       openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D6      net (fanout=1)        0.489   openmips/id_ex/ex_aluop_0_1
+    SLICE_X27Y12.D       Tilo                  0.259   openmips/id_ex/ex_aluop_3_1
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_SW0
+    SLICE_X25Y10.A6      net (fanout=3)        0.556   N226
+    SLICE_X25Y10.A       Tilo                  0.259   openmips/ex/opdata2_mult<13>
+                                                       openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694_1
+    SLICE_X26Y8.B6       net (fanout=18)       0.616   openmips/ex/aluop_i[7]_aluop_i[7]_OR_472_o694
+    SLICE_X26Y8.B        Tilo                  0.203   openmips/ex/opdata2_mult<1>
+                                                       openmips/ex/Mmux_opdata2_mult121
+    DSP48_X1Y2.B1        net (fanout=1)        0.679   openmips/ex/opdata2_mult<1>
+    DSP48_X1Y2.P28       Tdspdo_B_P            3.748   openmips/ex/Mmult_hilo_temp
+                                                       openmips/ex/Mmult_hilo_temp
+    DSP48_X1Y3.C11       net (fanout=1)        1.041   openmips/ex/Mmult_hilo_temp_P28_to_Mmult_hilo_temp1
+    DSP48_X1Y3.PCOUT1    Tdspdo_C_PCOUT        2.689   openmips/ex/Mmult_hilo_temp1
+                                                       openmips/ex/Mmult_hilo_temp1
+    DSP48_X1Y4.PCIN1     net (fanout=1)        0.002   openmips/ex/Mmult_hilo_temp1_PCOUT_to_Mmult_hilo_temp2_PCIN_1
+    DSP48_X1Y4.P22       Tdspdo_PCIN_P         2.264   openmips/ex/Mmult_hilo_temp2
+                                                       openmips/ex/Mmult_hilo_temp2
+    DSP48_X1Y5.C5        net (fanout=1)        1.103   openmips/ex/Mmult_hilo_temp2_P22_to_Mmult_hilo_temp3
+    DSP48_X1Y5.P0        Tdspdo_C_P            2.687   openmips/ex/Mmult_hilo_temp3
+                                                       openmips/ex/Mmult_hilo_temp3
+    SLICE_X26Y18.C3      net (fanout=2)        0.918   openmips/ex/hilo_temp<34>
+    SLICE_X26Y18.COUT    Topcyc                0.277   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+                                                       openmips/ex/n0547<34>1_INV_0
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<35>
+    SLICE_X26Y19.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<39>
+    SLICE_X26Y20.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<43>
+    SLICE_X26Y21.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<47>
+    SLICE_X26Y22.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<51>
+    SLICE_X26Y23.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.CIN     net (fanout=1)        0.082   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<55>
+    SLICE_X26Y24.COUT    Tbyp                  0.076   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CIN     net (fanout=1)        0.003   openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_cy<59>
+    SLICE_X26Y25.CMUX    Tcinc                 0.261   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<63>
+                                                       openmips/ex/Madd_hilo_temp[63]_GND_10_o_add_155_OUT_xor<63>
+    SLICE_X28Y23.D6      net (fanout=1)        0.578   openmips/ex/hilo_temp[63]_GND_10_o_add_155_OUT<62>
+    SLICE_X28Y23.CLK     Tas                   0.341   openmips/ex_mem/mem_hi<30>
+                                                       openmips/ex/Mmux_HI1893
+                                                       openmips/ex_mem/mem_hi_30
     -------------------------------------------------  ---------------------------
-    Total                                      4.262ns (1.124ns logic, 3.138ns route)
-                                                       (26.4% logic, 73.6% route)
+    Total                                     19.934ns (13.852ns logic, 6.082ns route)
+                                                       (69.5% logic, 30.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk_100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/sw_ok_6 (SLICE_X16Y15.C5), 1 path
+Paths for end point openmips/hilo_reg/hi_15 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.458ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               anti_jitter/sw_ok_6 (FF)
-  Destination:          anti_jitter/sw_ok_6 (FF)
+Slack (hold path):      0.374ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               openmips/mem_wb/wb_whilo (FF)
+  Destination:          openmips/hilo_reg/hi_15 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.458ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.373ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.036 - 0.037)
   Source Clock:         clk_100mhz_BUFGP rising at 10.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: anti_jitter/sw_ok_6 to anti_jitter/sw_ok_6
+  Minimum Data Path at Fast Process Corner: openmips/mem_wb/wb_whilo to openmips/hilo_reg/hi_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y15.CQ      Tcko                  0.200   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_6
-    SLICE_X16Y15.C5      net (fanout=9)        0.068   anti_jitter/sw_ok<6>
-    SLICE_X16Y15.CLK     Tah         (-Th)    -0.190   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_6_dpot
-                                                       anti_jitter/sw_ok_6
+    SLICE_X15Y20.AMUX    Tshcko                0.244   openmips/mem_wb/wb_wreg
+                                                       openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CE      net (fanout=91)       0.237   openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.108   openmips/hilo_reg/hi<15>
+                                                       openmips/hilo_reg/hi_15
     -------------------------------------------------  ---------------------------
-    Total                                      0.458ns (0.390ns logic, 0.068ns route)
-                                                       (85.2% logic, 14.8% route)
+    Total                                      0.373ns (0.136ns logic, 0.237ns route)
+                                                       (36.5% logic, 63.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/counter_4 (SLICE_X15Y25.C5), 1 path
+Paths for end point openmips/hilo_reg/hi_14 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.470ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               anti_jitter/counter_4 (FF)
-  Destination:          anti_jitter/counter_4 (FF)
+Slack (hold path):      0.378ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               openmips/mem_wb/wb_whilo (FF)
+  Destination:          openmips/hilo_reg/hi_14 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.470ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.377ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.036 - 0.037)
   Source Clock:         clk_100mhz_BUFGP rising at 10.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: anti_jitter/counter_4 to anti_jitter/counter_4
+  Minimum Data Path at Fast Process Corner: openmips/mem_wb/wb_whilo to openmips/hilo_reg/hi_14
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y25.CQ      Tcko                  0.198   anti_jitter/counter<6>
-                                                       anti_jitter/counter_4
-    SLICE_X15Y25.C5      net (fanout=2)        0.057   anti_jitter/counter<4>
-    SLICE_X15Y25.CLK     Tah         (-Th)    -0.215   anti_jitter/counter<6>
-                                                       anti_jitter/counter_4_rstpot
-                                                       anti_jitter/counter_4
+    SLICE_X15Y20.AMUX    Tshcko                0.244   openmips/mem_wb/wb_wreg
+                                                       openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CE      net (fanout=91)       0.237   openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.104   openmips/hilo_reg/hi<15>
+                                                       openmips/hilo_reg/hi_14
     -------------------------------------------------  ---------------------------
-    Total                                      0.470ns (0.413ns logic, 0.057ns route)
-                                                       (87.9% logic, 12.1% route)
+    Total                                      0.377ns (0.140ns logic, 0.237ns route)
+                                                       (37.1% logic, 62.9% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point anti_jitter/sw_ok_1 (SLICE_X16Y15.B5), 1 path
+Paths for end point openmips/hilo_reg/hi_13 (SLICE_X14Y21.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.470ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               anti_jitter/sw_ok_1 (FF)
-  Destination:          anti_jitter/sw_ok_1 (FF)
+Slack (hold path):      0.380ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               openmips/mem_wb/wb_whilo (FF)
+  Destination:          openmips/hilo_reg/hi_13 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.470ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.379ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.001ns (0.036 - 0.037)
   Source Clock:         clk_100mhz_BUFGP rising at 10.000ns
   Destination Clock:    clk_100mhz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: anti_jitter/sw_ok_1 to anti_jitter/sw_ok_1
+  Minimum Data Path at Fast Process Corner: openmips/mem_wb/wb_whilo to openmips/hilo_reg/hi_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y15.BQ      Tcko                  0.200   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_1
-    SLICE_X16Y15.B5      net (fanout=5)        0.080   anti_jitter/sw_ok<1>
-    SLICE_X16Y15.CLK     Tah         (-Th)    -0.190   anti_jitter/sw_ok<6>
-                                                       anti_jitter/sw_ok_1_dpot
-                                                       anti_jitter/sw_ok_1
+    SLICE_X15Y20.AMUX    Tshcko                0.244   openmips/mem_wb/wb_wreg
+                                                       openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CE      net (fanout=91)       0.237   openmips/mem_wb/wb_whilo
+    SLICE_X14Y21.CLK     Tckce       (-Th)     0.102   openmips/hilo_reg/hi<15>
+                                                       openmips/hilo_reg/hi_13
     -------------------------------------------------  ---------------------------
-    Total                                      0.470ns (0.390ns logic, 0.080ns route)
-                                                       (83.0% logic, 17.0% route)
+    Total                                      0.379ns (0.142ns logic, 0.237ns route)
+                                                       (37.5% logic, 62.5% route)
 
 --------------------------------------------------------------------------------
 
@@ -474,22 +822,22 @@ Slack: 8.270ns (period - min period limit)
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: anti_jitter/pulse/CLK
-  Logical resource: anti_jitter/pulse/CK
-  Location pin: SLICE_X16Y26.CLK
+  Physical resource: openmips/div/cnt<3>/CLK
+  Logical resource: openmips/div/cnt_0/CK
+  Location pin: SLICE_X0Y7.CLK
   Clock network: clk_100mhz_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: anti_jitter/sw_ok<6>/CLK
-  Logical resource: anti_jitter/sw_ok_1/CK
-  Location pin: SLICE_X16Y15.CLK
+  Physical resource: openmips/div/cnt<3>/CLK
+  Logical resource: openmips/div/cnt_1/CK
+  Location pin: SLICE_X0Y7.CLK
   Clock network: clk_100mhz_BUFGP
 --------------------------------------------------------------------------------
 
 
-All constraints were met.
+1 constraint not met.
 
 
 Data Sheet report:
@@ -501,32 +849,32 @@ Clock to Setup on destination clock clk_100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    5.939|         |         |         |
+clk_100mhz     |   20.079|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
 Timing summary:
 ---------------
 
-Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+Timing errors: 454  Score: 2105499  (Setup/Max: 2105499, Hold: 0)
 
-Constraints cover 1258 paths, 0 nets, and 169 connections
+Constraints cover 88403013677 paths, 0 nets, and 13124 connections
 
 Design statistics:
-   Minimum period:   5.939ns{1}   (Maximum frequency: 168.379MHz)
+   Minimum period:  20.079ns{1}   (Maximum frequency:  49.803MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Nov 24 17:11:35 2015 
+Analysis completed Mon Dec 28 10:34:21 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 161 MB
+Peak Memory Usage: 190 MB
 
 
 
